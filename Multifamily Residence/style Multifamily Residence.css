@@ -61,6 +61,7 @@ nav ul li a:hover {
 /* Background images for each card */
 .card1 {
     background-image: url("Photos/exterior\ wall.jpg");
+    background-image: url("Photos/Room\ A.png");
     background-size: cover;
     background-position: center;
 }

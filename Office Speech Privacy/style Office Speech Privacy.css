@@ -1,0 +1,186 @@
+/* Basic Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(Photos/Room\ A.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.5s ease; /* Smooth transition for backround change */
+}
+header {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+.main {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+
+/* Toggle Switch Styling*/
+.container {
+    position: fixed; /* Fix the position */
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Center elements horizontally */
+    text-align: center; /* Center text */
+}
+
+.switch_title {
+    margin-bottom: 10px; /* Space between title and switches */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.single-select-switch {
+    display: flex;
+    justify-content: center; /* Center the switches horizontally */
+    gap: 20px; /* Space between switches */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 34px; /* Height of the slider */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: rgb(94, 192, 238);
+}
+
+input:checked + .slider:before {
+    transform: translateX(116px);
+}
+
+/* Style for the label */
+.label {
+    position: absolute;
+    top: 50%; /* Center the label vertically */
+    left: 50%; /* Center the label horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the label's own size */
+    color: black; /* Change text color */
+    z-index: 1; /* Ensure the label is above the slider */
+}
+
+/* Style for the inactive options */
+.switch input:not(:checked) + .slider {
+    background-color: #ccc;
+}
+
+
+/* Mini Map Styling */
+.mini-map {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    display: flex; /* Use flexbox to lay out buttons */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: 1px solid #ccc; /* Border around the mini-map */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside the mini-map */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.stacked {
+    position: relative; /* Position relative for stacking */
+    margin-right: 0px; /* Space between stacked images and the side image */
+}
+
+.stacked img {
+    display: block; /* Ensure images are block elements */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.stacked input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.stacked img:hover {
+    transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.non-stacked img {
+        display: block; /* Ensure images are block elements */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: transform 0.3s; /* Smooth transition for hover effect */
+    }
+
+.non-stacked img:hover {
+        transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.non-stacked input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Different sizes for each image */
+.img-small {
+    width: 40px;
+    height: 40px;
+}
+.img-wide {
+    width: 40px;
+    height: 40px;
+}
