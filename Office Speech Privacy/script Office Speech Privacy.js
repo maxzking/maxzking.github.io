@@ -97,9 +97,20 @@ function playAudio() {
 
 
 // Navigation mini-map changes the background image
+// function changeBackground(imageUrl) {
+//     document.body.style.backgroundImage = imageUrl;
+//     document.body.style.backgroundSize = 'auto'; // Cover the entire background
+//     document.body.style.backgroundRepeat = 'no-repeat'; // Cover the entire background
+//     document.body.style.backgroundPosition = 'center'; // Center the background image
+// }
+
 function changeBackground(imageUrl) {
-    document.body.style.backgroundImage = imageUrl;
-    document.body.style.backgroundSize = 'auto'; // Cover the entire background
-    document.body.style.backgroundRepeat = 'no-repeat'; // Cover the entire background
-    document.body.style.backgroundPosition = 'center'; // Center the background image
+    // Select the Underheader division
+    var Underheader = document.getElementById('Underheader'); // Assuming the division has an id of 'Underheader'
+    
+    // Change the background image and properties for the Underheader division
+    Underheader.style.backgroundImage = imageUrl;
+    Underheader.style.backgroundSize = 'contain';
+    Underheader.style.backgroundRepeat = 'no-repeat'; // Do not repeat the background image
+    Underheader.style.backgroundPosition = 'center'; // Center the background image
 }

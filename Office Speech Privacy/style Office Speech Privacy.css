@@ -2,11 +2,6 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url(Photos/Room\ A.png);
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: background-image 0.5s ease; /* Smooth transition for backround change */
 }
 header {
     background-color: white;
@@ -15,6 +10,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+#Underheader {
+    background-image: url(Photos/Room\ A.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 70vh;
+    transition: background-image 0.5s ease; /* Smooth transition for backround change */
 }
 nav ul {
     list-style-type: none;
