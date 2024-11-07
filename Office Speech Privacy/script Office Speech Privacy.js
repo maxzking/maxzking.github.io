@@ -16,77 +16,77 @@ function playAudio() {
     // Determine which audio to play based on the selected options
     let audioToPlay;
     if (Volume === 'Normal' && Wall === '1&1' && Masking === 'On' && Room === 'RoomA') {
-        audioToPlay = 'normal200sine';
+        audioToPlay = '1+1,MaskingON,Normal';
     } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'On' && Room === 'RoomB') {
-        audioToPlay = 'normal400sine';
+        audioToPlay = '1+1,MaskingON,Normal';
     } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'On' && Room === 'RoomC') {
-        audioToPlay = 'normal800sine';
+        audioToPlay = '1+1,MaskingON,Normal';
     } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomA') {
-        audioToPlay = 'normal200square';
+        audioToPlay = '1+1,MaskingOFF,Normal';
     } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomB') {
-        audioToPlay = 'normal400square';
+        audioToPlay = '1+1,MaskingOFF,Normal';
     } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomC') {
-        audioToPlay = 'normal800square';
+        audioToPlay = '1+1,MaskingOFF,Normal';
     } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'On' && Room === 'RoomA') {
-        audioToPlay = 'normal250sine';
+        audioToPlay = '1+2,MaskingON,Normal';
     } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'On' && Room === 'RoomB') {
-        audioToPlay = 'normal500sine';
+        audioToPlay = '1+2,MaskingON,Normal';
     } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'On' && Room === 'RoomC') {
-        audioToPlay = 'normal1000sine';
+        audioToPlay = '1+2,MaskingON,Normal';
     } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomA') {
-        audioToPlay = 'normal250square';
+        audioToPlay = '1+2,MaskingOFF,Normal';
     } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomB') {
-        audioToPlay = 'normal500square';
+        audioToPlay = '1+2,MaskingOFF,Normal';
     } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomC') {
-        audioToPlay = 'normal1000square';
+        audioToPlay = '1+2,MaskingOFF,Normal';
     } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'On' && Room === 'RoomA') {
-        audioToPlay = 'normal300sine';
+        audioToPlay = '2+2,MaskingON,Normal';
     } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'On' && Room === 'RoomB') {
-        audioToPlay = 'normal600sine';
+        audioToPlay = '2+2,MaskingON,Normal';
     } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'On' && Room === 'RoomC') {
-        audioToPlay = 'normal1200sine';
+        audioToPlay = '2+2,MaskingON,Normal';
     } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomA') {
-        audioToPlay = 'normal300square';
+        audioToPlay = '2+2,MaskingOFF,Normal';
     } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomB') {
-        audioToPlay = 'normal600square';
+        audioToPlay = '2+2,MaskingOFF,Normal';
     } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomC') {
-        audioToPlay = 'normal1200square';
+        audioToPlay = '2+2,MaskingOFF,Normal';
     } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'On' && Room === 'RoomA') {
-        audioToPlay = 'raised200sine';
+        audioToPlay = '1+1,MaskingON,Raised';
     } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'On' && Room === 'RoomB') {
-        audioToPlay = 'raised400sine';
+        audioToPlay = '1+1,MaskingON,Raised';
     } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'On' && Room === 'RoomC') {
-        audioToPlay = 'raised800sine';
+        audioToPlay = '1+1,MaskingON,Raised';
     } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomA') {
-        audioToPlay = 'raised200square';
+        audioToPlay = '1+1,MaskingOFF,Raised';
     } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomB') {
-        audioToPlay = 'raised400square';
+        audioToPlay = '1+1,MaskingOFF,Raised';
     } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomC') {
-        audioToPlay = 'raised800square';
+        audioToPlay = '1+1,MaskingOFF,Raised';
     } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'On' && Room === 'RoomA') {
-        audioToPlay = 'raised250sine';
+        audioToPlay = '1+2,MaskingON,Raised';
     } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'On' && Room === 'RoomB') {
-        audioToPlay = 'raised500sine';
+        audioToPlay = '1+2,MaskingON,Raised';
     } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'On' && Room === 'RoomC') {
-        audioToPlay = 'raised1000sine';
+        audioToPlay = '1+2,MaskingON,Raised';
     } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomA') {
-        audioToPlay = 'raised250square';
+        audioToPlay = '1+2,MaskingOFF,Raised';
     } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomB') {
-        audioToPlay = 'raised500square';
+        audioToPlay = '1+2,MaskingOFF,Raised';
     } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomC') {
-        audioToPlay = 'raised1000square';
+        audioToPlay = '1+2,MaskingOFF,Raised';
     } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'On' && Room === 'RoomA') {
-        audioToPlay = 'raised300sine';
+        audioToPlay = '2+2,MaskingON,Raised';
     } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'On' && Room === 'RoomB') {
-        audioToPlay = 'raised600sine';
+        audioToPlay = '2+2,MaskingON,Raised';
     } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'On' && Room === 'RoomC') {
-        audioToPlay = 'raised1200sine';
+        audioToPlay = '2+2,MaskingON,Raised';
     } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomA') {
-        audioToPlay = 'raised300square';
+        audioToPlay = '2+2,MaskingOFF,Raised';
     } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomB') {
-        audioToPlay = 'raised600square';
+        audioToPlay = '2+2,MaskingOFF,Raised';
     } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomC') {
-        audioToPlay = 'raised1200square';
+        audioToPlay = '2+2,MaskingOFF,Raised';
     }
     // PLay the selected Audio
     if (audioToPlay) {
