@@ -203,9 +203,9 @@ input:checked + .slider:before {
 
 /* Mini Map Styling */
 .mini-map {
-    position: absolute;
-    bottom: 50%; /* Distance from the bottom */
-    right: 5%; /* Distance from the left */
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
     display: flex; /* Use flexbox to lay out buttons */
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
     border: 1px solid #ccc; /* Border around the mini-map */
@@ -215,58 +215,41 @@ input:checked + .slider:before {
     z-index: 1000; /* Ensure it stays on top */
 }
 
-.mini-map-title {
-    position: absolute;
-    bottom: 60%; /* Distance from the bottom */
-    right: 2.5%; /* Distance from the left */
-    margin: 0; /* Remove default margin */
-    font-size: 16px; /* Font size for the title */
-    padding-bottom: 5px; /* Space between title and mini-map */
-    z-index: 1001; /* Ensure it stays on top of the mini-map */
+.stacked {
+    position: relative; /* Position relative for stacking */
+    margin-right: 0px; /* Space between stacked images and the side image */
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 40px 40px; /* Two columns: Room A and Room C */
-    grid-template-rows: auto 40px; /* First row auto height, second row fixed height for Room B */
-    gap: 0; /* No gap between grid items */
-}
-
-.room-b {
-    grid-column: 1; /* Room A in column 1 */
-    grid-row: 1; /* Room A in row 1 */
-}
-
-.room-c {
-    grid-column: 2; /* Room C in column 2 */
-    grid-row: 1; /* Room C in row 1 */
-}
-
-.room-a {
-    grid-column: 1 / span 2; /* Room B spans both columns */
-    grid-row: 2; /* Room B in row 2 */
-}
-
-.stacked, .non-stacked {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-}
-
-.stacked img, .non-stacked img {
+.stacked img {
     display: block; /* Ensure images are block elements */
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.3s; /* Smooth transition for hover effect */
 }
 
-.stacked input, .non-stacked input {
+.stacked input{
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.stacked img:hover, .non-stacked img:hover {
+.stacked img:hover {
     transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.non-stacked img {
+        display: block; /* Ensure images are block elements */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: transform 0.3s; /* Smooth transition for hover effect */
+    }
+
+.non-stacked img:hover {
+        transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.non-stacked input{
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 /* Different sizes for each image */
@@ -275,6 +258,6 @@ input:checked + .slider:before {
     height: 40px;
 }
 .img-wide {
-    width: 80px; /* Width for Room A */
-    height: 40px; /* Height for Room A */
+    width: 40px;
+    height: 40px;
 }

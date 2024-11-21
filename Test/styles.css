@@ -1,22 +1,53 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
 }
 
-.toggle-container {
+.multiple-choice {
+    margin: 20px;
+}
+
+.choice-button {
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    margin: 0px 0;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.3s;
+    width: 10vw;
 }
 
-#toggleImage {
-    width: 50px; /* Adjust the size as needed */
-    height: auto;
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-    transition: transform 0.2s ease; /* Add transition for scaling */
+.choice-button:hover {
+    background-color: rgba(245, 245, 245, 0.7);
 }
 
-#toggleImage:active {
-    transform: scale(1.1); /* Scale up when clicked */
+input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.custom-radio {
+    width: 20px; /* Size of the custom radio button */
+    height: 20px; /* Size of the custom radio button */
+    border: 2px solid #ccc; /* Border color */
+    border-radius: 50%; /* Make it circular */
+    position: relative; /* Positioning for the inner circle */
+    margin-right: 10px; /* Space between radio button and label */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+input[type="radio"]:checked + .custom-radio {
+    border-color: rgb(94, 192, 238, 0.5); 
+}
+
+input[type="radio"]:checked + .custom-radio::after {
+    content: ''; /* Create a pseudo-element */
+    width: 12px; /* Size of the inner circle */
+    height: 12px; /* Size of the inner circle */
+    background-color: rgb(94, 192, 238);
+    border-radius: 50%; /* Make it circular */
+    position: absolute; /* Positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the inner circle */
 }

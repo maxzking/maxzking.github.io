@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style Office Speech Privacy.css" />
+    <link rel="stylesheet" href="TEST style Office Speech Privacy.css" />
     <title>Resonance Acoustics - Office Speech Privacy</title>
   </head>
   <body>
-    <script src="script Office Speech Privacy.js" defer></script>
+    <script src="TEST Script office Speech Privacy.js" defer></script>
     <!--This is the website navigation bar at the top of the screen-->
     <header>
         <img src="../Photos/RA_Logo.png" alt ="RA Logo" width = 143 height = 47>
@@ -88,28 +88,23 @@
 
   </div>
 
-    <!--Mini Map for navigation on the Left Side of the Screen-->
-    <h2 class="mini-map-title">Select Your Receive Room</h2>
-    <div class="mini-map">
-        <div class="grid">
-            <div class="room-b">
-                <label>
-                    <input type="radio" name="Room" value="RoomB" checked onclick="playAudio()">
-                    <img class="img-small" src="Photos/Room B.png" alt="Background 1" onclick="changeBackground('url(Photos/Room%20B.png)')">
-                </label>
-            </div>
-            <div class="room-c">
-                <label>
-                    <input type="radio" name="Room" value="RoomC" onclick="playAudio()">
-                    <img class="img-small" src="Photos/Room C.png" alt="Background 3" onclick="changeBackground('url(Photos/Room%20C.png)')">
-                </label>
-            </div>
-            <div class="room-a">
-                <label>
-                    <input type="radio" name="Room" value="RoomB" onclick="playAudio()">
-                    <img class="img-wide" src="Photos/Room A.png" alt="Background 2" onclick="changeBackground('url(Photos/Room%20A.png)')">
-                </label>
-            </div>
+    <!--Mini Map for navigation at the bottom corner of the screen-->
+      <div class="mini-map">
+        <div class="stacked">
+            <label>
+                <input type="radio" name="Room" value="RoomA" checked onclick="playAudio()">
+                <img class="img-small" src="Photos/Room A.png" alt="Background 1" onclick="changeBackground('url(Photos/Room%20A.png)')">
+            </label>
+            <label>
+                <input type="radio" name="Room" value="RoomB" onclick="playAudio()">
+                <img class="img-small" src="Photos/Room B.png" alt="Background 2" onclick="changeBackground('url(Photos/Room%20B.png)')">
+            </label>
+        </div>
+        <div class="non-stacked">
+            <label>
+                <input type="radio" name="Room" value="RoomC" onclick="playAudio()">
+                <img class="img-small" src="Photos/Room C.png" alt="Background 3" onclick="changeBackground('url(Photos/Room%20C.png)')">
+            </label>
         </div>
     </div>
     
