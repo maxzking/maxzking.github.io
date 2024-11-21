@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#toggleImage {
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    transition: transform 0.2s ease; /* Add transition for scaling */
+}
+
+#toggleImage:active {
+    transform: scale(1.1); /* Scale up when clicked */
+}

@@ -24,17 +24,23 @@
     <h1>Office Speech Privacy</h1>
   <div id="Underheader"> <!--Container for everything underneath Header-->
      <div class="container">
-      <h2 class="switch_title">Speech Volume</h2>
 
+        <h2 class="switch_title">Play/Pause</h2>
+        <!-- Play Toggle Button -->
+          <div class="toggle-container">
+            <img id="toggleImage" src="Photos/Play Button.png" alt="Pause Image" onclick="toggleImage()" />
+        </div>
+
+      <h2 class="switch_title">Speech Volume</h2>
       <!-- First row of toggle switches -->
       <div class="single-select-switch">
           <label class="switch">
-              <input type="radio" name="Volume" value="Normal" checked onchange="playAudio()" onload="playAudio()">
+              <input type="radio" name="Volume" value="Normal" checked>
               <span class="slider"></span>
               <span class="label">Normal Speech</span>
           </label>
           <label class="switch">
-              <input type="radio" name="Volume" value="Raised" onchange="playAudio()">
+              <input type="radio" name="Volume" value="Raised">
               <span class="slider"></span>
               <span class="label">Raised Speech</span>
           </label>
@@ -44,17 +50,17 @@
       <h2 class="switch_title">Wall Type</h2>
       <div class="single-select-switch">
           <label class="switch">
-              <input type="radio" name="Wall" value="1&1" checked onchange="playAudio()" onload="playAudio()">
+              <input type="radio" name="Wall" value="1&1" checked >
               <span class="slider"></span>
               <span class="label">1&1</span>
           </label>
           <label class="switch">
-              <input type="radio" name="Wall" value="1&2" onchange="playAudio()">
+              <input type="radio" name="Wall" value="1&2">
               <span class="slider"></span>
               <span class="label">1&2</span>
           </label>
           <label class="switch">
-              <input type="radio" name="Wall" value="2&2" onchange="playAudio()">
+              <input type="radio" name="Wall" value="2&2">
               <span class="slider"></span>
               <span class="label">2&2</span>
           </label>
@@ -64,12 +70,12 @@
       <h2 class="switch_title">Sound Masking</h2>
       <div class="single-select-switch">
           <label class="switch">
-              <input type="radio" name="Masking" value="On" checked onchange="playAudio()" onload="playAudio()">
+              <input type="radio" name="Masking" value="On" checked>
               <span class="slider"></span>
               <span class="label">On</span>
           </label>
           <label class="switch">
-              <input type="radio" name="Masking" value="Off" onchange="playAudio()">
+              <input type="radio" name="Masking" value="Off">
               <span class="slider"></span>
               <span class="label">Off</span>
           </label>
@@ -89,31 +95,6 @@
       <audio id="2+2,MaskingOFF,Raised" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking Off, Raised Speech.wav" preload="auto" loop></audio>
       <audio id="2+2,MaskingON,Normal" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking On, Normal Speech.wav" preload="auto" loop></audio>
       <audio id="2+2,MaskingON,Raised" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking On, Raised Speech.wav" preload="auto" loop></audio>
-      <audio id="normal300sine" src="Audio/normal300sine.wav" preload="auto" loop></audio>
-      <audio id="normal600sine" src="Audio/normal600sine.wav" preload="auto" loop></audio>
-      <audio id="normal1200sine" src="Audio/normal1200sine.wav" preload="auto" loop></audio>
-      <audio id="normal300square" src="Audio/normal300square.wav" preload="auto" loop></audio>
-      <audio id="normal600square" src="Audio/normal600square.wav" preload="auto" loop></audio>
-      <audio id="normal1200square" src="Audio/normal1200square.wav" preload="auto" loop></audio>
-      <audio id="raised200sine" src="Audio/raised200sine.wav" preload="auto" loop></audio>
-      <audio id="raised400sine" src="Audio/raised400sine.wav" preload="auto" loop></audio>
-      <audio id="raised800sine" src="Audio/raised800sine.wav" preload="auto" loop></audio>
-      <audio id="raised200square" src="Audio/raised200square.wav" preload="auto" loop></audio>
-      <audio id="raised400square" src="Audio/raised400square.wav" preload="auto" loop></audio>
-      <audio id="raised800square" src="Audio/raised800square.wav" preload="auto" loop></audio>
-      <audio id="raised250sine" src="Audio/raised250sine.wav" preload="auto" loop></audio>
-      <audio id="raised500sine" src="Audio/raised500sine.wav" preload="auto" loop></audio>
-      <audio id="raised1000sine" src="Audio/raised1000sine.wav" preload="auto" loop></audio>
-      <audio id="raised250square" src="Audio/raised250square.wav" preload="auto" loop></audio>
-      <audio id="raised500square" src="Audio/raised500square.wav" preload="auto" loop></audio>
-      <audio id="raised1000square" src="Audio/raised1000square.wav" preload="auto" loop></audio>
-      <audio id="raised300sine" src="Audio/raised300sine.wav" preload="auto" loop></audio>
-      <audio id="raised600sine" src="Audio/raised600sine.wav" preload="auto" loop></audio>
-      <audio id="raised1200sine" src="Audio/raised1200sine.wav" preload="auto" loop></audio>
-      <audio id="raised300square" src="Audio/raised300square.wav" preload="auto" loop></audio>
-      <audio id="raised600square" src="Audio/raised600square.wav" preload="auto" loop></audio>
-      <audio id="raised1200square" src="Audio/raised1200square.wav" preload="auto" loop></audio>
-
 
   </div>
 

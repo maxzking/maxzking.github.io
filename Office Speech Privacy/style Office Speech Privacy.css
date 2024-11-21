@@ -43,6 +43,23 @@ nav ul li a:hover {
     width: 100%;
 }
 
+/* PLay-Pause Button Styling */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#toggleImage {
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    transition: transform 0.4s ease; /* Add transition for scaling */
+}
+
+#toggleImage:active {
+    transform: scale(1.15); /* Scale up when clicked */
+}
 
 /* Toggle Switch Styling*/
 .container {

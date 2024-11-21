@@ -1,3 +1,23 @@
+// Play-Pause button function
+let isPlaying = false; // Track the state of the toggle
+let currentAudio = null; // Track the currently playing audio
+
+function toggleImage() {
+    const toggleImage = document.getElementById('toggleImage');
+
+    if (isPlaying) {
+        toggleImage.src = 'Photos/Play Button.png'; // Change to your "Play" image path
+        toggleImage.alt = 'Play Image';
+        stopAudio(); // Stop audio playback
+    } else {
+        toggleImage.src = 'Photos/Pause Button.png'; // Change to your "Pause" image path
+        toggleImage.alt = 'Pause Image';
+        playAudio(); // Start audio playback
+    }
+
+    isPlaying = !isPlaying; // Toggle the state
+}
+
 // Toggle switch audio function
 function playAudio() {
     // Stop all audio elements
@@ -88,22 +108,40 @@ function playAudio() {
     } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomC') {
         audioToPlay = '2+2,MaskingOFF,Raised';
     }
-    // PLay the selected Audio
+
+    // Play the selected Audio
     if (audioToPlay) {
         const selectedAudio = document.getElementById(audioToPlay);
         selectedAudio.play();
+        currentAudio = selectedAudio; // Track the currently playing audio
     }
 }
 
+function stopAudio() {
+    if (currentAudio) {
+        currentAudio.pause(); // Pause the currently playing audio
+        currentAudio.currentTime = 0; // Reset the audio to the beginning
+        currentAudio = null; // Clear the current audio reference
+    }
+}
+
+// Function to handle switch changes
+function handleSwitchChange() {
+    // If not playing, prevent any audio from starting
+    if (!isPlaying) {
+        return;
+    }
+    // If playing, you can call playAudio() here if needed
+    // Uncomment the next line if you want to play audio when switches change while in play mode
+    playAudio(); 
+}
+
+// Add event listeners to the switches
+document.querySelectorAll('input[name="Volume"], input[name="Wall"], input[name="Masking"], input[name="Room"]').forEach(switchElement => {
+    switchElement.addEventListener('change', handleSwitchChange);
+});
 
 // Navigation mini-map changes the background image
-// function changeBackground(imageUrl) {
-//     document.body.style.backgroundImage = imageUrl;
-//     document.body.style.backgroundSize = 'auto'; // Cover the entire background
-//     document.body.style.backgroundRepeat = 'no-repeat'; // Cover the entire background
-//     document.body.style.backgroundPosition = 'center'; // Center the background image
-// }
-
 function changeBackground(imageUrl) {
     // Select the Underheader division
     var Underheader = document.getElementById('Underheader'); // Assuming the division has an id of 'Underheader'
