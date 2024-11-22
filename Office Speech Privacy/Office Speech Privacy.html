@@ -22,13 +22,13 @@
         </nav>
     </header>
     <h1>Office Speech Privacy</h1>
-  <div id="Underheader"> <!--Container for everything underneath Header-->
-     <div class="container">
+  <div id="Underheader">
+     <div class="container"> <!--Container for Playback Controls-->
 
         <h2 class="switch_title">Play/Pause</h2>
         <!-- Play Toggle Button -->
           <div class="toggle-container">
-            <img id="toggleImage" src="Photos/Play Button.png" alt="Pause Image" onclick="toggleImage()" />
+            <img id="toggleImage" src="Photos/Play Button.png" alt="Pause Image" onclick="toggleImage(); playAudio()" />
         </div>
 
       <h2 class="switch_title">Speech Volume</h2>
