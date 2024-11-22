@@ -20,6 +20,9 @@ function toggleImage() {
 
 // Toggle switch audio function
 function playAudio() {
+    if (!isPlaying) {
+        return; // Exit the function if audio is paused
+    }
     // Stop all audio elements
     const audios = document.querySelectorAll('audio');
     audios.forEach(audio => {
@@ -27,7 +30,7 @@ function playAudio() {
         audio.currentTime = 0; // Reset the audio to the beginning
     });
 
-    // Get selected options from Volume, Wall,a nd Room
+    // Get selected options from Volume, Wall,a d Room
     const Volume = document.querySelector('input[name="Volume"]:checked').value;
     const Wall = document.querySelector('input[name="Wall"]:checked').value;
     const Room = document.querySelector('input[name="Room"]:checked').value;
@@ -37,77 +40,77 @@ function playAudio() {
     // Determine which audio to play based on the selected options
     console.log(`Volume: ${Volume}, Wall: ${Wall}, Masking: ${Masking}, Room: ${Room}`);
     let audioToPlay;
-    if (Volume === 'Normal' && Wall === '1&1' && Masking === 'On' && Room === 'RoomA') {
+    if (Volume === 'Normal' && Wall === '1&1' && Masking === 'On' && Room === 'receive-room-1') {
         audioToPlay = '1+1,MaskingON,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'On' && Room === 'RoomB') {
+    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'On' && Room === 'receive-room-2') {
         audioToPlay = '1+1,MaskingON,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'On' && Room === 'RoomC') {
+    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'On' && Room === 'source-room') {
         audioToPlay = '1+1,MaskingON,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomA') {
+    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'Off' && Room === 'receive-room-1') {
         audioToPlay = '1+1,MaskingOFF,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomB') {
+    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'Off' && Room === 'receive-room-2') {
         audioToPlay = '1+1,MaskingOFF,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomC') {
+    } else if (Volume === 'Normal' && Wall === '1&1' && Masking === 'Off' && Room === 'source-room') {
         audioToPlay = '1+1,MaskingOFF,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'On' && Room === 'RoomA') {
+    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'On' && Room === 'receive-room-1') {
         audioToPlay = '1+2,MaskingON,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'On' && Room === 'RoomB') {
+    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'On' && Room === 'receive-room-2') {
         audioToPlay = '1+2,MaskingON,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'On' && Room === 'RoomC') {
+    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'On' && Room === 'source-room') {
         audioToPlay = '1+2,MaskingON,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomA') {
+    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'Off' && Room === 'receive-room-1') {
         audioToPlay = '1+2,MaskingOFF,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomB') {
+    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'Off' && Room === 'receive-room-2') {
         audioToPlay = '1+2,MaskingOFF,Normal';
-    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomC') {
+    } else if (Volume === 'Normal' && Wall === '1&2' && Masking === 'Off' && Room === 'source-room') {
         audioToPlay = '1+2,MaskingOFF,Normal';
-    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'On' && Room === 'RoomA') {
+    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'On' && Room === 'receive-room-1') {
         audioToPlay = '2+2,MaskingON,Normal';
-    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'On' && Room === 'RoomB') {
+    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'On' && Room === 'receive-room-2') {
         audioToPlay = '2+2,MaskingON,Normal';
-    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'On' && Room === 'RoomC') {
+    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'On' && Room === 'source-room') {
         audioToPlay = '2+2,MaskingON,Normal';
-    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomA') {
+    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'Off' && Room === 'receive-room-1') {
         audioToPlay = '2+2,MaskingOFF,Normal';
-    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomB') {
+    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'Off' && Room === 'receive-room-2') {
         audioToPlay = '2+2,MaskingOFF,Normal';
-    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomC') {
+    } else if (Volume === 'Normal' && Wall === '2&2' && Masking === 'Off' && Room === 'source-room') {
         audioToPlay = '2+2,MaskingOFF,Normal';
-    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'On' && Room === 'RoomA') {
+    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'On' && Room === 'receive-room-1') {
         audioToPlay = '1+1,MaskingON,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'On' && Room === 'RoomB') {
+    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'On' && Room === 'receive-room-2') {
         audioToPlay = '1+1,MaskingON,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'On' && Room === 'RoomC') {
+    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'On' && Room === 'source-room') {
         audioToPlay = '1+1,MaskingON,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomA') {
+    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'Off' && Room === 'receive-room-1') {
         audioToPlay = '1+1,MaskingOFF,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomB') {
+    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'Off' && Room === 'receive-room-2') {
         audioToPlay = '1+1,MaskingOFF,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'Off' && Room === 'RoomC') {
+    } else if (Volume === 'Raised' && Wall === '1&1' && Masking === 'Off' && Room === 'source-room') {
         audioToPlay = '1+1,MaskingOFF,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'On' && Room === 'RoomA') {
+    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'On' && Room === 'receive-room-1') {
         audioToPlay = '1+2,MaskingON,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'On' && Room === 'RoomB') {
+    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'On' && Room === 'receive-room-2') {
         audioToPlay = '1+2,MaskingON,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'On' && Room === 'RoomC') {
+    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'On' && Room === 'source-room') {
         audioToPlay = '1+2,MaskingON,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomA') {
+    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'Off' && Room === 'receive-room-1') {
         audioToPlay = '1+2,MaskingOFF,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomB') {
+    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'Off' && Room === 'receive-room-2') {
         audioToPlay = '1+2,MaskingOFF,Raised';
-    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'Off' && Room === 'RoomC') {
+    } else if (Volume === 'Raised' && Wall === '1&2' && Masking === 'Off' && Room === 'source-room') {
         audioToPlay = '1+2,MaskingOFF,Raised';
-    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'On' && Room === 'RoomA') {
+    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'On' && Room === 'receive-room-1') {
         audioToPlay = '2+2,MaskingON,Raised';
-    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'On' && Room === 'RoomB') {
+    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'On' && Room === 'receive-room-2') {
         audioToPlay = '2+2,MaskingON,Raised';
-    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'On' && Room === 'RoomC') {
+    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'On' && Room === 'source-room') {
         audioToPlay = '2+2,MaskingON,Raised';
-    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomA') {
+    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'receive-room-1') {
         audioToPlay = '2+2,MaskingOFF,Raised';
-    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomB') {
+    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'receive-room-2') {
         audioToPlay = '2+2,MaskingOFF,Raised';
-    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'RoomC') {
+    } else if (Volume === 'Raised' && Wall === '2&2' && Masking === 'Off' && Room === 'source-room') {
         audioToPlay = '2+2,MaskingOFF,Raised';
     }
 
@@ -168,4 +171,22 @@ function changeBackground(imageUrl) {
     Underheader.style.backgroundSize = 'contain';
     Underheader.style.backgroundRepeat = 'no-repeat'; // Do not repeat the background image
     Underheader.style.backgroundPosition = 'center'; // Center the background image
+}
+// Function to change the image based on the selected radio button
+function changeImage(selectedRadio) {
+    // Get all radio buttons
+    const radios = document.querySelectorAll('input[name="Room"]');
+    // Get all images
+    const images = document.querySelectorAll('.grid img');
+
+    // Loop through all radio buttons
+    radios.forEach((radio, index) => {
+        if (radio.checked) {
+            // Change the image to the selected state
+            images[index].src = images[index].src.replace('Unselected', 'Selected'); // Change to selected image
+        } else {
+            // Revert the image to the unselected state
+            images[index].src = images[index].src.replace('Selected', 'Unselected'); // Change back to unselected image
+        }
+    });
 }

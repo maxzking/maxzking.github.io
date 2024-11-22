@@ -88,23 +88,28 @@
 
   </div>
 
-    <!--Mini Map for navigation at the bottom corner of the screen-->
-      <div class="mini-map">
-        <div class="stacked">
-            <label>
-                <input type="radio" name="Room" value="RoomA" checked onclick="playAudio()">
-                <img class="img-small" src="Photos/Room A.png" alt="Background 1" onclick="changeBackground('url(Photos/Room%20A.png)')">
-            </label>
-            <label>
-                <input type="radio" name="Room" value="RoomB" onclick="playAudio()">
-                <img class="img-small" src="Photos/Room B.png" alt="Background 2" onclick="changeBackground('url(Photos/Room%20B.png)')">
-            </label>
-        </div>
-        <div class="non-stacked">
-            <label>
-                <input type="radio" name="Room" value="RoomC" onclick="playAudio()">
-                <img class="img-small" src="Photos/Room C.png" alt="Background 3" onclick="changeBackground('url(Photos/Room%20C.png)')">
-            </label>
+    <!--Mini Map for navigation on the Left Side of the Screen-->
+    <h2 class="mini-map-title">Select Your Receive Room</h2>
+    <div class="mini-map">
+        <div class="grid">
+            <div class="receive-room-1">
+                <label>
+                    <input type="radio" name="Room" value="receive-room-1" checked onclick="playAudio(); changeImage(this)">
+                    <img class="img-receive-room-1" src="Photos/Selected Receive Room 1.png" alt="Background 1" onclick="changeBackground('url(Photos/Unselected%20Receive%20Room%201.png)');">
+                </label>
+            </div>
+            <div class="source-room">
+                <label>
+                    <input type="radio" name="Room" value="source-room" onclick="playAudio(); changeImage(this)">
+                    <img class="img-source-room" src="Photos/Unselected Source Room.png" alt="Background 3" onclick="changeBackground('url(Photos/Unselected%20Source%20Room.png)');">
+                </label>
+            </div>
+            <div class="receive-room-2">
+                <label>
+                    <input type="radio" name="Room" value="receive-room-2" onclick="playAudio(); changeImage(this)">
+                    <img class="img-receive-room-2" src="Photos/Unselected Receive Room 2.png" alt="Background 2" onclick="changeBackground('url(Photos/Unselected%20Receive%20Room%202.png)');">
+                </label>
+            </div>
         </div>
     </div>
     

@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+
 header {
     background-color: white;
     color: black;
@@ -12,35 +13,40 @@ header {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop Shadow */
 }
+
 #Underheader {
     background-image: url(Photos/Unselected\ Receive\ Room\ 1.png);
-    background-size: contain;
+    background-size: cover; /* Cover to fill the area */
     background-repeat: no-repeat;
     background-position: center;
     min-height: 70vh;
-    transition: background-image 0.5s ease; /* Smooth transition for backround change */
+    transition: background-image 0.5s ease; /* Smooth transition for background change */
 }
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
     color: black;
     text-decoration: none;
 }
+
 nav ul li a:hover {
     text-decoration: underline;
 }
+
 .main {
     display: flex;
     justify-content: space-around;
     margin: 20px;
-    margin-left: 0px;
     width: 100%;
 }
 
@@ -52,7 +58,7 @@ nav ul li a:hover {
 }
 
 #toggleImage {
-    width: 50px; /* Adjust the size as needed */
+    width: 10vw; /* Responsive size */
     height: auto;
     cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
     transition: transform 0.4s ease; /* Add transition for scaling */
@@ -72,11 +78,11 @@ nav ul li a:hover {
     align-items: center;
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0);
-    margin: 0px 0;
+    margin: 0;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0);
     transition: background-color 0.3s;
-    width: 10vw;
+    width: 100%; /* Full width */
 }
 
 .choice-button:hover {
@@ -113,11 +119,11 @@ input[type="radio"]:checked + .custom-radio::after {
     transform: translate(-50%, -50%); /* Center the inner circle */
 }
 
-/* Toggle Switch Styling*/
+/* Toggle Switch Styling */
 .container {
-    position: absolute; /* Change to absolute positioning */
+    position: relative; /* Change to relative positioning */
     top: 50%; /* Position from the top */
-    left: 7%; /* Position from the left */
+    left: 50%; /* Position from the left */
     transform: translate(-50%, -50%); /* Center the container */
     display: flex;
     flex-direction: column; /* Stack elements vertically */
@@ -139,6 +145,7 @@ input[type="radio"]:checked + .custom-radio::after {
     position: relative;
     display: inline-block;
     width: 150px;
+    height: 34;
     height: 34px; /* Height of the slider */
 }
 
@@ -200,13 +207,13 @@ input:checked + .slider:before {
     background-color: #ccc;
 }
 
-
 /* Mini Map Styling */
 .mini-map {
     position: absolute;
     top: 25%; /* Distance from the top */
-    right: 5%; /* Distance from the left */
+    right: 5%; /* Distance from the right */
     display: flex; /* Use flexbox to lay out buttons */
+    flex-direction: column; /* Stack items vertically */
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
     border: 1px solid #ccc; /* Border around the mini-map */
     border-radius: 8px; /* Rounded corners */
@@ -216,37 +223,33 @@ input:checked + .slider:before {
 }
 
 .mini-map-title {
-    position: absolute;
-    top: 22%; /* Distance from the top */
-    right: 10%; /* Distance from the right */
     margin: 0; /* Remove default margin */
     font-size: 16px; /* Font size for the title */
     padding-bottom: 5px; /* Space between title and mini-map */
     z-index: 1001; /* Ensure it stays on top of the mini-map */
 }
 
+/* Grid Layout for Mini Map */
 .grid {
     display: grid;
-    grid-template-columns: 177px 217px; /* Two columns: Room A and Room C */
-    grid-template-rows: 313px 258px; /* First row auto height, second row fixed height for Room B */
-    gap: 0; /* No gap between grid items */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    grid-template-rows: auto; /* Auto height for rows */
+    gap: 10px; /* Gap between grid items */
 }
 
 .receive-room-1 {
-    grid-column: 1 / span 2; /* Receive Room 1 spans both columns */
-    grid-row: 1; 
+    grid-column: 1 / -1; /* Receive Room 1 spans both columns */
 }
 
 .receive-room-2 {
     grid-column: 2; 
-    grid-row: 2; 
 }
 
 .source-room {
     grid-column: 1;
-    grid-row: 2;
 }
 
+/* Stacked and Non-Stacked Styles */
 .stacked, .non-stacked {
     display: flex; /* Use flexbox for alignment */
     flex-direction: column; /* Stack items vertically */
@@ -271,17 +274,88 @@ input:checked + .slider:before {
 
 /* Different sizes for each image */
 .img-receive-room-1 {
-    width: 394px;
-    height: 313px;
-    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
 }
+
 .img-receive-room-2 {
-    width: 217px;
-    height: 258px;
-    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
 }
+
 .img-source-room {
-    width: 177px;
-    height: 258px;
-    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Media Queries for Additional Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header items on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        margin-top: 10px; /* Add some space above the nav */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Space between nav items */
+    }
+
+    .container {
+        width: 90%; /* Make the container take up more width */
+        margin: 0 auto; /* Center the container */
+    }
+
+    .toggle-container {
+        margin: 20px 0; /* Add margin for spacing */
+    }
+
+    .multiple-choice {
+        flex-direction: column; /* Stack multiple-choice options vertically */
+        width: 100%; /* Full width */
+    }
+
+    .choice-button {
+        width: 100%; /* Full width for choice buttons */
+    }
+
+    .mini-map {
+        width: 90%; /* Make mini-map responsive */
+        right: 5%; /* Keep it aligned */
+    }
+
+    .mini-map-title {
+        font-size: 14px; /* Smaller font size for the title */
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .img-receive-room-1,
+    .img-receive-room-2,
+    .img-source-room {
+        width: 100%; /* Full width for images */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .switch_title {
+        font-size: 14px; /* Smaller font size for switch titles */
+    }
+
+    #toggleImage {
+        width: 30vw; /* Smaller toggle button */
+    }
+
+    .label {
+        font-size: 12px; /* Smaller font size for labels */
+    }
 }
