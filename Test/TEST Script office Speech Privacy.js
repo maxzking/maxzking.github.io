@@ -1,3 +1,18 @@
+// Array Of Audio File Paths for clicking sound effect
+const clickFiles = [
+    'Audio/click-high.wav', // Replace with your audio file paths
+    'Audio/click-normal.wav',
+    'Audio/click-low.wav'
+];
+
+// Function to play a random click sound
+function playRandomSound() {
+    // Generate a random index
+    const randomIndex = Math.floor(Math.random() * clickFiles.length);
+    const randomAudio = new Audio(clickFiles[randomIndex]);
+    randomAudio.play();
+}
+
 // Play-Pause button function
 let isPlaying = false; // Track the state of the toggle
 let currentAudio = null; // Track the currently playing audio
@@ -9,6 +24,8 @@ function toggleImage() {
         toggleImage.src = 'Photos/Play Button.png'; // Change to your "Play" image path
         toggleImage.alt = 'Play Image';
         stopAudio(); // Stop audio playback
+        playRandomSound();
+
     } else {
         toggleImage.src = 'Photos/Pause Button.png'; // Change to your "Pause" image path
         toggleImage.alt = 'Pause Image';
@@ -23,6 +40,10 @@ function playAudio() {
     if (!isPlaying) {
         return; // Exit the function if audio is paused
     }
+
+    // Play a random sound first
+    playRandomSound();
+
     // Stop all audio elements
     const audios = document.querySelectorAll('audio');
     audios.forEach(audio => {
@@ -134,10 +155,13 @@ function stopAudio() {
 function handleSwitchChange() {
     // If not playing, prevent any audio from starting
     if (!isPlaying) {
+        // Play a random sound first
+        playRandomSound();
         return;
     }
     // If playing, you can call playAudio() here if needed
     // Uncomment the next line if you want to play audio when switches change while in play mode
+    
     playAudio(); 
 }
 
@@ -190,3 +214,23 @@ function changeImage(selectedRadio) {
         }
     });
 }
+
+function toggleDoorButtons() {
+    const doorButtons = document.getElementById('doorButtons');
+    const doorTypeTitle = document.getElementById('doorTypeTitle');
+    const selectedRoom = document.querySelector('input[name="Room"]:checked').value;
+
+    // Show door buttons only if "receive-room-1" is selected
+    if (selectedRoom === 'receive-room-1') {
+        doorButtons.style.display = 'block';
+        doorTypeTitle.style.display = 'block';
+    } else {
+        doorButtons.style.display = 'none';
+        doorTypeTitle.style.display = 'none';
+    }
+}
+
+// Call toggleDoorButtons on page load to set initial state
+window.onload = function() {
+    toggleDoorButtons();
+};

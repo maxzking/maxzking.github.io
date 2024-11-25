@@ -17,7 +17,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../Exterior Facade/Exterior Facade.html">Exterior Facade</a></li>
                 <li><a href="../Multifamily Residence/Multifamily Residence.html">Multifamily Residence</a></li>
-                <li><a href="Office Speech Privacy.html">Office Speech Privacy</a></li>
+                <li><a href="Office Speech Privacy.html" style="color: rgb(94, 192, 238);">Office Speech Privacy</a></li>
             </ul>
         </nav>
     </header>
@@ -32,7 +32,7 @@
         </div>
 
       <h2 class="switch_title">Speech Volume</h2>
-      <!-- First row of toggle switches -->
+      <!-- Speech Volume Buttons -->
       <div class="multiple-choice">
           <label class="choice-button">
               <input type="radio" name="Volume" value="Normal" checked>
@@ -44,7 +44,17 @@
           </label>
       </div>
 
-      <!-- Second row of toggle switches -->
+      <!-- Sound Masking Buttons-->
+      <h2 class="switch_title">Sound Masking</h2>
+      <div class="single-select-switch">
+            <label class="switch">
+                <input type="checkbox" id="Masking" onchange="updateToggleValue()";>
+                <span class="slider"></span>
+                <span class="label">Off</span>
+            </label>
+      </div>
+
+      <!-- Wall Type Buttons -->
       <h2 class="switch_title">Wall Type</h2>
       <div class="multiple-choice">
           <label class="choice-button">
@@ -60,18 +70,26 @@
               <span class="custom-radio"></span>2&2
           </label>
       </div>
-
-      <!-- Third row of toggle switches-->
-      <h2 class="switch_title">Sound Masking</h2>
-      <div class="single-select-switch">
-            <label class="switch">
-                <input type="checkbox" id="Masking" onchange="updateToggleValue()";>
-                <span class="slider"></span>
-                <span class="label">Off</span>
-            </label>
+      
+      <!-- Door Type Buttons -->
+      <h2 class="switch_title" id="doorTypeTitle">Door Type</h2>
+      <div class="multiple-choice door-buttons" id="doorButtons">
+          <label class="choice-button">
+              <input type="radio" name="Door" value="sliding-glass" checked >
+              <span class="custom-radio"></span>Sliding Glass
+          </label>
+          <label class="choice-button">
+              <input type="radio" name="Door" value="Full-Perimeter+drop-bottom">
+              <span class="custom-radio"></span>Full Perimeter + Drop Bottom
+          </label>
+          <label class="choice-button">
+              <input type="radio" name="Door" value="Swinging-Door-No-Bottom-Seal">
+              <span class="custom-radio"></span>Swinging-Door-No-Bottom-Seal
+          </label>
       </div>
 
-      <!-- Audio Elements -->
+
+      <!-- Partition Audio Elements -->
 
       <audio id="1+1,MaskingOFF,Normal" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking Off, Normal Speech.wav" preload="auto" loop></audio>
       <audio id="1+1,MaskingOFF,Raised" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking Off, Raised Speech.wav" preload="auto" loop></audio>
@@ -89,24 +107,24 @@
   </div>
 
     <!--Mini Map for navigation on the Left Side of the Screen-->
-    <h2 class="mini-map-title">Select Your Receive Room</h2>
+    <h2 class="mini-map-title">Select Your Listening Location</h2>
     <div class="mini-map">
         <div class="grid">
             <div class="receive-room-1">
                 <label>
-                    <input type="radio" name="Room" value="receive-room-1" checked onclick="playAudio(); changeImage(this)">
+                    <input type="radio" name="Room" value="receive-room-1" checked onclick="playAudio(); changeImage(this); toggleDoorButtons();">
                     <img class="img-receive-room-1" src="Photos/Selected Receive Room 1.png" alt="Background 1" onclick="changeBackground('url(Photos/Unselected%20Receive%20Room%201.png)');">
                 </label>
             </div>
             <div class="source-room">
                 <label>
-                    <input type="radio" name="Room" value="source-room" onclick="playAudio(); changeImage(this)">
+                    <input type="radio" name="Room" value="source-room" onclick="playAudio(); changeImage(this); toggleDoorButtons();">
                     <img class="img-source-room" src="Photos/Unselected Source Room.png" alt="Background 3" onclick="changeBackground('url(Photos/Unselected%20Source%20Room.png)');">
                 </label>
             </div>
             <div class="receive-room-2">
                 <label>
-                    <input type="radio" name="Room" value="receive-room-2" onclick="playAudio(); changeImage(this)">
+                    <input type="radio" name="Room" value="receive-room-2" onclick="playAudio(); changeImage(this); toggleDoorButtons();">
                     <img class="img-receive-room-2" src="Photos/Unselected Receive Room 2.png" alt="Background 2" onclick="changeBackground('url(Photos/Unselected%20Receive%20Room%202.png)');">
                 </label>
             </div>

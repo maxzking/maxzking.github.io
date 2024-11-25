@@ -64,7 +64,7 @@ nav ul li a:hover {
 
 /* Multiple-Choice Switch Styling */
 .multiple-choice {
-    margin: 20px;
+    margin: 0px;
 }
 
 .choice-button {
@@ -127,12 +127,14 @@ input[type="radio"]:checked + .custom-radio::after {
 
 .switch_title {
     margin-bottom: 5px; /* Space between title and switches */
+    margin-top: 10px;
     font-size: 16px; /* Adjust font size as needed */
 }
 
 .single-select-switch {
     display: flex;
     justify-content: center; /* Center the switches horizontally */
+    margin-bottom: 5px;
 }
 
 .switch {
