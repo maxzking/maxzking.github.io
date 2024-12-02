@@ -13,6 +13,7 @@ function playRandomSound() {
     randomAudio.play();
 }
 
+
 // Play-Pause button function
 let isPlaying = false; // Track the state of the toggle
 let currentAudio = null; // Track the currently playing audio
