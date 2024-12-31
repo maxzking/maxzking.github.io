@@ -1,0 +1,22 @@
+Minimap Naming Conventions:
+Receive Room 1: 159x185
+Receive Room 2: 283:227
+Source Room: 124x185
+
+U/S - Unselected or Selected
+1,2,3,A - Wall type 1, wall type 2, wall type 3, all wall types
+SW/SL - Swinging vs. sliding door
+ON/OFF - sound masking on or off
+1,2,s - receive room 1, receive room 2, source room
+
+
+
+Background Image Naming Conventions:
+Source and receive room 1: 281x185
+Source and receive room 2:278 x 414
+Source Room alone: 124x184
+
+1,2,3,A - Wall type 1, wall type 2, wall type 3, all wall types
+SW/SL - Swinging vs. sliding door
+ON/OFF - sound masking on or off
+1,2,s - receive room 1, receive room 2, source room

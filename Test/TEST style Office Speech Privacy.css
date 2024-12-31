@@ -13,12 +13,16 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop Shadow */
 }
 #Underheader {
-    background-image: url(Photos/Unselected\ Receive\ Room\ 1.png);
+    background-image: url("Photos/Background/1SL-OFF-1.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     min-height: 70vh;
-    transition: background-image 0.5s ease; /* Smooth transition for backround change */
+    transition: background-image .25s ease-in-out, opacity .25s ease-in-out;
+    opacity: 1;
+}
+.fade-out {
+    opacity: 0;
 }
 nav ul {
     list-style-type: none;

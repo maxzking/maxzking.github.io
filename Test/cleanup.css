@@ -15,7 +15,7 @@ header {
 }
 
 #Underheader {
-    background-image: url(Photos/Unselected\ Receive\ Room\ 1.png);
+    background-image: url("Photos/Minimap/Unselected%20Receive%20Room%201.png");
     background-size: cover; /* Cover to fill the area */
     background-repeat: no-repeat;
     background-position: center;
