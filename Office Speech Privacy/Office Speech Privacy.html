@@ -8,128 +8,128 @@
   </head>
   <body>
     <script src="script Office Speech Privacy.js" defer></script>
-    <!--This is the website navigation bar at the top of the screen-->
-    <header>
-        <img src="../Photos/RA_Logo.png" alt ="RA Logo" width = 143 height = 47>
-        <h2>Resonance Acoustics - Listening Demonstrations</h2>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../Exterior Facade/Exterior Facade.html">Exterior Facade</a></li>
-                <li><a href="../Multifamily Residence/Multifamily Residence.html">Multifamily Residence</a></li>
-                <li><a href="Office Speech Privacy.html" style="color: rgb(94, 192, 238);">Office Speech Privacy</a></li>
-            </ul>
-        </nav>
-    </header>
-    <h1>Office Speech Privacy</h1>
-  <div id="Underheader">
-     <div class="container"> <!--Container for Playback Controls-->
+<!--This is the website navigation bar at the top of the screen-->
+<header>
+    <img src="../Photos/RA_Logo.png" alt ="RA Logo" width = 143 height = 47>
+    <h2>Resonance Acoustics - Listening Demonstrations</h2>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Exterior Facade/Exterior Facade.html">Exterior Facade</a></li>
+            <li><a href="../Multifamily Residence/Multifamily Residence.html">Multifamily Residence</a></li>
+            <li><a href="Office Speech Privacy.html" style="color: rgb(94, 192, 238);">Office Speech Privacy</a></li>
+        </ul>
+    </nav>
+</header>
+<h1>Office Speech Privacy</h1>
+<div id="Underheader">
+ <div class="container"> <!--Container for Playback Controls-->
 
-        <h2 class="switch_title">Play/Pause</h2>
-        <!-- Play Toggle Button -->
-          <div class="toggle-container">
-            <img id="toggleImage" src="Photos/Play Button.png" alt="Pause Image" onclick="toggleImage(); playAudio()" />
-        </div>
+    <h2 class="switch_title">Play/Pause</h2>
+    <!-- Play Toggle Button -->
+      <div class="toggle-container">
+        <img id="toggleImage" src="Photos/Play Button.png" alt="Pause Image" onclick="toggleImage(); playAudio()" />
+    </div>
 
-      <h2 class="switch_title">Speech Volume</h2>
-      <!-- Speech Volume Buttons -->
-      <div class="multiple-choice">
-          <label class="choice-button">
-              <input type="radio" name="Volume" value="Normal" checked>
-              <span class="custom-radio"></span> Normal Speech
-            </label>
-          <label class="choice-button">
-              <input type="radio" name="Volume" value="Raised">
-              <span class="custom-radio"></span> Raised Speech
-          </label>
-      </div>
-
-      <!-- Sound Masking Buttons-->
-      <h2 class="switch_title">Sound Masking</h2>
-      <div class="single-select-switch">
-            <label class="switch">
-                <input type="checkbox" id="Masking" onchange="updateToggleValue()";>
-                <span class="slider"></span>
-                <span class="label">Off</span>
-            </label>
-      </div>
-
-      <!-- Wall Type Buttons -->
-      <h2 class="switch_title">Wall Type</h2>
-      <div class="multiple-choice">
-          <label class="choice-button">
-              <input type="radio" name="Wall" value="1&1" checked >
-              <span class="custom-radio"></span>1&1
-          </label>
-          <label class="choice-button">
-              <input type="radio" name="Wall" value="1&2">
-              <span class="custom-radio"></span>1&2
-          </label>
-          <label class="choice-button">
-              <input type="radio" name="Wall" value="2&2">
-              <span class="custom-radio"></span>2&2
-          </label>
-      </div>
+  <h2 class="switch_title">Speech Volume</h2>
+  <!-- Speech Volume Buttons -->
+  <div class="multiple-choice">
+      <label class="choice-button">
+          <input type="radio" name="Volume" value="Normal" checked>
+          <span class="custom-radio"></span> Normal Speech
+        </label>
+      <label class="choice-button">
+          <input type="radio" name="Volume" value="Raised">
+          <span class="custom-radio"></span> Raised Speech
+      </label>
   </div>
-  <div class="door-container">
-        <!-- Door Type Buttons -->
-        <h2 class="switch_title" id="doorTypeTitle">Door Type</h2>
-        <div class="multiple-choice door-buttons" id="doorButtons">
-            <label class="choice-button">
-                <input type="radio" name="Door" value="sliding-glass" checked >
-                <span class="custom-radio"></span>Sliding Glass
-            </label>
-            <label class="choice-button">
-                <input type="radio" name="Door" value="Full-Perimeter+drop-bottom">
-                <span class="custom-radio"></span>Full Perimeter + Drop Bottom
-            </label>
-            <label class="choice-button">
-                <input type="radio" name="Door" value="Swinging-Door-No-Bottom-Seal">
-                <span class="custom-radio"></span>Swinging-Door-No-Bottom-Seal
-            </label>
-        </div>
-    
-          <!-- Partition Audio Elements -->
-          <audio id="1+1,MaskingOFF,Normal" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking Off, Normal Speech.wav" preload="auto" loop></audio>
-          <audio id="1+1,MaskingOFF,Raised" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking Off, Raised Speech.wav" preload="auto" loop></audio>
-          <audio id="1+1,MaskingON,Normal" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking On, Normal Speech.wav" preload="auto" loop></audio>
-          <audio id="1+1,MaskingON,Raised" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking On, Raised Speech.wav" preload="auto" loop></audio>
-          <audio id="1+2,MaskingOFF,Normal" src="Audio/2024-11-07 WoodStud(1+2), Sound Masking Off, Normal Speech.wav" preload="auto" loop></audio>
-          <audio id="1+2,MaskingOFF,Raised" src="Audio/2024-11-07 WoodStud(1+2), Sound Masking Off, Raised Speech.wav" preload="auto" loop></audio>
-          <audio id="1+2,MaskingON,Normal" src="Audio/2024-11-07 WoodStud(1+2), Sound Masking On, Normal Speech.wav" preload="auto" loop></audio>
-          <audio id="1+2,MaskingON,Raised" src="Audio/2024-11-07 WoodStud(1+2), Sound Masking On, Raised Speech.wav" preload="auto" loop></audio>
-          <audio id="2+2,MaskingOFF,Normal" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking Off, Normal Speech.wav" preload="auto" loop></audio>
-          <audio id="2+2,MaskingOFF,Raised" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking Off, Raised Speech.wav" preload="auto" loop></audio>
-          <audio id="2+2,MaskingON,Normal" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking On, Normal Speech.wav" preload="auto" loop></audio>
-          <audio id="2+2,MaskingON,Raised" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking On, Raised Speech.wav" preload="auto" loop></audio>
-        
+
+  <!-- Sound Masking Buttons-->
+  <h2 class="switch_title">Sound Masking</h2>
+  <div class="single-select-switch">
+        <label class="switch">
+            <input type="checkbox" id="Masking">
+            <span class="slider"></span>
+            <span class="label">Off</span>
+        </label>
+  </div>
+
+  <!-- Wall Type Buttons -->
+  <h2 class="switch_title">Wall Type</h2>
+  <div class="multiple-choice">
+      <label class="choice-button">
+          <input type="radio" name="Wall" value="1" checked>
+          <span class="custom-radio"></span>1&1
+      </label>
+      <label class="choice-button">
+          <input type="radio" name="Wall" value="2">
+          <span class="custom-radio"></span>1&2
+      </label>
+      <label class="choice-button">
+          <input type="radio" name="Wall" value="3">
+          <span class="custom-radio"></span>2&2
+      </label>
+  </div>
+</div>
+<div class="door-container">
+    <!-- Door Type Buttons -->
+    <h2 class="switch_title" id="doorTypeTitle">Door Type</h2>
+    <div class="multiple-choice door-buttons" id="doorButtons">
+        <label class="choice-button">
+            <input type="radio" name="Door" value="SL" checked >
+            <span class="custom-radio"></span>Sliding Glass
+        </label>
+        <label class="choice-button">
+            <input type="radio" name="Door" value="SW" >
+            <span class="custom-radio"></span>Full Perimeter + Drop Bottom
+        </label>
+        <label class="choice-button">
+            <input type="radio" name="Door" value="SW">
+            <span class="custom-radio"></span>Swinging-Door-No-Bottom-Seal
+        </label>
     </div>
 
-    <!--Mini Map for navigation on the Left Side of the Screen-->
-    <h2 class="mini-map-title">Select Your Listening Location</h2>
-    <div class="mini-map">
-        <div class="grid">
-            <div class="receive-room-1">
-                <label>
-                    <input type="radio" name="Room" value="receive-room-1" checked onclick="changeImage(this); toggleDoorButtons();">
-                    <img class="img-receive-room-1" src="Photos/Selected Receive Room 1.png" alt="Background 1" onclick="changeBackground('url(Photos/Unselected%20Receive%20Room%201.png)');">
-                </label>
-            </div>
-            <div class="source-room">
-                <label>
-                    <input type="radio" name="Room" value="source-room" onclick="changeImage(this); toggleDoorButtons();">
-                    <img class="img-source-room" src="Photos/Unselected Source Room.png" alt="Background 3" onclick="changeBackground('url(Photos/Unselected%20Source%20Room.png)');">
-                </label>
-            </div>
-            <div class="receive-room-2">
-                <label>
-                    <input type="radio" name="Room" value="receive-room-2" onclick="changeImage(this); toggleDoorButtons();">
-                    <img class="img-receive-room-2" src="Photos/Unselected Receive Room 2.png" alt="Background 2" onclick="changeBackground('url(Photos/Unselected%20Receive%20Room%202.png)');">
-                </label>
-            </div>
+      <!-- Partition Audio Elements -->
+      <audio id="1+1,MaskingOFF,Normal" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking Off, Normal Speech.wav" preload="auto" loop></audio>
+      <audio id="1+1,MaskingOFF,Raised" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking Off, Raised Speech.wav" preload="auto" loop></audio>
+      <audio id="1+1,MaskingON,Normal" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking On, Normal Speech.wav" preload="auto" loop></audio>
+      <audio id="1+1,MaskingON,Raised" src="Audio/2024-11-07 WoodStud(1+1), Sound Masking On, Raised Speech.wav" preload="auto" loop></audio>
+      <audio id="1+2,MaskingOFF,Normal" src="Audio/2024-11-07 WoodStud(1+2), Sound Masking Off, Normal Speech.wav" preload="auto" loop></audio>
+      <audio id="1+2,MaskingOFF,Raised" src="Audio/2024-11-07 WoodStud(1+2), Sound Masking Off, Raised Speech.wav" preload="auto" loop></audio>
+      <audio id="1+2,MaskingON,Normal" src="Audio/2024-11-07 WoodStud(1+2), Sound Masking On, Normal Speech.wav" preload="auto" loop></audio>
+      <audio id="1+2,MaskingON,Raised" src="Audio/2024-11-07 WoodStud(1+2), Sound Masking On, Raised Speech.wav" preload="auto" loop></audio>
+      <audio id="2+2,MaskingOFF,Normal" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking Off, Normal Speech.wav" preload="auto" loop></audio>
+      <audio id="2+2,MaskingOFF,Raised" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking Off, Raised Speech.wav" preload="auto" loop></audio>
+      <audio id="2+2,MaskingON,Normal" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking On, Normal Speech.wav" preload="auto" loop></audio>
+      <audio id="2+2,MaskingON,Raised" src="Audio/2024-11-07 WoodStud(2+2), Sound Masking On, Raised Speech.wav" preload="auto" loop></audio>
+    
+</div>
+
+<!--Mini Map for navigation on the Left Side of the Screen-->
+<h2 class="mini-map-title">Select Your Listening Location</h2>
+<div class="mini-map">
+    <div class="grid">
+        <div class="receive-room-1">
+            <label>
+                <input type="radio" name="Room" value="receive-room-1" checked>
+                <img class="img-receive-room-1" src="Photos/S1SL-OFF-1.png" alt="Background 1" onclick="changeBackground('url(Photos/Unselected%20Receive%20Room%201.png)');">
+            </label>
+        </div>
+        <div class="source-room">
+            <label>
+                <input type="radio" name="Room" value="source-room">
+                <img class="img-source-room" src="Photos/UASL-OFF-S.png" alt="Background 3" onclick="changeBackground('url(Photos/Unselected%20Source%20Room.png)');">
+            </label>
+        </div>
+        <div class="receive-room-2">
+            <label>
+                <input type="radio" name="Room" value="receive-room-2">
+                <img class="img-receive-room-2" src="Photos/UASL-OFF-2.png" alt="Background 2" onclick="changeBackground('url(Photos/Unselected%20Receive%20Room%202.png)');">
+            </label>
         </div>
     </div>
-    
-    </div>
-  </body>
+</div>
+
+</div>
+</body>
 </html>

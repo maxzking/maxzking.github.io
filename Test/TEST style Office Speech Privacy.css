@@ -241,17 +241,17 @@ input:checked + .slider:before {
 
 .grid {
     display: grid;
-    grid-template-columns: 177px 217px; /* Two columns: Room A and Room C */
-    grid-template-rows: 313px 258px; /* First row auto height, second row fixed height for Room B */
+    grid-template-columns: 124px 159px; /* Two columns: Room A and Room C */
+    grid-template-rows: 227px 185px; /* First row height, second row fixed height for Room B */
     gap: 0; /* No gap between grid items */
 }
 
-.receive-room-1 {
+.receive-room-2 {
     grid-column: 1 / span 2; /* Receive Room 1 spans both columns */
     grid-row: 1; 
 }
 
-.receive-room-2 {
+.receive-room-1 {
     grid-column: 2; 
     grid-row: 2; 
 }
@@ -285,17 +285,17 @@ input:checked + .slider:before {
 
 /* Different sizes for each image */
 .img-receive-room-1 {
-    width: 394px;
-    height: 313px;
+    width: 159px;
+    height: 185px;
     cursor: pointer; /* Pointer cursor on hover */
 }
 .img-receive-room-2 {
-    width: 217px;
-    height: 258px;
+    width: 283px;
+    height: 227px;
     cursor: pointer; /* Pointer cursor on hover */
 }
 .img-source-room {
-    width: 177px;
-    height: 258px;
+    width: 124px;
+    height: 185px;
     cursor: pointer; /* Pointer cursor on hover */
 }
