@@ -13,6 +13,18 @@ function playRandomSound() {
     randomAudio.play();
 }
 
+// DropDown Menu Code
+const mobileMenu = document.getElementById('mobile-menu');
+const navUl = document.querySelector('nav ul');
+const closeMenu = document.getElementById('close-menu');
+
+mobileMenu.addEventListener('click', () => {
+    navUl.classList.toggle('active'); // Toggle the active class
+});
+
+closeMenu.addEventListener('click', () => {
+    navUl.classList.remove('active'); // Hide the menu when 'X' is clicked
+});
 
 // Play-Pause button function
 let isPlaying = false; // Track the state of the toggle
@@ -226,17 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Underheader.style.backgroundRepeat = 'no-repeat'; // Do not repeat the background image
         Underheader.style.backgroundPosition = 'center'; // Center the background image
         var backgroundImage = getBackgroundImage(Room, wall, door, masking);
-        console.log(`Setting background image: ${backgroundImage}`);
         Underheader.style.backgroundImage = `url(${backgroundImage})`;
-
-        // Start the fade-out effect
-        Underheader.classList.add('fade-out');
-
-        // Wait for the fade-out transition to complete before changing the image
-        setTimeout(() => {
-            Underheader.style.backgroundImage = `url(${backgroundImage})`;
-            Underheader.classList.remove('fade-out'); // Remove fade-out class to fade in
-        }, 250); // Match this duration with the CSS transition duration
     }
     
 

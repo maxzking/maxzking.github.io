@@ -1,11 +1,12 @@
-const audioToggle = document.getElementById('audioToggle');
-const audio = document.getElementById('audio');
+// Navigation Bar / Dropdown menu
+const mobileMenu = document.getElementById('mobile-menu');
+const navUl = document.querySelector('nav ul');
+const closeMenu = document.getElementById('close-menu');
 
-audioToggle.addEventListener('change', function() {
-    if (this.checked) {
-        audio.play(); // Play audio when toggled on
-    } else {
-        audio.pause(); // Pause audio when toggled off
-        audio.currentTime = 0; // Reset audio to the beginning
-    }
+mobileMenu.addEventListener('click', () => {
+    navUl.classList.toggle('active'); // Toggle the active class
+});
+
+closeMenu.addEventListener('click', () => {
+    navUl.classList.remove('active'); // Hide the menu when 'X' is clicked
 });

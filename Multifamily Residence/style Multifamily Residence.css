@@ -1,32 +1,9 @@
+/* Basic Styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-header {
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop Shadow */
-}
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-nav ul li {
-    margin: 0 15px;
-}
-nav ul li a {
-    color: black;
-    text-decoration: none;
-}
-nav ul li a:hover {
-    text-decoration: underline;
-}
+
 .main {
     display: flex;
     justify-content: space-around;
@@ -34,53 +11,98 @@ nav ul li a:hover {
     margin-left: 0px;
     width: 100%;
 }
-/*Style for the 3-card selection of virtual environments*/
-.card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 25%;
-    padding: 30px;
-    padding-top: 500px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.2s;
-    background-size: cover; /* Cover the entire card */
-    background-position: center; /* Center the background image */
-}
-.card:hover {
-    transform: scale(1.05); /* Scale up on hover */
-}
-.card h2 {
-    margin-top: 0%;
-    position: relative;
-    z-index: 1;
-    color: rgb(81, 81, 81);
+/* Existing styles */
+header {
     background-color: white;
-    border-radius: 15px;
+    color: black;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Background images for each card */
-.card1 {
-    background-image: url("Photos/exterior\ wall.jpg");
-    background-image: url("Photos/Room\ A.png");
-    background-size: cover;
-    background-position: center;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
-.card2 {
-    background-image: url("Photos/multi-family\ housing.jpg");
-    background-size: cover;
-    background-position: center;
+
+nav ul li {
+    margin: 0 15px;
 }
-.card3 {
-    background-image: url("Photos/office.jpg");
-    background-size: cover;
-    background-position: center;
-}
-/* Ensures that links on the website are not underlined or change colors when clicked*/
-a {
-    text-decoration: none; /* Remove underline */
+
+nav ul li a {
     color: black;
+    text-decoration: none;
 }
-a:visited {
-        color: black; /* Color after clicking */
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* New styles for mobile menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin: 3px 0;
+}
+
+.close-menu {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: black; /* Text color */
+    font-size: 24px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    margin: 10px; /* Margin for spacing */
+    align-self: flex-start; /* Align to the start of the menu */
+    display: none; /* Hide by default */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 1280px) {
+    nav ul {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack items vertically */
+        width: 250px; /* Set the width of the menu */
+        position: fixed; /* Position it fixed */
+        top: 0; /* Align to the top */
+        right: -250px; /* Start off-screen */
+        background-color: white; /* Background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        text-align: left; /* Align text to the left */
+        transition: right 0.3s ease; /* Animation for sliding */
+        z-index: 1000; /* Ensure it appears above other content */
+    }
+
+    nav ul.active {
+        right: 0; /* Slide in */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the hamburger icon */
+    }
+
+    /* Align the close button to the right */
+    nav ul li:first-child {
+        display: flex; /* Use flexbox for the close button */
+        justify-content: flex-end; /* Align the close button to the right */
+        width: 100%; /* Full width for the close button */
+    }
+
+    .close-menu {
+        display: block; /* Show the close button in mobile view */
+    }
+
+    nav ul li {
+        padding-top: 15px;
+    }
 }

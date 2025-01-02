@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+/* Existing styles */
 header {
     background-color: white;
     color: black;
@@ -10,23 +11,92 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop Shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
     color: black;
     text-decoration: none;
 }
+
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+/* New styles for mobile menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin: 3px 0;
+}
+
+.close-menu {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: black; /* Text color */
+    font-size: 24px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    margin: 10px; /* Margin for spacing */
+    align-self: flex-start; /* Align to the start of the menu */
+    display: none; /* Hide by default */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 1280px) {
+    nav ul {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack items vertically */
+        width: 250px; /* Set the width of the menu */
+        position: fixed; /* Position it fixed */
+        top: 0; /* Align to the top */
+        right: -250px; /* Start off-screen */
+        background-color: white; /* Background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        text-align: left; /* Align text to the left */
+        transition: right 0.3s ease; /* Animation for sliding */
+        z-index: 1000; /* Ensure it appears above other content */
+    }
+
+    nav ul.active {
+        right: 0; /* Slide in */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the hamburger icon */
+    }
+
+    /* Align the close button to the right */
+    nav ul li:first-child {
+        display: flex; /* Use flexbox for the close button */
+        justify-content: flex-end; /* Align the close button to the right */
+        width: 100%; /* Full width for the close button */
+    }
+
+    .close-menu {
+        display: block; /* Show the close button in mobile view */
+    }
+
+    nav ul li {
+        padding-top: 15px;
+    }
 }
 .main {
     display: flex;

@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+/* Existing styles */
 header {
     background-color: white;
     color: black;
@@ -10,42 +11,109 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop Shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-#Underheader {
-    background-image: url("Photos/Background/1SL-OFF-1.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 70vh;
-    transition: background-image .25s ease-in-out, opacity .25s ease-in-out;
-    opacity: 1;
-}
-.fade-out {
-    opacity: 0;
-}
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
     color: black;
     text-decoration: none;
 }
+
 nav ul li a:hover {
     text-decoration: underline;
 }
+
+/* New styles for mobile menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin: 3px 0;
+}
+
+.close-menu {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: black; /* Text color */
+    font-size: 24px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    margin: 10px; /* Margin for spacing */
+    align-self: flex-start; /* Align to the start of the menu */
+    display: none; /* Hide by default */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 1280px) {
+    nav ul {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack items vertically */
+        width: 250px; /* Set the width of the menu */
+        position: fixed; /* Position it fixed */
+        top: 0; /* Align to the top */
+        right: -250px; /* Start off-screen */
+        background-color: white; /* Background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        text-align: left; /* Align text to the left */
+        transition: right 0.3s ease; /* Animation for sliding */
+        z-index: 1002; /* Ensure it appears above other content */
+    }
+
+    nav ul.active {
+        right: 0; /* Slide in */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the hamburger icon */
+    }
+
+    /* Align the close button to the right */
+    nav ul li:first-child {
+        display: flex; /* Use flexbox for the close button */
+        justify-content: flex-end; /* Align the close button to the right */
+        width: 100%; /* Full width for the close button */
+    }
+
+    .close-menu {
+        display: block; /* Show the close button in mobile view */
+    }
+
+    nav ul li {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+}
+
 .main {
     display: flex;
     justify-content: space-around;
     margin: 20px;
     margin-left: 0px;
     width: 100%;
+}
+
+#Underheader {
+    background-image: url("Photos/Background/1SL-OFF-1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-height: 70vh;
 }
 
 /* Play-Pause Button Styling */
@@ -98,7 +166,14 @@ input[type="radio"] {
     border-radius: 50%; /* Make it circular */
     position: relative; /* Positioning for the inner circle */
     margin-right: 10px; /* Space between radio button and label */
+    flex-shrink: 0; /* Prevent the radio button from shrinking */
     cursor: pointer; /* Change cursor to pointer */
+}
+
+.choice-text {
+    flex-grow: 1; /* Allow the text to take up remaining space */
+    white-space: normal; /* Allow text to wrap */
+    overflow-wrap: break-word; /* Break long words if necessary */
 }
 
 input[type="radio"]:checked + .custom-radio {
@@ -117,24 +192,17 @@ input[type="radio"]:checked + .custom-radio::after {
     transform: translate(-50%, -50%); /* Center the inner circle */
 }
 
+/* Aliging the title */
+.background_title {
+    text-align: center;
+}
+
 /* Toggle Switch Styling*/
 .container {
     position: absolute; /* Change to absolute positioning */
     top: 50%; /* Position from the top */
     left: 7%; /* Position from the left */
     transform: translate(-50%, -50%); /* Center the container */
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
-    text-align: center; /* Center text */
-}
-
-/* Toggle Switch Styling*/
-.door-container {
-    position: absolute; /* Change to relative positioning */
-    left: 7%;
-    top: 72%;
-    transform: translate(-50%, 0); /* Center the container */
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center elements horizontally */
@@ -229,13 +297,14 @@ input:checked + .slider:before {
     border: 1px solid #ccc; /* Border around the mini-map */
     border-radius: 8px; /* Rounded corners */
     padding: 10px; /* Padding inside the mini-map */
+    padding-top: 30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
     z-index: 1000; /* Ensure it stays on top */
 }
 
 .mini-map-title {
     position: absolute;
-    top: 22%; /* Distance from the top */
+    top: 10px; /* Distance from the top */
     right: 10%; /* Distance from the right */
     margin: 0; /* Remove default margin */
     font-size: 16px; /* Font size for the title */
@@ -265,41 +334,31 @@ input:checked + .slider:before {
     grid-row: 2;
 }
 
-.stacked, .non-stacked {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-}
-
-.stacked img, .non-stacked img {
-    display: block; /* Ensure images are block elements */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: transform 0.3s; /* Smooth transition for hover effect */
-}
-
-.stacked input, .non-stacked input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.stacked img:hover, .non-stacked img:hover {
-    transform: scale(1.1); /* Scale up the image on hover */
-}
-
 /* Different sizes for each image */
 .img-receive-room-1 {
     width: 159px;
     height: 185px;
     cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s
+}
+.img-receive-room-1:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-receive-room-2 {
     width: 283px;
     height: 227px;
     cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s
+}
+.img-receive-room-2:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-source-room {
     width: 124px;
     height: 185px;
     cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s
+}
+.img-source-room:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
 }

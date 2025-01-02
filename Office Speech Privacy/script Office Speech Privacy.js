@@ -13,6 +13,18 @@ function playRandomSound() {
     randomAudio.play();
 }
 
+// DropDown Menu Code
+const mobileMenu = document.getElementById('mobile-menu');
+const navUl = document.querySelector('nav ul');
+const closeMenu = document.getElementById('close-menu');
+
+mobileMenu.addEventListener('click', () => {
+    navUl.classList.toggle('active'); // Toggle the active class
+});
+
+closeMenu.addEventListener('click', () => {
+    navUl.classList.remove('active'); // Hide the menu when 'X' is clicked
+});
 
 // Play-Pause button function
 let isPlaying = false; // Track the state of the toggle
@@ -186,18 +198,6 @@ function updateToggleValue() {
     }
 }
 
-// Minimap Changes the Background Image
-function changeBackground(imageUrl) {
-    // Select the Underheader division
-    var Underheader = document.getElementById('Underheader'); // Assuming the division has an id of 'Underheader'
-    
-    // Change the background image and properties for the Underheader division
-    Underheader.style.backgroundImage = imageUrl;
-    Underheader.style.backgroundSize = 'contain';
-    Underheader.style.backgroundRepeat = 'no-repeat'; // Do not repeat the background image
-    Underheader.style.backgroundPosition = 'center'; // Center the background image
-}
-
 // Updating MiniMap image based on user-selections
 document.addEventListener('DOMContentLoaded', () => {
     const maskingToggle = document.getElementById('Masking');
@@ -215,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedRoom1 = document.querySelector('input[name="Room"][value="receive-room-1"]').checked;
         const selectedRoom2 = document.querySelector('input[name="Room"][value="receive-room-2"]').checked;
         const selectedSourceRoom = document.querySelector('input[name="Room"][value="source-room"]').checked;
+        const Room = document.querySelector('input[name="Room"]:checked').value;
         const wall = document.querySelector('input[name="Wall"]:checked').value;
         const door = document.querySelector('input[name="Door"]:checked').value;
         const masking = maskingToggle.checked ? 'ON' : 'OFF';
@@ -230,36 +231,54 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update Source Room Image
         const sourceImage = document.querySelector('.img-source-room');
         sourceImage.src = getSourceImage(selectedSourceRoom, wall, door);
+
+        // Update Background Image
+        var Underheader = document.getElementById('Underheader'); // Assuming the division has an id of 'Underheader'
+        Underheader.style.backgroundSize = 'contain';
+        Underheader.style.backgroundRepeat = 'no-repeat'; // Do not repeat the background image
+        Underheader.style.backgroundPosition = 'center'; // Center the background image
+        var backgroundImage = getBackgroundImage(Room, wall, door, masking);
+        Underheader.style.backgroundImage = `url(${backgroundImage})`;
     }
+    
 
     function getRoom1Image(room, wall, door, masking) {
-        console.log(`Room: ${room}`)
         if (room === true) {
-            return `Photos/S${wall}${door}-${masking}-1.png`;
+            return `Photos/Minimap/S${wall}${door}-${masking}-1.png`;
         } else if (room === false) {
-            return `Photos/U${wall}${door}-${masking}-1.png`;
+            return `Photos/Minimap/U${wall}${door}-${masking}-1.png`;
         }
     }
 
     function getRoom2Image(room, door, masking) {
-        console.log(`Room: ${room}`)
         if (room === true) {
-            return `Photos/SA${door}-${masking}-2.png`;
+            return `Photos/Minimap/SA${door}-${masking}-2.png`;
         } else if (room === false) {
-            return `Photos/UA${door}-${masking}-2.png`;
+            return `Photos/Minimap/UA${door}-${masking}-2.png`;
         }
     }
 
     function getSourceImage(room, wall, door) {
-        console.log(`Room: ${room}`)
         if (room === true && door === 'SL') {
-            return `Photos/SA${door}-OFF-S.png`;
+            return `Photos/Minimap/SA${door}-OFF-S.png`;
         } else if (room === false && door === 'SL') {
-            return `Photos/UA${door}-OFF-S.png`;
+            return `Photos/Minimap/UA${door}-OFF-S.png`;
         } else if (room === true && door === 'SW') {
-            return `Photos/S${wall}${door}-OFF-S.png`;
+            return `Photos/Minimap/S${wall}${door}-OFF-S.png`;
         } else if (room === false && door === 'SW') {
-            return `Photos/U${wall}${door}-OFF-S.png`;
+            return `Photos/Minimap/U${wall}${door}-OFF-S.png`;
         }
     }
-});
+
+    function getBackgroundImage(room, wall, door, masking){
+        if (room === 'source-room' && door === 'SL') {
+            return `Photos/Background/A${door}-OFF-S.png`;
+        } else if (room === 'source-room' && door === 'SW') {
+            return `Photos/Background/${wall}${door}-OFF-S.png`;
+        } else if (room === 'receive-room-1') {
+            return `Photos/Background/${wall}${door}-${masking}-1.png`;
+        } else if (room === 'receive-room-2') {
+            return `Photos/Background/${wall}${door}-${masking}-2.png`;
+        }
+    }
+})
