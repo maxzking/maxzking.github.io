@@ -1,12 +1,10 @@
 // Array Of Audio File Paths for clicking sound effect
 const clickFiles = [
-    'Audio/click-high.wav', // Replace with your audio file paths
-    'Audio/click-normal.wav',
-    'Audio/click-low.wav'
+    'Audio/select_sound.wav',
 ];
 
 // Function to play a random click sound
-function playRandomSound() {
+function playSelectSound() {
     // Generate a random index
     const randomIndex = Math.floor(Math.random() * clickFiles.length);
     const randomAudio = new Audio(clickFiles[randomIndex]);
@@ -37,7 +35,7 @@ function toggleImage() {
         toggleImage.src = 'Photos/Play Button.png'; // Change to your "Play" image path
         toggleImage.alt = 'Play Image';
         stopAudio(); // Stop audio playback
-        playRandomSound();
+        playSelectSound();
 
     } else {
         toggleImage.src = 'Photos/Pause Button.png'; // Change to your "Pause" image path
@@ -55,7 +53,7 @@ function playAudio() {
     }
 
     // Play a random sound first
-    playRandomSound();
+    playSelectSound();
 
     // Stop all audio elements
     const audios = document.querySelectorAll('audio');
@@ -169,7 +167,7 @@ function handleSwitchChange() {
     // If not playing, prevent any audio from starting
     if (!isPlaying) {
         // Play a random sound first
-        playRandomSound();
+        playSelectSound();
         return;
     }
     // If playing, you can call playAudio() here if needed
@@ -179,7 +177,7 @@ function handleSwitchChange() {
 }
 
 // Add event listeners to the switches
-document.querySelectorAll('input[name="Volume"], input[name="Wall"], input[name="Room"], #Masking').forEach(switchElement => {
+document.querySelectorAll('input[name="Volume"], input[name="Wall"], input[name="Room"], input[name="Door"], #Masking').forEach(switchElement => {
     switchElement.addEventListener('change', handleSwitchChange);
 });
 
@@ -302,22 +300,6 @@ floorplan_menu.addEventListener('click', () => {
 
     // Toggle the active class for the mini-map
     mini_map.classList.toggle('active'); // Add this line to toggle the mini-map's active state
-});
-
-// Add event listeners to radio buttons
-const radioButtons = document.querySelectorAll('input[name="Room"]');
-radioButtons.forEach(radio => {
-    radio.addEventListener('change', () => {
-        // Remove active class from all rooms and reset the toggle
-        receive_room_1.classList.remove('active');
-        receive_room_2.classList.remove('active');
-        source_room.classList.remove('active');
-        floorplan_menu.classList.remove('active');
-        grid.classList.remove('active');
-        mini_map_title.classList.remove('active');
-        close_map.classList.remove('active'); // Hide the close button
-        mini_map.classList.remove('active'); // Hide the mini-map
-    });
 });
 
 // Hide the map when the "X" close button is clicked
