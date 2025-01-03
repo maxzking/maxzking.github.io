@@ -13,7 +13,7 @@ function playRandomSound() {
     randomAudio.play();
 }
 
-// DropDown Menu Code
+// DropDown Navigation Menu Code
 const mobileMenu = document.getElementById('mobile-menu');
 const navUl = document.querySelector('nav ul');
 const closeMenu = document.getElementById('close-menu');
@@ -233,12 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sourceImage.src = getSourceImage(selectedSourceRoom, wall, door);
 
         // Update Background Image
-        var Underheader = document.getElementById('Underheader'); // Assuming the division has an id of 'Underheader'
-        Underheader.style.backgroundSize = 'contain';
-        Underheader.style.backgroundRepeat = 'no-repeat'; // Do not repeat the background image
-        Underheader.style.backgroundPosition = 'center'; // Center the background image
-        var backgroundImage = getBackgroundImage(Room, wall, door, masking);
-        Underheader.style.backgroundImage = `url(${backgroundImage})`;
+        var listening_path = document.querySelector('.listening_path');
+        listening_path.src = getListeningImage(Room, wall, door, masking);
     }
     
 
@@ -270,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function getBackgroundImage(room, wall, door, masking){
+    function getListeningImage(room, wall, door, masking){
         if (room === 'source-room' && door === 'SL') {
             return `Photos/Background/A${door}-OFF-S.png`;
         } else if (room === 'source-room' && door === 'SW') {
@@ -282,3 +278,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 })
+
+// Select the necessary elements from the DOM
+const floorplan_menu = document.getElementById('floorplan-menu');
+const mini_map = document.querySelector('.mini-map'); // Select the mini-map element
+const receive_room_1 = document.querySelector('.receive-room-1');
+const receive_room_2 = document.querySelector('.receive-room-2');
+const source_room = document.querySelector('.source-room');
+const grid = document.querySelector('.grid');
+const mini_map_title = document.querySelector('.mini-map-title');
+const close_map = document.getElementById('close-map');
+
+// Event listener for the floorplan menu icon
+floorplan_menu.addEventListener('click', () => {
+    // Toggle the active class for the rooms and other elements
+    receive_room_1.classList.toggle('active'); // Toggle visibility of receive room 1
+    receive_room_2.classList.toggle('active'); // Toggle visibility of receive room 2
+    source_room.classList.toggle('active'); // Toggle visibility of source room
+    floorplan_menu.classList.toggle('active'); // Toggle visibility of the floorplan menu icon
+    grid.classList.toggle('active'); // Toggle visibility of the grid
+    mini_map_title.classList.toggle('active'); // Toggle visibility of the mini-map title
+    close_map.classList.toggle('active'); // Toggle visibility of the close button
+
+    // Toggle the active class for the mini-map
+    mini_map.classList.toggle('active'); // Add this line to toggle the mini-map's active state
+});
+
+// Add event listeners to radio buttons
+const radioButtons = document.querySelectorAll('input[name="Room"]');
+radioButtons.forEach(radio => {
+    radio.addEventListener('change', () => {
+        // Remove active class from all rooms and reset the toggle
+        receive_room_1.classList.remove('active');
+        receive_room_2.classList.remove('active');
+        source_room.classList.remove('active');
+        floorplan_menu.classList.remove('active');
+        grid.classList.remove('active');
+        mini_map_title.classList.remove('active');
+        close_map.classList.remove('active'); // Hide the close button
+        mini_map.classList.remove('active'); // Hide the mini-map
+    });
+});
+
+// Hide the map when the "X" close button is clicked
+close_map.addEventListener('click', () => {
+    // Remove active class from all rooms and reset the toggle
+    receive_room_1.classList.remove('active');
+    receive_room_2.classList.remove('active');
+    source_room.classList.remove('active');
+    floorplan_menu.classList.remove('active');
+    grid.classList.remove('active');
+    mini_map_title.classList.remove('active');
+    close_map.classList.remove('active'); // Hide the close button
+    mini_map.classList.remove('active'); // Hide the mini-map
+});
