@@ -27,6 +27,13 @@
             </ul>
         </nav>
     </header>
+    <div class="caution_popup">
+        <img id="caution_image" src="Photos/caution_sign.png"/>
+        <h2>Caution</h2>
+        <p>The audio volume for this listening demonstration varies widely. For your safety, please use caution with the volume settings on your listening device.</p>
+        <button class="close_button">Okay</button>
+    </div>
+    <div class="caution_cover"> <!-- Blocks acess to all other page functionality until the caution popup is closed--></div>
     <div id="content_wrapper">
         <div class="flex-container"> <!-- New flex container -->
             <div class="container"> <!-- Container for Playback Controls -->
@@ -97,21 +104,21 @@
                 <img class="listening_path" src="Photos/Background/1SL-OFF-1.png" alt="Listening Path">
             </div>
         
-
-    
           <!-- Partition Audio Elements -->
-          <audio id="receive-room-1-R1ON" src="Audio/receive-room-1-R1ON.wav" preload="auto"></audio>
-          <audio id="receive-room-1-R1OFF" src="Audio/receive-room-1-R1OFF.wav" preload="auto"></audio>
-          <audio id="receive-room-1-R2ON" src="Audio/receive-room-1-R2ON.wav" preload="auto" ></audio>
-          <audio id="receive-room-1-R2OFF" src="Audio/receive-room-1-R2OFF.wav" preload="auto" ></audio>
-          <audio id="receive-room-1-R3ON" src="Audio/receive-room-1-R3ON.wav" preload="auto" ></audio>
-          <audio id="receive-room-1-R3OFF" src="Audio/receive-room-1-R3OFF.wav" preload="auto" ></audio>
-          <audio id="receive-room-1-N1ON" src="Audio/receive-room-1-N1ON.wav" preload="auto" ></audio>
-          <audio id="receive-room-1-N1OFF" src="Audio/receive-room-1-N1OFF.wav" preload="auto" ></audio>
-          <audio id="receive-room-1-N2ON" src="Audio/receive-room-1-N2ON.wav" preload="auto" ></audio>
-          <audio id="receive-room-1-N2OFF" src="Audio/receive-room-1-N2OFF.wav" preload="auto" ></audio>
-          <audio id="receive-room-1-N3ON" src="Audio/receive-room-1-N3ON.wav" preload="auto" ></audio>
-          <audio id="receive-room-1-N3OFF" src="Audio/receive-room-1-N3OFF.wav" preload="auto" ></audio>
+          <audio id="receive-room-1-R1ON" src="Audio/receive-room-1-R1ON.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-R1OFF" src="Audio/receive-room-1-R1OFF.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-R2ON" src="Audio/receive-room-1-R2ON.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-R2OFF" src="Audio/receive-room-1-R2OFF.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-R3ON" src="Audio/receive-room-1-R3ON.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-R3OFF" src="Audio/receive-room-1-R3OFF.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-N1ON" src="Audio/receive-room-1-N1ON.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-N1OFF" src="Audio/receive-room-1-N1OFF.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-N2ON" src="Audio/receive-room-1-N2ON.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-N2OFF" src="Audio/receive-room-1-N2OFF.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-N3ON" src="Audio/receive-room-1-N3ON.wav" preload="auto" loop></audio>
+          <audio id="receive-room-1-N3OFF" src="Audio/receive-room-1-N3OFF.wav" preload="auto" loop></audio>
+          <audio id="source-room-N" src="Audio/source-room-N.wav" preload="auto" loop></audio>
+          <audio id="source-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
 
             <!--Mini Map for navigation on the Left Side of the Screen-->
             <div class="mini-map">

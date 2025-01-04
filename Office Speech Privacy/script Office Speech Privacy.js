@@ -1,6 +1,7 @@
 // Array Of Audio File Paths for clicking sound effect
 const clickFiles = [
     'Audio/select_sound.wav',
+    'Audio/select_sound_plus1.wav'
 ];
 
 // Function to play a random click sound
@@ -70,6 +71,9 @@ function playAudio() {
     let audioToPlay;
         if (Room === "receive-room-1") {
             audioToPlay = `receive-room-1-${Volume}${Wall}${Masking}`;
+        }
+        if (Room === "source-room") {
+            audioToPlay = `source-room-${Volume}`;
         }
 
     // Play the selected Audio
@@ -248,3 +252,17 @@ close_map.addEventListener('click', () => {
     close_map.classList.remove('active'); // Hide the close button
     mini_map.classList.remove('active'); // Hide the mini-map
 });
+
+// Caution Popup Closing Functionality
+const close_button = document.querySelector('.close_button');
+const caution_popup = document.querySelector('.caution_popup');
+const caution_cover = document.querySelector('.caution_cover');
+
+// Function to close the popup and cover
+const closePopup = () => {
+    caution_popup.classList.add('active'); // Add the active class to hide
+    caution_cover.classList.add('active'); // Add the active class to hide
+};
+
+// Add event listener to the close button
+close_button.addEventListener('click', closePopup);
