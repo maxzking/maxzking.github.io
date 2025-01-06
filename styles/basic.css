@@ -1,0 +1,17 @@
+/* Basic Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box; /* Ensure padding is included in width/height calculations */
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    margin-left: 0px;
+    width: 100%;
+}

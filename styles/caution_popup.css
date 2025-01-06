@@ -1,0 +1,56 @@
+/* Listening Experience Caution Popup */
+.caution_popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    padding-top: 30px;
+    z-index: 1010;
+    opacity: 1; /* Start visible */
+    visibility: visible; /* Allow interaction when visible */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Transition for fade effect */
+}
+
+.caution_popup.active {
+    opacity: 0; /* Fade out */
+    visibility: hidden; /* Prevent interaction when hidden */
+}
+
+#caution_image {
+    width: 50px;
+    height: 50px;
+    align-self: center;
+}
+
+.close_button{
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    border: rgba(255, 255, 255, 0);
+}
+
+.close_button:hover{
+    color: rgb(94, 192, 238);
+    text-decoration: underline;
+}
+
+.caution_cover {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 88px);
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1009;
+    opacity: 1; /* Start visible */
+    visibility: visible; /* Allow interaction when visible */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Transition for fade effect */
+}
+
+.caution_cover.active {
+    opacity: 0; /* Fade out */
+    visibility: hidden; /* Prevent interaction when hidden */
+}

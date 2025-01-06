@@ -1,0 +1,197 @@
+/* Play-Pause Button Styling */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#toggleImage {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px;
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    transition: transform 0.4s ease; /* Add transition for scaling */
+}
+
+#toggleImage:active {
+    transform: scale(1.15); /* Scale up when clicked */
+}
+
+/* Multiple-Choice Switch Styling */
+.multiple-choice {
+    margin: 0px;
+}
+
+.choice-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin: 0px 0;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s;
+}
+
+.choice-button:hover {
+    background-color: rgba(250, 250, 250, 0.848);
+}
+
+input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.custom-radio {
+    width: 20px; /* Size of the custom radio button */
+    height: 20px; /* Size of the custom radio button */
+    border: 2px solid #ccc; /* Border color */
+    border-radius: 50%; /* Make it circular */
+    position: relative; /* Positioning for the inner circle */
+    margin-right: 10px; /* Space between radio button and label */
+    flex-shrink: 0; /* Prevent the radio button from shrinking */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.choice-text {
+    flex-grow: 1; /* Allow the text to take up remaining space */
+    white-space: normal; /* Allow text to wrap */
+    overflow-wrap: break-word; /* Break long words if necessary */
+}
+
+input[type="radio"]:checked + .custom-radio {
+    border-color: rgb(94, 192, 238); 
+}
+
+input[type="radio"]:checked + .custom-radio::after {
+    content: ''; /* Create a pseudo-element */
+    width: 12px; /* Size of the inner circle */
+    height: 12px; /* Size of the inner circle */
+    background-color: rgb(94, 192, 238);
+    border-radius: 50%; /* Make it circular */
+    position: absolute; /* Positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the inner circle */
+}
+
+.listening-path-container {
+    display: flex; /* Use flexbox for the title and image */
+    flex-direction: column; /* Stack title and image vertically */
+    align-items: center; /* Center items horizontally */
+    margin-left: 20%;
+}
+
+/* Listening Path Image */
+.listening_path {
+    width: 90%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Aliging the title */
+.background_title {
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center the text */
+    /* Optional: Add some padding or margin to the title */
+    padding: 10px 0; /* Add vertical padding for spacing */
+}
+.flex-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+}
+
+/* Toggle Switch Styling */
+.container {
+    position: relative; /* Change to relative positioning */
+    align-self: flex-start; /* Align to the top of the flex container */
+    left: 0; /* Align to the left */
+    width: 200px; /* Set a fixed width for the container */
+    height: 70vh; /* Full height minus the header height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #f0f0f0; /* Optional background color */
+    border-right: 1px solid #ccc; /* Optional border for separation */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    padding: 0px; /* Padding inside the container */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    text-align: center; /* Center text */
+    flex: none;
+}
+
+
+.switch_title {
+    margin-bottom: 5px; /* Space between title and switches */
+    margin-top: 10px;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.single-select-switch {
+    display: flex;
+    justify-content: center; /* Center the switches horizontally */
+    margin-bottom: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 34px; /* Height of the slider */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: rgb(94, 192, 238);
+}
+
+input:checked + .slider:before {
+    transform: translateX(116px);
+}
+
+/* Change label text based on toggle state */
+.switch input:checked + .slider + .label {
+    content: "On"; /* Change label to "On" when checked */
+}
+
+/* Style for the label */
+.label {
+    position: absolute;
+    top: 50%; /* Center the label vertically */
+    left: 50%; /* Center the label horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the label's own size */
+    color: black; /* Change text color */
+    z-index: 1; /* Ensure the label is above the slider */
+}
+
+/* Style for the inactive options */
+.switch input:not(:checked) + .slider {
+    background-color: #ccc;
+}
