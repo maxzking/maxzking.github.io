@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/mini_map.css" />
     <link rel="stylesheet" href="../styles/switches.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/progress_bar.css" />
     <title>Resonance Acoustics - Office Speech Privacy</title>
   </head>
   <body>
@@ -16,6 +17,7 @@
     <script src="../scripts/caution_popup.js" defer></script>
     <script src="../scripts/dropdown_menu.js" defer></script>
     <script src="../scripts/mini_map.js" defer></script>
+    <script src="../scripts/progress_bar.js" defer></script>
     <!--This is the website navigation bar at the top of the screen-->
     <header>
         <a href="../index.html"><img src="../Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
@@ -49,6 +51,16 @@
                 <div class="toggle-container">
                     <img id="toggleImage" src="Photos/Play Button.png" alt="Pause Image" onclick="toggleImage(); playAudio()" />
                 </div>
+
+                <div class="progress-container">
+                    <div id="time-progress-container">
+                        <span id="timestamp">0:00</span> / <span id="audiolength">0:00</span>
+                    </div>
+                    <div id="progress-subcontainer">
+                        <div id="progress-bar"></div>
+                    </div>
+                </div>
+
                 <h2 class="switch_title">Speech Volume</h2>
                 <div class="multiple-choice">
                     <label class="choice-button">
@@ -109,7 +121,7 @@
             </div>
             <div class="listening-path-container"> <!-- Container for listening path title and image -->
                 <h1 class="background_title">Selected Listening Path</h1>
-                <img class="listening_path" src="Photos/Background/1SL-OFF-1.png" alt="Listening Path">
+                <img class="listening_path" src="Photos/Background/ASL-OFF-S.png" alt="Listening Path">
             </div>
         
           <!-- Partition Audio Elements -->
@@ -138,14 +150,14 @@
                 <div class="grid">
                     <div class="receive-room-1">
                         <label>
-                            <input type="radio" name="Room" value="receive-room-1" checked>
-                            <img class="img-receive-room-1" src="Photos/Minimap/S1SL-OFF-1.png" alt="Background 1">
+                            <input type="radio" name="Room" value="receive-room-1">
+                            <img class="img-receive-room-1" src="Photos/Minimap/U1SL-OFF-1.png" alt="Background 1">
                         </label>
                 </div>
                     <div class="source-room">
                         <label>
-                            <input type="radio" name="Room" value="source-room">
-                            <img class="img-source-room" src="Photos/Minimap/UASL-OFF-S.png" alt="Background 3">
+                            <input type="radio" name="Room" value="source-room" checked>
+                            <img class="img-source-room" src="Photos/Minimap/SASL-OFF-S.png" alt="Background 3">
                         </label>
                     </div>
                     <div class="receive-room-2">

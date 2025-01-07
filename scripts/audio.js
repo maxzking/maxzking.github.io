@@ -76,14 +76,13 @@ function playAudio() {
 
         selectedAudio.play(); // Play the selected audio
         currentAudio = selectedAudio; // Track the currently playing audio
+        // Update the progress bar and set up event listeners
     }
 }
 
 function stopAudio() {
     if (currentAudio) {
         currentAudio.pause(); // Pause the currently playing audio
-        currentAudio.currentTime = 0; // Reset the audio to the beginning
-        currentAudio = null; // Clear the current audio reference
     }
 }
 
