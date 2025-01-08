@@ -1,8 +1,7 @@
 /* Play-Pause Button Styling */
 .toggle-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-left: 5px;
 }
 
 #toggleImage {
@@ -21,11 +20,15 @@
     margin: 0px;
 }
 
-.choice-button {
+.choice-button-speech,
+.choice-button-wall,
+.choice-button-door {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border: 1px solid rgba(255, 255, 255, 0);
     margin: 0px 0;
     cursor: pointer;
@@ -33,7 +36,10 @@
     transition: background-color 0.3s;
 }
 
-.choice-button:hover {
+/* Hover effect for choice buttons */
+.choice-button-speech:hover:not(.unclickable),
+.choice-button-wall:hover:not(.unclickable),
+.choice-button-door:hover:not(.unclickable) {
     background-color: rgba(250, 250, 250, 0.848);
 }
 
@@ -84,7 +90,7 @@ input[type="radio"]:checked + .custom-radio::after {
 /* Listening Path Image */
 .listening_path {
     width: 100%; /* Make the image responsive */
-    height: 100%;
+    height: 90%;
 }
 
 /* Aliging the title */
@@ -106,37 +112,47 @@ input[type="radio"]:checked + .custom-radio::after {
     align-self: flex-start; /* Align to the top of the flex container */
     left: 0; /* Align to the left */
     width: 200px; /* Set a fixed width for the container */
-    max-height: 100vh; /* Use max-height instead of height */
+    height: 100vh; /* Use max-height instead of height */
     overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden;
     background-color: #f0f0f0; /* Optional background color */
     border-right: 1px solid #ccc; /* Optional border for separation */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
     padding: 0px; /* Padding inside the container */
+    padding-top: 10px;
     display: flex;
     flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
-    text-align: center; /* Center text */
     flex: none;
 }
 
+.title_container_volume,
+.title_container_masking,
+.title_container_door,
+.title_container_wall {
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
 
-.switch_title {
-    margin-bottom: 5px; /* Space between title and switches */
-    margin-top: 10px;
+.switch_title,
+.switch_title_volume,
+.switch_title_masking,
+.switch_title_door,
+.switch_title_wall {
     font-size: 16px; /* Adjust font size as needed */
+    color: rgba(100,100,100);
 }
 
 .single-select-switch {
     display: flex;
-    justify-content: center; /* Center the switches horizontally */
-    margin-bottom: 5px;
+    width: 100%
 }
 
 .switch {
     position: relative;
     display: inline-block;
     width: 150px;
-    height: 34px; /* Height of the slider */
+    height: 33px; /* Height of the slider */
+    padding-left: 5px;
 }
 
 .switch input {
@@ -148,8 +164,9 @@ input[type="radio"]:checked + .custom-radio::after {
 .slider {
     position: absolute;
     cursor: pointer;
+    padding-left: 5px;
     top: 0;
-    left: 0;
+    left: 5px;
     right: 0;
     bottom: 0;
     background-color: #ccc;
@@ -174,7 +191,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(116px);
+    transform: translateX(111px);
 }
 
 /* Change label text based on toggle state */
@@ -195,4 +212,10 @@ input:checked + .slider:before {
 /* Style for the inactive options */
 .switch input:not(:checked) + .slider {
     background-color: #ccc;
+}
+
+.unclickable {
+    background-color: lightgray; /* Change color to indicate it's unclickable */
+    cursor: not-allowed; /* Change cursor to indicate it's unclickable */
+    opacity: 0.5; /* Make it look disabled */
 }

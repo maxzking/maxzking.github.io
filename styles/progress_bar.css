@@ -1,9 +1,10 @@
-#progress-container {
+.progress-container {
     width: 100%;
     background: #eee;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px; /* Space between progress and buttons */
+    margin-left: 5px;
 }
 #progress-subcontainer {
     width: 125px;
