@@ -5,10 +5,10 @@
   <link rel="stylesheet" href="../styles/basic.css" />
   <link rel="stylesheet" href="../styles/caution_popup.css" />
   <link rel="stylesheet" href="../styles/header.css" />
-  <link rel="stylesheet" href="../styles/mini_map.css" />
   <link rel="stylesheet" href="../styles/switches.css" />
   <link rel="stylesheet" href="../styles/footer.css" />
   <link rel="stylesheet" href="../styles/progress_bar.css" />
+  <link rel="stylesheet" href="../styles/mini_map.css" />
   <title>Resonance Acoustics - Office Speech Privacy</title>
 </head>
 <body>
@@ -31,106 +31,140 @@
           <ul>
               <li><button class="close-menu" id="close-menu">X</button></li> <!-- Close button -->
               <li><a href="../index.html">Home</a></li>
+              <li><a href="Office Speech Privacy.html" style="color: rgb(94, 192, 238);">Office Speech Privacy</a></li>
               <li><a href="../Exterior Facade/Exterior Facade.html">Exterior Facade</a></li>
               <li><a href="../Multifamily Residence/Multifamily Residence.html">Multifamily Residence</a></li>
-              <li><a href="Office Speech Privacy.html" style="color: rgb(94, 192, 238);">Office Speech Privacy</a></li>
           </ul>
       </nav>
   </header>
-  <div class="caution_popup">
-      <img id="caution_image" src="Photos/caution_sign.png"/>
-      <h2>Caution</h2>
-      <p>The audio volume for this listening demonstration varies widely. For your safety, please use caution with the volume settings on your listening device.</p>
-      <button class="close_button">Okay</button>
-  </div>
+    <div class="caution_popup">
+        <h2 id="popup_title">Caution</h2>
+        <p id="popup_content">The audio volume for this listening demonstration varies widely. For your safety, please use caution with the volume settings on your listening device.</p>
+        <img id="popup_image" class="play_button" style="cursor: pointer;"/>
+        <audio id="audio_demo" src="Audio/source-room-R.wav"></audio>
+        <div class="navigation">
+            <button id="left_arrow" class="nav_button">&lt;</button>
+            <button id="right_arrow" class="nav_button">&gt;</button>
+        </div>
+        <button class="close_button">Okay</button>
+    </div>
   <div class="caution_cover"> <!-- Blocks acess to all other page functionality until the caution popup is closed--></div>
   <div id="content_wrapper">
       <div class="flex-container"> <!-- New flex container -->
-          <div class="container"> <!-- Container for Playback Controls -->
-              <h2 class="switch_title">Play/Pause</h2>
-              <div class="toggle-container">
-                  <img id="toggleImage" src="Photos/Play Button.png" alt="Pause Image" onclick="toggleImage(); playAudio()" />
-              </div>
-
-              <div class="progress-container">
-                  <div id="time-progress-container">
-                      <span id="timestamp">0:00</span> / <span id="audiolength">0:00</span>
-                  </div>
-                  <div id="progress-subcontainer">
-                      <div id="progress-bar"></div>
-                  </div>
-              </div>
-              
-              <div class="title_container_volume">
-                <h2 class="switch_title_volume">Speech Volume</h2>
-              </div>
-              <div class="multiple-choice">
-                  <label class="choice-button-speech">
-                      <input type="radio" name="Volume" value="N" checked>
-                      <span class="custom-radio"></span>
-                      <span class="choice-text">Normal Speech</span>
-                  </label>
-                  <label class="choice-button-speech">
-                      <input type="radio" name="Volume" value="R">
-                      <span class="custom-radio"></span>
-                      <span class="choice-text">Raised Speech</span>
-                  </label>
-              </div>
-              <div class="title_container_masking">
-                <h2 class="switch_title_masking">Sound Masking</h2>
-              </div>
-              <div class="single-select-switch">
-                  <label class="switch">
-                      <input type="checkbox" id="Masking">
-                      <span class="slider"></span>
-                      <span class="label">Off</span>
-                  </label>
-              </div>
-              <div class="title_container_wall">
-                <h2 class="switch_title_wall">Wall Type</h2>
-              </div>
-              <div class="multiple-choice">
-                  <label class="choice-button-wall">
-                      <input type="radio" name="Wall" value="1" id="Wall" checked>
-                      <span class="custom-radio"></span>
-                      <span class="choice-text">1&1</span>
-                  </label>
-                  <label class="choice-button-wall">
-                      <input type="radio" name="Wall" value="2" id="Wall">
-                      <span class="custom-radio"></span>
-                      <span class="choice-text">1&2</span>
-                  </label>
-                  <label class="choice-button-wall">
-                      <input type="radio" name="Wall" value="3" id="Wall">
-                      <span class="custom-radio"></span>
-                      <span class="choice-text">2&2</span>
-                  </label>
-              </div>
-              <div class="title_container_door">
-                <h2 class="switch_title_door">Door Type</h2>
-              </div>
-              <div class="multiple-choice">
-                <label class="choice-button-door">
-                    <input type="radio" name="Door" value="SL" class="door-option" checked>
-                    <span class="custom-radio"></span>
-                    <span class="choice-text">Sliding Glass</span>
-                </label>
-                <label class="choice-button-door">
-                    <input type="radio" name="Door" value="SW" class="door-option">
-                    <span class="custom-radio"></span>
-                    <span class="choice-text">Full Perimeter + Drop Bottom</span>
-                </label>
-                <label class="choice-button-door">
-                    <input type="radio" name="Door" value="SW" class="door-option">
-                    <span class="custom-radio"></span>
-                    <span class="choice-text">Swinging-Door-No-Bottom-Seal</span>
-                </label>
-              </div>   
-            </div>       
-          <div class="listening-path-container"> <!-- Container for listening path title and image -->
-              <h1 class="background_title">Selected Listening Path</h1>
-              <img class="listening_path" src="Photos/Background/ASL-OFF-S.png" alt="Listening Path">
-          </div>
+            <!--Mini Map and Controls on the Left Side of the Screen-->
+            <div class="controls-container">
+                <div class="map-toggle" id="floorplan-menu">
+                    <img class="floorplan_icon" src="Photos/Floorplan Icon.png">
+                </div>
+                <div class="grid">
+                    <div class="receive-room-1">
+                        <label>
+                            <input type="radio" name="Room" value="receive-room-1">
+                            <img class="img-receive-room-1" src="Photos/Minimap/U1SL-OFF-1.png" alt="Background 1">
+                        </label>
+                </div>
+                    <div class="source-room">
+                        <label>
+                            <input type="radio" name="Room" value="source-room" checked>
+                            <img class="img-source-room" src="Photos/Minimap/SASL-OFF-S.png" alt="Background 3">
+                        </label>
+                    </div>
+                    <div class="receive-room-2">
+                        <label>
+                            <input type="radio" name="Room" value="receive-room-2">
+                            <img class="img-receive-room-2" src="Photos/Minimap/UASL-OFF-2.png" alt="Background 2">
+                        </label>
+                    </div>
+                </div>
+                    
+                    <div class="title_container_volume">
+                      <h2 class="switch_title_volume">Speech Volume</h2>
+                    </div>
+                    <div class="multiple-choice">
+                        <label class="choice-button-speech">
+                            <input type="radio" name="Volume" value="N" checked>
+                            <span class="custom-radio"></span>
+                            <span class="choice-text">Normal Speech</span>
+                        </label>
+                        <label class="choice-button-speech">
+                            <input type="radio" name="Volume" value="R">
+                            <span class="custom-radio"></span>
+                            <span class="choice-text">Raised Speech</span>
+                        </label>
+                    </div>
+                    <div class="title_container_masking">
+                      <h2 class="switch_title_masking">Sound Masking</h2>
+                    </div>
+                    <div class="single-select-switch">
+                        <label class="switch">
+                            <input type="checkbox" id="Masking">
+                            <span class="slider"></span>
+                            <span class="label">Off</span>
+                        </label>
+                    </div>
+                    <div class="title_container_wall">
+                      <h2 class="switch_title_wall">Wall Type</h2>
+                    </div>
+                    <div class="multiple-choice">
+                        <label class="choice-button-wall">
+                            <input type="radio" name="Wall" value="1" id="Wall" checked>
+                            <span class="custom-radio"></span>
+                            <span class="choice-text">1&1</span>
+                        </label>
+                        <label class="choice-button-wall">
+                            <input type="radio" name="Wall" value="2" id="Wall">
+                            <span class="custom-radio"></span>
+                            <span class="choice-text">1&2</span>
+                        </label>
+                        <label class="choice-button-wall">
+                            <input type="radio" name="Wall" value="3" id="Wall">
+                            <span class="custom-radio"></span>
+                            <span class="choice-text">2&2</span>
+                        </label>
+                    </div>
+                    <div class="title_container_door">
+                      <h2 class="switch_title_door">Door Type</h2>
+                    </div>
+                    <div class="multiple-choice">
+                      <label class="choice-button-door">
+                          <input type="radio" name="Door" value="SL" class="door-option" checked>
+                          <span class="custom-radio"></span>
+                          <span class="choice-text">Sliding Glass</span>
+                      </label>
+                      <label class="choice-button-door">
+                          <input type="radio" name="Door" value="SW" class="door-option">
+                          <span class="custom-radio"></span>
+                          <span class="choice-text">Full Perimeter + Drop Bottom</span>
+                      </label>
+                      <label class="choice-button-door">
+                          <input type="radio" name="Door" value="SW" class="door-option">
+                          <span class="custom-radio"></span>
+                          <span class="choice-text">Swinging-Door-No-Bottom-Seal</span>
+                      </label>
+                    </div>     
+            </div>
+            <div class="right-container"> <!-- New container for playback and listening path -->
+                <div class="listening-path-container"> <!-- Container for listening path title and image -->
+                    <div class="help-container">
+                        <h1 class="background_title">Selected Listening Path</h1>
+                        <img id="help_button" src="Photos/round_help_button.png" alt="Help" />
+                    </div>
+                    <img class="listening_path" src="Photos/Background/ASL-OFF-S.png" alt="Listening Path">
+                </div>
+                <div class="playback-container">
+                    <div class="toggle-container">
+                        <img id="toggleImage" src="Photos/Play Button.png" alt="Pause Image" onclick="toggleImage(); playAudio()" />
+                    </div>
+                    <div class="progress-container">
+                        <div id="progress-subcontainer">
+                            <div id="progress-bar"></div>
+                        </div>
+                        <div id="time-progress-container">
+                            <span id="timestamp">0:00</span> / <span id="audiolength">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
       
         <!-- Partition Audio Elements -->
         <audio id="receive-room-1-R1ON" src="Audio/receive-room-1-R1ON.wav" preload="auto" loop></audio>
@@ -147,35 +181,6 @@
         <audio id="receive-room-1-N3OFF" src="Audio/receive-room-1-N3OFF.wav" preload="auto" loop></audio>
         <audio id="source-room-N" src="Audio/source-room-N.wav" preload="auto" loop></audio>
         <audio id="source-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
-
-          <!--Mini Map for navigation on the Left Side of the Screen-->
-          <div class="mini-map">
-              <h3><button class="close-map" id="close-map">Close</button></h3> <!-- Close button -->
-              <h2 class="mini-map-title">Select Your Listening Location</h2>
-              <div class="map-toggle" id="floorplan-menu">
-                  <img class="floorplan_icon" src="Photos/Floorplan Icon.png">
-              </div>
-              <div class="grid">
-                  <div class="receive-room-1">
-                      <label>
-                          <input type="radio" name="Room" value="receive-room-1">
-                          <img class="img-receive-room-1" src="Photos/Minimap/U1SL-OFF-1.png" alt="Background 1">
-                      </label>
-              </div>
-                  <div class="source-room">
-                      <label>
-                          <input type="radio" name="Room" value="source-room" checked>
-                          <img class="img-source-room" src="Photos/Minimap/SASL-OFF-S.png" alt="Background 3">
-                      </label>
-                  </div>
-                  <div class="receive-room-2">
-                      <label>
-                          <input type="radio" name="Room" value="receive-room-2">
-                          <img class="img-receive-room-2" src="Photos/Minimap/UASL-OFF-2.png" alt="Background 2">
-                      </label>
-                  </div>
-              </div>
-          </div>
       </div>
   </div>
   <footer>

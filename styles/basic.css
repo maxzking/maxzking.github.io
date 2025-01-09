@@ -8,6 +8,11 @@ body {
     box-sizing: border-box; /* Ensure padding is included in width/height calculations */
 }
 
+/* Prevents Scrolling. Disabled when the popup is closed */
+body.no-scroll {
+    overflow: hidden; /* Prevent scrolling */
+}
+
 .main {
     display: flex;
     justify-content: space-around;

@@ -1,14 +1,15 @@
 /* Mini Map Styling */
-.mini-map {
-    position: fixed; /* Change to fixed to stick to the viewport */
-    top: 20%; /* Distance from the top */
-    right: 3%; /* Distance from the right */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-    border: 1px solid #ccc; /* Border around the mini-map */
-    border-radius: 8px; /* Rounded corners */
+.controls-container {
+    position: relative;
+    height: 70vh;
+    width: 220px;
+    left: 0;
+    background-color:#f0f0f0;
     padding: 10px; /* Padding inside the mini-map */
-    padding-top: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    padding-right: 0px;
+    padding-left: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
     z-index: 1000; /* Ensure it stays on top */
 }
 
@@ -17,14 +18,14 @@
     font-size: 16px; /* Font size for the title */
     padding-bottom: 5px; /* Space between title and mini-map */
     z-index: 1001; /* Ensure it stays on top of the mini-map */
-    text-align: center;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 124px 159px; /* Two columns: Room A and Room C */
-    grid-template-rows: 227px 185px; /* First row height, second row fixed height for Room B */
+    grid-template-columns: 86.8px 111.3px; /* Two columns: Room A and Room C */
+    grid-template-rows: 158.9px 129.5px; /* First row height, second row fixed height for Room B */
     gap: 0; /* No gap between grid items */
+    padding-left: 10px;
 }
 
 .receive-room-1 {
@@ -44,8 +45,8 @@
 
 /* Different sizes for each image */
 .img-receive-room-1 {
-    width: 159px;
-    height: 185px;
+    width: 111.3px;
+    height: 129.5px;
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
@@ -53,8 +54,8 @@
     transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-receive-room-2 {
-    width: 283px;
-    height: 227px;
+    width: 198.1px;
+    height: 158.9px;
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
@@ -62,8 +63,8 @@
     transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-source-room {
-    width: 124px;
-    height: 185px;
+    width: 86.8px;
+    height: 129.5px;
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
@@ -93,84 +94,3 @@
     display: none; /* Hide by default */
 }
 
-/* Hide the h3 element by default */
-h3 {
-    display: none; /* Hide by default */
-}
-
-/* Show the h3 element when the mini-map is active */
-.mini-map.active h3 {
-    display: block; /* Show the h3 element when the mini-map is active */
-}
-
-@media (max-width: 1200px) {
-    .map-toggle {
-        display: flex; /* Show the minimap icon */
-    }
-
-    /* Hide all room elements and grid by default */
-    .receive-room-1,
-    .receive-room-2,
-    .source-room,
-    .grid,
-    .mini-map-title {
-        display: none;
-    }
-
-    .mini-map {
-        background-color: rgba(255, 255, 255, 1); /* Make Opaque */
-        padding: 10px; /* Padding inside the mini-map */
-        top: 20%;
-    }
-
-    /* When the map toggle is active, hide the toggle button */
-    .map-toggle.active {
-        display: none; /* Hide the hamburger icon */
-    }
-
-    /* Show room elements when they have the active class */
-    .receive-room-1.active,
-    .receive-room-2.active,
-    .source-room.active {
-        display: block; /* Change to block or flex as needed */
-    }
-
-    /* Specific grid layout for active rooms */
-    .receive-room-1.active {
-        grid-column: 2; 
-        grid-row: 2;
-    }
-    .receive-room-2.active {
-        grid-column: 1 / span 2; /* Receive Room 2 spans both columns */
-        grid-row: 1; 
-    }
-    .source-room.active {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    /* Show close button when active */
-    .close-map.active {
-        display: block; /* Show the close button */
-    }
-
-    /* Show grid when active */
-    .grid.active {
-        display: grid;
-        grid-template-columns: 124px 159px; /* Two columns: Room A and Room C */
-        grid-template-rows: 227px 185px; /* First row height, second row fixed height for Room B */
-    }
-
-    .mini-map-title.active {
-        gap: 0; /* No gap between grid items */
-        right: 10%; /* Distance from the right */
-        margin: 0; /* Remove default margin */
-        font-size: 16px; /* Font size for the title */
-        padding-bottom: 5px; /* Space between title and mini-map */
-        z-index: 1001; /* Ensure it stays on top of the mini-map */
-        text-align: center;
-        display: block; /* Ensure grid is displayed when active */
-        overflow-y: auto; /* Enable vertical scrolling */
-        top: 20%;
-    }
-}

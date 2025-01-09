@@ -133,17 +133,17 @@ nav ul li a:hover {
 
 /* Background images for each card */
 .card1 {
-    background-image: url("Photos/exterior\ wall.jpg");
+    background-image: url("Photos/office.jpg");
     background-size: cover;
     background-position: center;
 }
 .card2 {
-    background-image: url("Photos/multi-family\ housing.jpg");
+    background-image: url("Photos/exterior\ wall.jpg");
     background-size: cover;
     background-position: center;
 }
 .card3 {
-    background-image: url("Photos/office.jpg");
+    background-image: url("Photos/multi-family\ housing.jpg");
     background-size: cover;
     background-position: center;
 }

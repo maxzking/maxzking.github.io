@@ -1,12 +1,15 @@
 /* Mini Map Styling */
-.mini-map {
+.controls-container {
     position: relative;
-    height: 100vh;
+    height: 70vh;
+    width: 220px;
     left: 0;
     background-color:#f0f0f0;
     padding: 10px; /* Padding inside the mini-map */
-    padding-right: 10px;
-    padding-top: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
     z-index: 1000; /* Ensure it stays on top */
 }
 
@@ -19,9 +22,10 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 124px 159px; /* Two columns: Room A and Room C */
-    grid-template-rows: 227px 185px; /* First row height, second row fixed height for Room B */
+    grid-template-columns: 86.8px 111.3px; /* Two columns: Room A and Room C */
+    grid-template-rows: 158.9px 129.5px; /* First row height, second row fixed height for Room B */
     gap: 0; /* No gap between grid items */
+    padding-left: 10px;
 }
 
 .receive-room-1 {
@@ -41,8 +45,8 @@
 
 /* Different sizes for each image */
 .img-receive-room-1 {
-    width: 159px;
-    height: 185px;
+    width: 111.3px;
+    height: 129.5px;
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
@@ -50,8 +54,8 @@
     transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-receive-room-2 {
-    width: 283px;
-    height: 227px;
+    width: 198.1px;
+    height: 158.9px;
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
@@ -59,8 +63,8 @@
     transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-source-room {
-    width: 124px;
-    height: 185px;
+    width: 86.8px;
+    height: 129.5px;
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }

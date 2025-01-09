@@ -59,6 +59,9 @@ function playAudio() {
         if (Room === "receive-room-1") {
             audioToPlay = `receive-room-1-${Volume}${Wall}${Masking}`;
         }
+        if (Room === "receive-room-2") {
+            audioToPlay = `receive-room-1-${Volume}${Wall}${Masking}`;
+        }
         if (Room === "source-room") {
             audioToPlay = `source-room-${Volume}`;
         }

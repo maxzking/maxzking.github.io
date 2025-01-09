@@ -3,7 +3,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 400px;
+    width: 500px;
     transform: translate(-50%, -50%);
     text-align: center;
     background-color: rgba(255, 255, 255, 0.9);
@@ -22,9 +22,9 @@
     visibility: hidden; /* Prevent interaction when hidden */
 }
 
-#caution_image {
-    width: 50px;
-    height: 50px;
+#popup_image {
+    height: 200px;
+    width: auto; 
     align-self: center;
 }
 
@@ -53,4 +53,21 @@
 .caution_cover.active {
     opacity: 0; /* Fade out */
     visibility: hidden; /* Prevent interaction when hidden */
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.nav_button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav_button.hidden {
+    visibility: hidden; /* Hide the button */
 }
