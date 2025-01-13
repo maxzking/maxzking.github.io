@@ -19,12 +19,12 @@ const instructions = [
     },
     {
         title: "Instruction 3/5",
-        content: "Use the mini-map on the left scroll bar to select which room you are listening from.",
+        content: "Use the mini-map on the left side of the screen to select which room you are listening from.",
         img: "Photos/Instructions/mini-map.png"
     },
     {
         title: "Instruction 4/5",
-        content: "Use the controls on the left scroll bar to change the volume of the source and the partitions between source and receive rooms.",
+        content: "Use the controls on the left side of the screen to change the volume of the source and the partitions between source and receive rooms.",
         img: "Photos/Instructions/volume_settings.png"
     },
     {

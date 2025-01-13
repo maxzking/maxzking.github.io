@@ -94,3 +94,12 @@ nav ul li a:hover {
         padding-bottom: 5px;
     }
 }
+
+/* Ensures that links on the website are not underlined or change colors when clicked*/
+a {
+    text-decoration: none; /* Remove underline */
+    color: black;
+}
+a:visited {
+        color: black; /* Color after clicking */
+}

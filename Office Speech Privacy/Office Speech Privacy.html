@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../styles/progress_bar.css" />
   <link rel="stylesheet" href="../styles/mini_map.css" />
   <title>Resonance Acoustics - Office Speech Privacy</title>
+  <link rel="icon" href="../Photos/RA_favicon.png" type="image/png"> <!-- Favicon -->
 </head>
 <body>
   <script src="../scripts/audio.js" defer></script>
@@ -97,9 +98,9 @@
                     </div>
                     <div class="single-select-switch">
                         <label class="switch">
-                            <input type="checkbox" id="Masking">
+                            <input type="checkbox" id="Masking" onchange="toggleLabel()">
                             <span class="slider"></span>
-                            <span class="label">Off</span>
+                            <span class="label" id="switchLabel">Off</span>
                         </label>
                     </div>
                     <div class="title_container_wall">
@@ -109,17 +110,23 @@
                         <label class="choice-button-wall">
                             <input type="radio" name="Wall" value="1" id="Wall" checked>
                             <span class="custom-radio"></span>
-                            <span class="choice-text">1&1</span>
+                            <span class="choice-text">
+                                <div class="wall-1">1&1</div>
+                            </span>
                         </label>
                         <label class="choice-button-wall">
                             <input type="radio" name="Wall" value="2" id="Wall">
                             <span class="custom-radio"></span>
-                            <span class="choice-text">1&2</span>
+                            <span class="choice-text">
+                                <div class="wall-2">1&2</div>
+                            </span>
                         </label>
                         <label class="choice-button-wall">
                             <input type="radio" name="Wall" value="3" id="Wall">
                             <span class="custom-radio"></span>
-                            <span class="choice-text">2&2</span>
+                            <span class="choice-text">
+                                <div class="wall-3">2&2</div>
+                            </span>
                         </label>
                     </div>
                     <div class="title_container_door">
@@ -134,12 +141,12 @@
                       <label class="choice-button-door">
                           <input type="radio" name="Door" value="SW" class="door-option">
                           <span class="custom-radio"></span>
-                          <span class="choice-text">Full Perimeter + Drop Bottom</span>
+                          <span class="choice-text">Full Perimeter Seals + Drop Bottom</span>
                       </label>
                       <label class="choice-button-door">
                           <input type="radio" name="Door" value="SW" class="door-option">
                           <span class="custom-radio"></span>
-                          <span class="choice-text">Swinging-Door-No-Bottom-Seal</span>
+                          <span class="choice-text">Swinging Door, No Bottom Seal</span>
                       </label>
                     </div>     
             </div>

@@ -1,134 +1,79 @@
-/* Basic Styling */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Existing styles */
-header {
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: black;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* New styles for mobile menu */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle .bar {
-    height: 3px;
-    width: 25px;
-    background-color: black;
-    margin: 3px 0;
-}
-
-.close-menu {
-    background: none; /* No background */
-    border: none; /* No border */
-    color: black; /* Text color */
-    font-size: 24px; /* Font size */
-    cursor: pointer; /* Pointer cursor */
-    margin: 10px; /* Margin for spacing */
-    align-self: flex-start; /* Align to the start of the menu */
-    display: none; /* Hide by default */
-}
-
-/* Media query for mobile responsiveness */
-@media (max-width: 1280px) {
-    nav ul {
-        display: flex; /* Use flexbox for layout */
-        flex-direction: column; /* Stack items vertically */
-        width: 250px; /* Set the width of the menu */
-        position: fixed; /* Position it fixed */
-        top: 0; /* Align to the top */
-        right: -250px; /* Start off-screen */
-        background-color: white; /* Background color */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
-        text-align: left; /* Align text to the left */
-        transition: right 0.3s ease; /* Animation for sliding */
-        z-index: 1000; /* Ensure it appears above other content */
-    }
-
-    nav ul.active {
-        right: 0; /* Slide in */
-    }
-
-    .menu-toggle {
-        display: flex; /* Show the hamburger icon */
-    }
-
-    /* Align the close button to the right */
-    nav ul li:first-child {
-        display: flex; /* Use flexbox for the close button */
-        justify-content: flex-end; /* Align the close button to the right */
-        width: 100%; /* Full width for the close button */
-    }
-
-    .close-menu {
-        display: block; /* Show the close button in mobile view */
-    }
-
-    nav ul li {
-        padding-top: 15px;
-    }
-}
 .main {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px;
-    margin-left: 0px;
-    width: 100%;
+    flex-direction: row;
 }
-/*Style for the 3-card selection of virtual environments*/
+
+.about_section {
+    padding: 20px; /* Add padding inside the About section */
+    background-color: #f0f0f0; /* Light background color for visibility */
+    width: 15vw;
+    left: 0;
+}
+
+.about_title {
+    font-size: 24px; /* Larger font size for the title */
+    font-weight: bold; /* Bold title */
+    margin-bottom: 10px; /* Space below the title */
+    color: rgb(91, 148, 186);
+    font-size: 50px;
+}
+
+.about_description ul {
+    list-style-type: none; /* Use bullet points */
+    padding-left: 20px; /* Indent the list */
+    text-align: left; /* Align text to the left */
+}
+
+.about_description li {
+    margin-bottom: 10px; /* Add space between list items */
+    font-size: 20px; /* Font size for the list items */
+    color: #333; /* Text color for readability */
+}
+
+.cards_container {
+    display: flex; /* Use flexbox for cards */
+    justify-content: center; /* Center the cards horizontally */
+    width: 100%; /* Make it full width */
+    margin-top: 20px; /* Add space above the cards */
+}
+
 .card {
+    margin: 2vw; /* Add margin around cards for spacing */
     border: 1px solid #ccc;
     border-radius: 10px;
-    width: 25%;
-    padding: 30px;
-    padding-top: 35%;
+    width: 22vw;
+    height: 70vh; /* Set a fixed height for the card */
+    display: flex; /* Make the card a flex container */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: flex-end; /* Align children to the bottom */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.2s;
     background-size: cover; /* Cover the entire card */
     background-position: center; /* Center the background image */
 }
+
 .card:hover {
     transform: scale(1.05); /* Scale up on hover */
 }
+
+.title_container {
+    height: 20%; /* Set height to 30% of the card */
+    display: flex; /* Make it a flex container */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
 .card h2 {
-    margin-top: 0%;
-    position: relative;
+    margin: 0; /* Remove default margin */
+    padding: 10px 0; /* Add vertical padding */
     z-index: 1;
-    color: rgb(81, 81, 81);
-    background-color: white;
-    border-radius: 15px;
+    color: white;
+    width: 100%; /* Ensure it takes full width */
+    font-size: 30px;
+    text-align: center; /* Center the text */
 }
 
 /* Background images for each card */
@@ -147,11 +92,23 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
 }
-/* Ensures that links on the website are not underlined or change colors when clicked*/
-a {
-    text-decoration: none; /* Remove underline */
-    color: black;
+
+.description {
+    display: none; /* Hide the description by default */
+    position: absolute; /* Position it absolutely within the card */
+    top: 0; /* Align it to the top of the card */
+    left: 0; /* Align it to the left */
+    right: 0; /* Align it to the right */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Background for the description */
+    color: white; /* Text color */
+    padding: 10px; /* Padding for the description */
+    font-size: 20px;
+    border-radius: 10px;
 }
-a:visited {
-        color: black; /* Color after clicking */
+
+.card:hover .description {
+    display: flex; /* Show the description on hover */
+    align-items: center;
+    text-align: center; /* Center the text */
 }

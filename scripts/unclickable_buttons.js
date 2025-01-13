@@ -11,6 +11,10 @@ function toggleDoorOptions() {
     const isReceiveRoom = Room && Room.value === "receive-room-1";
     const isSourceRoom = Room && Room.value === "source-room";
 
+    // Check the state of the masking switch
+    const maskingSwitch = document.getElementById('Masking');
+    const isMaskingEnabled = maskingSwitch.checked;
+
     // Function to toggle classes and disable inputs
     function toggleElements(elements, unclickable) {
         elements.forEach(element => {
@@ -19,7 +23,7 @@ function toggleDoorOptions() {
         });
     }
 
-    // Set titles and toggle elements based on room selection
+    // Set titles and toggle elements based on room selection and masking switch state
     door_title.classList.toggle('unclickable', isReceiveRoom || isSourceRoom);
     wall_title.classList.toggle('unclickable', isSourceRoom);
     masking_title.classList.toggle('unclickable', isSourceRoom);
@@ -34,6 +38,10 @@ const roomOptions = document.querySelectorAll('input[name="Room"]');
 roomOptions.forEach(option => {
     option.addEventListener('change', toggleDoorOptions);
 });
+
+// Add event listener to the masking switch
+const maskingSwitch = document.getElementById('Masking');
+maskingSwitch.addEventListener('change', toggleDoorOptions);
 
 // Initial call to set the state based on the default selected room
 toggleDoorOptions();

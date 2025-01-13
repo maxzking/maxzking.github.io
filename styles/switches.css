@@ -47,6 +47,24 @@ input[type="radio"] {
     overflow-wrap: break-word; /* Break long words if necessary */
 }
 
+.wall-1 {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: rgb(144,255,144);
+}
+
+.wall-2 {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: rgb(165,134,255);
+}
+
+.wall-3 {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: rgb(250,143,148);
+}
+
 input[type="radio"]:checked + .custom-radio {
     border-color: rgb(94, 192, 238); 
 }

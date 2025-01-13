@@ -137,3 +137,15 @@ close_map.addEventListener('click', () => {
     close_map.classList.remove('active'); // Hide the close button
     mini_map.classList.remove('active'); // Hide the mini-map
 });
+
+// Function to change the label of the sound masking switch
+function toggleLabel() {
+    const checkbox = document.getElementById('Masking');
+    const label = document.getElementById('switchLabel');
+    
+    if (checkbox.checked) {
+        label.textContent = 'On'; // Change text to "On"
+    } else {
+        label.textContent = 'Off'; // Change text to "Off"
+    }
+}
