@@ -60,16 +60,24 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
     function getRoom1Image(room, wall, door, masking) {
-        if (room === true) {
+        if (room === true && door === 'SW+') {
+            return `Photos/Minimap/S${wall}SW-${masking}-1.png`;
+        } else if (room === true) {
             return `Photos/Minimap/S${wall}${door}-${masking}-1.png`;
+        } else if (room === false && door === 'SW+') {
+            return `Photos/Minimap/U${wall}SW-${masking}-1.png`;
         } else if (room === false) {
             return `Photos/Minimap/U${wall}${door}-${masking}-1.png`;
-        }
+        } 
     }
 
     function getRoom2Image(room, door, masking) {
-        if (room === true) {
+        if (room === true && door === 'SW+') {
+            return `Photos/Minimap/SASW-${masking}-2.png`;
+        } else if (room === true) {
             return `Photos/Minimap/SA${door}-${masking}-2.png`;
+        } else if (room === false && door === 'SW+') {
+            return `Photos/Minimap/UASW-${masking}-2.png`;
         } else if (room === false) {
             return `Photos/Minimap/UA${door}-${masking}-2.png`;
         }
@@ -82,20 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return `Photos/Minimap/UA${door}-OFF-S.png`;
         } else if (room === true && door === 'SW') {
             return `Photos/Minimap/S${wall}${door}-OFF-S.png`;
+        } else if (room === true && door === 'SW+') {
+            return `Photos/Minimap/S${wall}SW-OFF-S.png`;
         } else if (room === false && door === 'SW') {
             return `Photos/Minimap/U${wall}${door}-OFF-S.png`;
-        }
-    }
-
-    function getListeningImage(room, wall, door, masking){
-        if (room === 'source-room' && door === 'SL') {
-            return `Photos/Background/A${door}-OFF-S.png`;
-        } else if (room === 'source-room' && door === 'SW') {
-            return `Photos/Background/${wall}${door}-OFF-S.png`;
-        } else if (room === 'receive-room-1') {
-            return `Photos/Background/${wall}${door}-${masking}-1.png`;
-        } else if (room === 'receive-room-2') {
-            return `Photos/Background/${wall}${door}-${masking}-2.png`;
+        } else if (room === false && door === 'SW+') {
+            return `Photos/Minimap/U${wall}SW-OFF-S.png`;
         }
     }
 })

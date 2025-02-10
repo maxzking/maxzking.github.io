@@ -3,6 +3,8 @@ function toggleDoorOptions() {
     const Room = document.querySelector('input[name="Room"]:checked');
     const doors = document.querySelectorAll('.choice-button-door');
     const walls = document.querySelectorAll('.choice-button-wall');
+    const wall_12 = document.querySelectorAll('.choice-button-wall-1-2');
+    const wall_22 = document.querySelectorAll('.choice-button-wall-2-2');
     const maskings = document.querySelectorAll('.single-select-switch');
     const door_title = document.querySelector('.title_container_door');
     const wall_title = document.querySelector('.title_container_wall');
@@ -22,11 +24,13 @@ function toggleDoorOptions() {
 
     // Set titles and toggle elements based on room selection and masking switch state
     door_title.classList.toggle('unclickable', isReceiveRoom1 || isSourceRoom);
-    wall_title.classList.toggle('unclickable', isReceiveRoom2 || isSourceRoom);
+    wall_title.classList.toggle('unclickable', isSourceRoom);
     masking_title.classList.toggle('unclickable', isSourceRoom);
 
     toggleElements(doors, isReceiveRoom1 || isSourceRoom);
-    toggleElements(walls, isReceiveRoom2 || isSourceRoom);
+    toggleElements(walls, isSourceRoom);
+    toggleElements(wall_12, isReceiveRoom2 || isSourceRoom);
+    toggleElements(wall_22, isReceiveRoom2 || isSourceRoom);
     toggleElements(maskings, isSourceRoom);
 }
 

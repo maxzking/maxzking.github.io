@@ -57,14 +57,20 @@ function playAudio() {
     // Determine which audio to play based on the selected options
     console.log(`Volume: ${Volume}, Wall: ${Wall}, Masking: ${Masking}, Room: ${Room}, Door: ${Door}`);
     let audioToPlay;
+        if (Room === "source-room") {
+            audioToPlay = `source-room-${Volume}`;
+        }
         if (Room === "receive-room-1") {
             audioToPlay = `receive-room-1-${Volume}-${Wall}-${Masking}`;
         }
-        if (Room === "receive-room-2") {
+        if (Room === "receive-room-2" && Door === "SL") {
             audioToPlay = `receive-room-2-${Volume}-${Door}-${Masking}`;
         }
-        if (Room === "source-room") {
-            audioToPlay = `source-room-${Volume}`;
+        else if (Room === "receive-room-2" && Door === "SW") {
+            audioToPlay = `receive-room-2-${Volume}-${Wall}-${Door}-${Masking}`;
+        }
+        else if (Room === "receive-room-2" && Door === "SW+") {
+            audioToPlay = `receive-room-2-${Volume}-${Wall}-${Door}-${Masking}`;
         }
 
     // Play the selected Audio
