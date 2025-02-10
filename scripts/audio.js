@@ -50,17 +50,18 @@ function playAudio() {
     const Volume = document.querySelector('input[name="Volume"]:checked').value;
     const Wall = document.querySelector('input[name="Wall"]:checked').value;
     const Room = document.querySelector('input[name="Room"]:checked').value;
+    const Door = document.querySelector('input[name="Door"]:checked').value;
     // Get the value of the toggle switch
     const MaskingToggle = document.getElementById('Masking');
     const Masking = MaskingToggle.checked ? 'ON' : 'OFF'; // Set value based on checked state
     // Determine which audio to play based on the selected options
-    console.log(`Volume: ${Volume}, Wall: ${Wall}, Masking: ${Masking}, Room: ${Room}`);
+    console.log(`Volume: ${Volume}, Wall: ${Wall}, Masking: ${Masking}, Room: ${Room}, Door: ${Door}`);
     let audioToPlay;
         if (Room === "receive-room-1") {
-            audioToPlay = `receive-room-1-${Volume}${Wall}${Masking}`;
+            audioToPlay = `receive-room-1-${Volume}-${Wall}-${Masking}`;
         }
         if (Room === "receive-room-2") {
-            audioToPlay = `receive-room-1-${Volume}${Wall}${Masking}`;
+            audioToPlay = `receive-room-2-${Volume}-${Door}-${Masking}`;
         }
         if (Room === "source-room") {
             audioToPlay = `source-room-${Volume}`;

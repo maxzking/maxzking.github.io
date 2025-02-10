@@ -61,7 +61,7 @@
                     <div class="receive-room-1">
                         <label>
                             <input type="radio" name="Room" value="receive-room-1">
-                            <img class="img-receive-room-1" src="Photos/Minimap/U1SL-OFF-1.png" alt="Background 1">
+                            <img class="img-receive-room-1" src="Photos/Minimap/U1+1SL-OFF-1.png" alt="Background 1">
                         </label>
                 </div>
                     <div class="source-room">
@@ -108,21 +108,28 @@
                     </div>
                     <div class="multiple-choice">
                         <label class="choice-button-wall">
-                            <input type="radio" name="Wall" value="1" id="Wall" checked>
+                            <input type="radio" name="Wall" value="PH" id="Wall" checked>
+                            <span class="custom-radio"></span>
+                            <span class="choice-text">
+                                <div class="wall-1">PH</div>
+                            </span>
+                        </label>
+                        <label class="choice-button-wall">
+                            <input type="radio" name="Wall" value="1+1" id="Wall" checked>
                             <span class="custom-radio"></span>
                             <span class="choice-text">
                                 <div class="wall-1">1&1</div>
                             </span>
                         </label>
                         <label class="choice-button-wall">
-                            <input type="radio" name="Wall" value="2" id="Wall">
+                            <input type="radio" name="Wall" value="1+2" id="Wall">
                             <span class="custom-radio"></span>
                             <span class="choice-text">
                                 <div class="wall-2">1&2</div>
                             </span>
                         </label>
                         <label class="choice-button-wall">
-                            <input type="radio" name="Wall" value="3" id="Wall">
+                            <input type="radio" name="Wall" value="2+2" id="Wall">
                             <span class="custom-radio"></span>
                             <span class="choice-text">
                                 <div class="wall-3">2&2</div>
@@ -144,7 +151,7 @@
                           <span class="choice-text">Full Perimeter Seals + Drop Bottom</span>
                       </label>
                       <label class="choice-button-door">
-                          <input type="radio" name="Door" value="SW" class="door-option">
+                          <input type="radio" name="Door" value="SW+" class="door-option">
                           <span class="custom-radio"></span>
                           <span class="choice-text">Swinging Door, No Bottom Seal</span>
                       </label>
@@ -174,20 +181,36 @@
             </div>
       
         <!-- Partition Audio Elements -->
-        <audio id="receive-room-1-R1ON" src="Audio/receive-room-1-R1ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R1OFF" src="Audio/receive-room-1-R1OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R2ON" src="Audio/receive-room-1-R2ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R2OFF" src="Audio/receive-room-1-R2OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R3ON" src="Audio/receive-room-1-R3ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R3OFF" src="Audio/receive-room-1-R3OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N1ON" src="Audio/receive-room-1-N1ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N1OFF" src="Audio/receive-room-1-N1OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N2ON" src="Audio/receive-room-1-N2ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N2OFF" src="Audio/receive-room-1-N2OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N3ON" src="Audio/receive-room-1-N3ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N3OFF" src="Audio/receive-room-1-N3OFF.wav" preload="auto" loop></audio>
         <audio id="source-room-N" src="Audio/source-room-N.wav" preload="auto" loop></audio>
-        <audio id="source-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
+        <audio id="soure-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-N-1+1-OFF" src="Audio/receive-room-1-N-1+1-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-N-1+1-ON" src="Audio/receive-room-1-N-1+1-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-N-1+2-OFF" src="Audio/receive-room-1-N-1+2-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-N-1+2-ON" src="Audio/receive-room-1-N-1+2-ON.wav  " preload="auto" loop></audio>
+        <audio id="receive-room-1-N-2+2-OFF" src="Audio/receive-room-1-N-2+2-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-N-2+2-ON" src="Audio/receive-room-1-N-2+2-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-N-PH-OFF" src="Audio/receive-room-1-N-PH-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-N-PH-ON" src="Audio/receive-room-1-N-PH-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-R-1+1-OFF" src="Audio/receive-room-1-R-1+1-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-R-1+1-ON" src="Audio/receive-room-1-R-1+1-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-R-1+2-OFF" src="Audio/receive-room-1-R-1+2-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-R-1+2-ON" src="Audio/receive-room-1-R-1+2-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-R-2+2-OFF" src="Audio/receive-room-1-R-2+2-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-R-2+2-ON" src="Audio/receive-room-1-R-2+2-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-R-PH-OFF" src="Audio/receive-room-1-R-PH-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-1-R-PH-ON" src="Audio/receive-room-1-R-PH-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-N-SL-OFF" src="Audio/receive-room-2-N-SL-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-N-SL-ON" src="Audio/receive-room-2-N-SL-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-N-SW-OFF" src="Audio/receive-room-2-N-SW-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-N-SW-ON" src="Audio/receive-room-2-N-SW-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-N-SW+-OFF" src="Audio/receive-room-2-N-SW+-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-N-SW+-ON" src="Audio/receive-room-2-R-SW+-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-R-SL-OFF" src="Audio/receive-room-2-R-SL-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-R-SL-ON" src="Audio/receive-room-2-R-SL-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-R-SW-OFF" src="Audio/receive-room-2-R-SW-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-R-SW-ON" src="Audio/receive-room-2-R-SW-ON.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-R-SW+-OFF" src="Audio/receive-room-2-R-SW+-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive-room-2-R-SW+-ON" src="Audio/receive-room-2-R-SW+-ON" preload="auto" loop></audio>
       </div>
   </div>
   <footer>
