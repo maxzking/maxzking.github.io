@@ -8,12 +8,9 @@ function toggleDoorOptions() {
     const wall_title = document.querySelector('.title_container_wall');
     const masking_title = document.querySelector('.title_container_masking');
 
-    const isReceiveRoom = Room && Room.value === "receive-room-1";
+    const isReceiveRoom1 = Room && Room.value === "receive-room-1";
+    const isReceiveRoom2 = Room && Room.value === "receive-room-2";
     const isSourceRoom = Room && Room.value === "source-room";
-
-    // Check the state of the masking switch
-    const maskingSwitch = document.getElementById('Masking');
-    const isMaskingEnabled = maskingSwitch.checked;
 
     // Function to toggle classes and disable inputs
     function toggleElements(elements, unclickable) {
@@ -24,12 +21,12 @@ function toggleDoorOptions() {
     }
 
     // Set titles and toggle elements based on room selection and masking switch state
-    door_title.classList.toggle('unclickable', isReceiveRoom || isSourceRoom);
-    wall_title.classList.toggle('unclickable', isSourceRoom);
+    door_title.classList.toggle('unclickable', isReceiveRoom1 || isSourceRoom);
+    wall_title.classList.toggle('unclickable', isReceiveRoom2 || isSourceRoom);
     masking_title.classList.toggle('unclickable', isSourceRoom);
 
-    toggleElements(doors, isReceiveRoom || isSourceRoom);
-    toggleElements(walls, isSourceRoom);
+    toggleElements(doors, isReceiveRoom1 || isSourceRoom);
+    toggleElements(walls, isReceiveRoom2 || isSourceRoom);
     toggleElements(maskings, isSourceRoom);
 }
 

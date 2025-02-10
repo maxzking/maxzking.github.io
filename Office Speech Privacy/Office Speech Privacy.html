@@ -57,27 +57,6 @@
                 <div class="map-toggle" id="floorplan-menu">
                     <img class="floorplan_icon" src="Photos/Floorplan Icon.png">
                 </div>
-                <div class="grid">
-                    <div class="receive-room-1">
-                        <label>
-                            <input type="radio" name="Room" value="receive-room-1">
-                            <img class="img-receive-room-1" src="Photos/Minimap/U1+1SL-OFF-1.png" alt="Background 1">
-                        </label>
-                </div>
-                    <div class="source-room">
-                        <label>
-                            <input type="radio" name="Room" value="source-room" checked>
-                            <img class="img-source-room" src="Photos/Minimap/SASL-OFF-S.png" alt="Background 3">
-                        </label>
-                    </div>
-                    <div class="receive-room-2">
-                        <label>
-                            <input type="radio" name="Room" value="receive-room-2">
-                            <img class="img-receive-room-2" src="Photos/Minimap/UASL-OFF-2.png" alt="Background 2">
-                        </label>
-                    </div>
-                </div>
-                    
                     <div class="title_container_volume">
                       <h2 class="switch_title_volume">Speech Volume</h2>
                     </div>
@@ -111,7 +90,7 @@
                             <input type="radio" name="Wall" value="PH" id="Wall" checked>
                             <span class="custom-radio"></span>
                             <span class="choice-text">
-                                <div class="wall-1">PH</div>
+                                <div class="PH">PH</div>
                             </span>
                         </label>
                         <label class="choice-button-wall">
@@ -148,12 +127,12 @@
                       <label class="choice-button-door">
                           <input type="radio" name="Door" value="SW" class="door-option">
                           <span class="custom-radio"></span>
-                          <span class="choice-text">Full Perimeter Seals + Drop Bottom</span>
+                          <span class="choice-text">Swinging Door, No Bottom Seal</span>
                       </label>
                       <label class="choice-button-door">
                           <input type="radio" name="Door" value="SW+" class="door-option">
                           <span class="custom-radio"></span>
-                          <span class="choice-text">Swinging Door, No Bottom Seal</span>
+                          <span class="choice-text">Full Perimeter Seals + Drop Bottom</span>
                       </label>
                     </div>     
             </div>
@@ -163,7 +142,27 @@
                         <h1 class="background_title">Selected Listening Path</h1>
                         <img id="help_button" src="Photos/round_help_button.png" alt="Help" />
                     </div>
-                    <img class="listening_path" src="Photos/Background/ASL-OFF-S.png" alt="Listening Path">
+                    <div class="grid">
+                        <div class="receive-room-1">
+                            <label>
+                                <input type="radio" name="Room" value="receive-room-1">
+                                <img class="img-receive-room-1" src="Photos/Minimap/U1+1SL-OFF-1.png" alt="Background 1">
+                            </label>
+                        </div>
+                        
+                        <div class="source-room">
+                            <label>
+                                <input type="radio" name="Room" value="source-room" checked>
+                                <img class="img-source-room" src="Photos/Minimap/SASL-OFF-S.png" alt="Background 3">
+                            </label>
+                        </div>
+                        <div class="receive-room-2">
+                            <label>
+                                <input type="radio" name="Room" value="receive-room-2">
+                                <img class="img-receive-room-2" src="Photos/Minimap/UASL-OFF-2.png" alt="Background 2">
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <div class="playback-container">
                     <div class="toggle-container">
@@ -180,9 +179,9 @@
                 </div>
             </div>
       
-        <!-- Partition Audio Elements -->
+        <!-- Partition Audio Elements --> 
         <audio id="source-room-N" src="Audio/source-room-N.wav" preload="auto" loop></audio>
-        <audio id="soure-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
+        <audio id="source-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
         <audio id="receive-room-1-N-1+1-OFF" src="Audio/receive-room-1-N-1+1-OFF.wav" preload="auto" loop></audio>
         <audio id="receive-room-1-N-1+1-ON" src="Audio/receive-room-1-N-1+1-ON.wav" preload="auto" loop></audio>
         <audio id="receive-room-1-N-1+2-OFF" src="Audio/receive-room-1-N-1+2-OFF.wav" preload="auto" loop></audio>

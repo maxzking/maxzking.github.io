@@ -23,8 +23,8 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 86.8px 111.3px; /* Two columns: Room A and Room C */
-    grid-template-rows: 158.9px 129.5px; /* First row height, second row fixed height for Room B */
+    grid-template-columns: 130.2px 167px; /* Two columns: Room A and Room C */
+    grid-template-rows: 238.4px 194.25px; /* First row height, second row fixed height for Room B */
     gap: 0; /* No gap between grid items */
     padding-left: 10px;
 }
@@ -46,8 +46,8 @@
 
 /* Different sizes for each image */
 .img-receive-room-1 {
-    width: 111.3px;
-    height: 129.5px;
+    width: 167x;
+    height: 194.25px;
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
@@ -55,8 +55,8 @@
     transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-receive-room-2 {
-    width: 198.1px;
-    height: 158.9px;
+    width: 297.2px;
+    height: 238.4px;
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
@@ -64,8 +64,8 @@
     transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-source-room {
-    width: 86.8px;
-    height: 129.5px;
+    width: 130.2px;
+    height: 194.25px;
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
