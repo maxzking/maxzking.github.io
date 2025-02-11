@@ -1,6 +1,7 @@
 /* Multiple-Choice Switch Styling */
 .multiple-choice {
-    margin: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 .choice-button-speech,
@@ -28,6 +29,12 @@
     background-color: rgba(250, 250, 250, 0.848); /* Hover background */
 }
 
+.color-rectangle {
+    width: 20px; /* Width of the rectangle */
+    height: 20px; /* Height of the rectangle */
+    margin-left: 5px; /* Space between text and rectangle */
+    border: 2px solid black; /* Black outline */
+}
 
 input[type="radio"] {
     display: none; /* Hide the default radio button */
@@ -50,7 +57,7 @@ input[type="radio"] {
     overflow-wrap: break-word; /* Break long words if necessary */
 }
 
-/* color: rgb(252, 156, 2); */
+/* color: rgb(128, 64, 64); */
 /* color: rgb(144,255,144); */
 /* color: rgb(165,134,255); */
 /* color: rgb(250,143,148); */
@@ -195,7 +202,7 @@ input:checked + .slider:before {
 
 /* Style for the inactive options */
 .switch input:not(:checked) + .slider {
-    background-color: #ccc;
+    background-color: #9b9b9b;
 }
 
 .unclickable {
