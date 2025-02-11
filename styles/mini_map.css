@@ -21,10 +21,18 @@
     z-index: 1001; /* Ensure it stays on top of the mini-map */
 }
 
+:root {
+    --row-1-height: 30vh; /* This is your dynamic variable */
+    --row-2-height: calc(var(--row-1-height) * 194.25 / 238.4);
+    
+    --column-1-width: calc(var(--row-1-height) * 130.2 / 238.4);
+    --column-2-width: calc(var(--row-1-height) * 167 / 238.4);
+}
+
 .grid {
     display: grid;
-    grid-template-columns: 130.2px 167px; /* Two columns: Room A and Room C */
-    grid-template-rows: 238.4px 194.25px; /* First row height, second row fixed height for Room B */
+    grid-template-columns: var(--column-1-width) var(--column-2-width); /* Two columns: Room A and Room C */
+    grid-template-rows: var(--row-1-height) var(--row-2-height); /* First row height, second row fixed height for Room B */
     gap: 0; /* No gap between grid items */
     padding-left: 10px;
 }
@@ -46,8 +54,8 @@
 
 /* Different sizes for each image */
 .img-receive-room-1 {
-    width: 167x;
-    height: 194.25px;
+    width: var(--column-2-width);
+    height: var(--row-2-height);
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
@@ -55,8 +63,8 @@
     transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-receive-room-2 {
-    width: 297.2px;
-    height: 238.4px;
+    width: calc(var(--column-1-width)+var(--column-2-width));
+    height: var(--row-1-height);
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }
@@ -64,8 +72,8 @@
     transform: scale(1.05); /* Scale up the image on hover */
 }
 .img-source-room {
-    width: 130.2px;
-    height: 194.25px;
+    width: var(--column-1-width);
+    height: var(--row-2-height);
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s
 }

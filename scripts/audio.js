@@ -34,6 +34,7 @@ function toggleImage() {
     isPlaying = !isPlaying; // Toggle the state
 }
 
+
 // Toggle switch audio function
 function playAudio() {
     if (!isPlaying) {
@@ -63,14 +64,8 @@ function playAudio() {
         if (Room === "receive-room-1") {
             audioToPlay = `receive-room-1-${Volume}-${Wall}-${Masking}`;
         }
-        if (Room === "receive-room-2" && Door === "SL") {
+        if (Room === "receive-room-2") {
             audioToPlay = `receive-room-2-${Volume}-${Door}-${Masking}`;
-        }
-        else if (Room === "receive-room-2" && Door === "SW") {
-            audioToPlay = `receive-room-2-${Volume}-${Wall}-${Door}-${Masking}`;
-        }
-        else if (Room === "receive-room-2" && Door === "SW+") {
-            audioToPlay = `receive-room-2-${Volume}-${Wall}-${Door}-${Masking}`;
         }
 
     // Play the selected Audio

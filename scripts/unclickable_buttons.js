@@ -28,7 +28,7 @@ function toggleDoorOptions() {
     masking_title.classList.toggle('unclickable', isSourceRoom);
 
     toggleElements(doors, isReceiveRoom1 || isSourceRoom);
-    toggleElements(walls, isSourceRoom);
+    toggleElements(walls, isReceiveRoom2 || isSourceRoom);
     toggleElements(wall_12, isReceiveRoom2 || isSourceRoom);
     toggleElements(wall_22, isReceiveRoom2 || isSourceRoom);
     toggleElements(maskings, isSourceRoom);
@@ -46,3 +46,16 @@ maskingSwitch.addEventListener('change', toggleDoorOptions);
 
 // Initial call to set the state based on the default selected room
 toggleDoorOptions();
+
+// This function changes the wall setting to 1+1 when receive-room-2 is selected.
+// Select the receive-room-2 radio button
+const receiveRoom2 = document.getElementById('receive-room-2');
+receiveRoom2.addEventListener('change', function() {
+    if (this.checked) {
+        // Check the wall input with value 1+1
+        const wallInput = document.querySelector('input[name="Wall"][value="1+1"]');
+        if (wallInput) {
+            wallInput.checked = true; // Check the wall input
+        }
+    }
+});
