@@ -1,6 +1,6 @@
 // Minimap functionality
 // Add event listeners to the switches
-document.querySelectorAll('input[name="Volume"], input[name="Wall"], input[name="Room"], input[name="Door"], #Masking').forEach(switchElement => {
+document.querySelectorAll('input[name="Wall"], input[name="Room"], input[name="Door"], #Masking').forEach(switchElement => {
     switchElement.addEventListener('change', handleSwitchChange);
 });
 

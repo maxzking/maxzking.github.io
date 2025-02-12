@@ -8,7 +8,8 @@
 .choice-button-wall,
 .choice-button-wall-1-2,
 .choice-button-wall-2-2,
-.choice-button-door {
+.choice-button-door,
+.choice-button-floor {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,0 +1,117 @@
+/* Mini Map Styling */
+.controls-container {
+    position: relative;
+    height: 70vh;
+    width: 30%;
+    left: 0;
+    background-color:#f0f0f0;
+    padding: 10px; /* Padding inside the mini-map */
+    padding-right: 0px;
+    padding-left: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000; /* Ensure it stays on top */
+    align-content: center;
+}
+
+.mini-map-title {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Font size for the title */
+    padding-bottom: 5px; /* Space between title and mini-map */
+    z-index: 1001; /* Ensure it stays on top of the mini-map */
+}
+
+:root {
+    --row-1-height: 50px;
+    --row-2-height: 20px;
+    --row-3-height: 122px;
+    --row-4-height: 20px;
+    --row-5-height: 122px;
+    --row-6-height: 20px;
+    --row-7-height: 50px;
+    
+    --column-1-width: 50px;
+    --column-2-width: 10px;
+    --column-3-width: 183px;
+    --column-4-width: 10px;
+    --column-5-width: 183px;
+    --column-6-width: 10px;
+    --column-7-width: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: var(--column-1-width) var(--column-2-width) var(--column-3-width) var(--column-4-width) var(--column-5-width) var(--column-6-width) var(--column-7-width); /* Two columns: Room A and Room C */
+    grid-template-rows: var(--row-1-height) var(--row-2-height) var(--row-3-height) var(--row-4-height) var(--row-5-height) var(--row-6-height) var(--row-7-height); /* First row height, second row fixed height for Room B */
+    gap: 0; /* No gap between grid items */
+    padding-left: 10px;
+}
+
+.receive-room-1 {
+    grid-column: 3; 
+    grid-row: 3; 
+}
+
+.receive-room-2 {
+    grid-column: 5;
+    grid-row: 5; 
+}
+
+.source-room {
+    grid-column: 5;
+    grid-row: 3;
+}
+
+.img-interior-wall,
+.img-floor,
+.repeat-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* Different sizes for each image */
+.img-receive-room-1 {
+    width: var(--column-3-width);
+    height: var(--row-3-height);
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s
+}
+.img-receive-room-2 {
+    width: var(--column-5-width);
+    height: var(--row-5-height);
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s
+}
+.img-source-room {
+    width: var(--column-5-width);
+    height: var(--row-3-height);
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s
+}
+.img-receive-room-1:hover,
+.img-receive-room-2:hover,
+.img-source-room:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
+}
+/* Mini Map Toggle Button */
+.map-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.map-toggle .floorplan_icon {
+    height: 50px;
+    width: 50px;
+}
+
+.close-map {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: grey; /* Text color */
+    font-size: 24px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    align-self: flex-start; /* Align to the start of the mini map */
+    display: none; /* Hide by default */
+}
+

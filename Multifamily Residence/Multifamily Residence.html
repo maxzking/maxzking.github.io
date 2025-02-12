@@ -10,20 +10,21 @@
     <link rel="stylesheet" href="../styles/switches.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="stylesheet" href="../styles/progress_bar.css" />
-    <link rel="stylesheet" href="../styles/mini_map.css" />
+    <link rel="stylesheet" href="../styles/multifamily_section_view.css" />
     <title>Resonance Acoustics - Multifamily Residence</title>
-    <link rel="icon" href="../Photos/RA_favicon.png" type="image/png"> <!-- Favicon -->
+    <link rel="icon" href="../Office%20Speech%20Privacy/Photos/RA_favicon.png" type="image/png"> <!-- Favicon -->
   </head>
   <body>
-    <script src="Multifamily Residence.js" defer></script>  <script src="../scripts/audio.js" defer></script>
+    <script src="Multifamily Residence.js" defer></script>  
+    <script src="../scripts/multifamily_audio.js" defer></script>
     <script src="../scripts/caution_popup.js" defer></script>
     <script src="../scripts/dropdown_menu.js" defer></script>
-    <script src="../scripts/mini_map.js" defer></script>
+    <script src="../scripts/multifamily_section_view.js" defer></script>
     <script src="../scripts/progress_bar.js" defer></script>
     <script src="../scripts/unclickable_buttons.js" defer></script>
     <!--This is the website navigation bar at the top of the screen-->
     <header>
-      <a href="../index.html"><img src="../Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
+      <a href="../index.html"><img src="../Office%20Speech%20Privacy/Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
       <h2>Resonance Acoustics - Listening Demonstrations</h2>
       <nav>
           <div class="menu-toggle" id="mobile-menu">
@@ -60,28 +61,18 @@
                 <img class="floorplan_icon" src="Photos/Floorplan Icon.png">
             </div>
                 <div class="title_container_volume">
-                  <h2 class="switch_title_volume">Speech Volume</h2>
+                  <h2 class="switch_title_volume">Party Volume</h2>
                 </div>
                 <div class="multiple-choice">
                     <label class="choice-button-speech">
                         <input type="radio" name="Volume" value="N" checked>
                         <span class="custom-radio"></span>
-                        <span class="choice-text">Normal Speech</span>
+                        <span class="choice-text">Normal</span>
                     </label>
                     <label class="choice-button-speech">
-                        <input type="radio" name="Volume" value="R">
+                        <input type="radio" name="Volume" value="L">
                         <span class="custom-radio"></span>
-                        <span class="choice-text">Raised Speech</span>
-                    </label>
-                </div>
-                <div class="title_container_masking">
-                  <h2 class="switch_title_masking">Sound Masking</h2>
-                </div>
-                <div class="single-select-switch">
-                    <label class="switch">
-                        <input type="checkbox" id="Masking" onchange="toggleLabel()">
-                        <span class="slider"></span>
-                        <span class="label" id="switchLabel">Off</span>
+                        <span class="choice-text">Loud</span>
                     </label>
                 </div>
                 <div class="title_container_wall">
@@ -89,52 +80,51 @@
                 </div>
                 <div class="multiple-choice">
                     <label class="choice-button-wall">
-                        <input type="radio" name="Wall" value="PH" id="Wall" checked>
+                        <input type="radio" name="Wall" value="SS-22" id="Wall" checked>
                         <span class="custom-radio"></span>
                         <span class="choice-text">
-                            <div class="PH">PH</div>
+                            <div class="PH">Single Stud, 2 & 2</div>
                         </span>
+                        <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
                     </label>
                     <label class="choice-button-wall">
-                        <input type="radio" name="Wall" value="1+1" id="Wall">
+                        <input type="radio" name="Wall" value="DS-11" id="Wall">
                         <span class="custom-radio"></span>
                         <span class="choice-text">
-                            <div class="wall-1">1&1</div>
+                            <div class="wall-1">Double Stud, 1 & 1</div>
                         </span>
+                        <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
                     </label>
-                    <label class="choice-button-wall-1-2">
-                        <input type="radio" name="Wall" value="1+2" id="Wall">
+                    <label class="choice-button-wall">
+                        <input type="radio" name="Wall" value="DS-22" id="Wall">
                         <span class="custom-radio"></span>
                         <span class="choice-text">
-                            <div class="wall-2">1&2</div>
+                            <div class="wall-2">Double Stud, 2 & 2</div>
                         </span>
-                    </label>
-                    <label class="choice-button-wall-2-2">
-                        <input type="radio" name="Wall" value="2+2" id="Wall">
-                        <span class="custom-radio"></span>
-                        <span class="choice-text">
-                            <div class="wall-3">2&2</div>
-                        </span>
+                        <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
                     </label>
                 </div>
                 <div class="title_container_door">
-                  <h2 class="switch_title_door">Door Type</h2>
+                  <h2 class="switch_title_door">Floor Type</h2>
                 </div>
                 <div class="multiple-choice">
-                  <label class="choice-button-door">
-                      <input type="radio" name="Door" value="SL" class="door-option" checked>
+                  <label class="choice-button-floor">
+                      <input type="radio" name="Floor" value="SS-22" class="floor-option" checked>
                       <span class="custom-radio"></span>
-                      <span class="choice-text">Sliding Glass</span>
+                      <span class="choice-text">Option 1</span>
+                      <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
                   </label>
-                  <label class="choice-button-door">
-                      <input type="radio" name="Door" value="SW" class="door-option">
+                  <label class="choice-button-floor">
+                      <input type="radio" name="Floor" value="DS-11" class="floor-option">
                       <span class="custom-radio"></span>
-                      <span class="choice-text">Swinging Door, No Bottom Seal</span>
+                      <span class="choice-text">Option 2</span>
+                      <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
                   </label>
-                  <label class="choice-button-door">
-                      <input type="radio" name="Door" value="SW+" class="door-option">
+                  <label class="choice-button-floor">
+                      <input type="radio" name="Floor" value="DS-22" class="floor-option">
                       <span class="custom-radio"></span>
-                      <span class="choice-text">Full Perimeter Seals + Drop Bottom</span>
+                      <span class="choice-text">Option 3</span>
+                      <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
                   </label>
                 </div>     
         </div>
@@ -144,25 +134,162 @@
                     <h1 class="background_title">Selected Listening Path</h1>
                     <img id="help_button" src="Photos/round_help_button.png" alt="Help" />
                 </div>
-                <div class="grid">
+                <div class="grid"> <!--This is a 7x7 grid, so there are 49 div elements-->
+                    <div class="repeat-image" style="grid-column: 1; grid-row: 1;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 2; grid-row: 1;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 3; grid-row: 1;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 4; grid-row: 1;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 5; grid-row: 1;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 6; grid-row: 1;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 7; grid-row: 1;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 1; grid-row: 2;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 2; grid-row: 2;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 3; grid-row: 2;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 4; grid-row: 2;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 5; grid-row: 2;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 6; grid-row: 2;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 7; grid-row: 2;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 1; grid-row: 3;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 2; grid-row: 3;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
                     <div class="receive-room-1">
                         <label>
                             <input type="radio" name="Room" value="receive-room-1">
-                            <img class="img-receive-room-1" src="Photos/Minimap/U1+1SL-OFF-1.png" alt="Background 1">
+                            <img class="img-receive-room-1" src="Photos/Minimap/receive-room-1-U.png" alt="Background 1">
                         </label>
                     </div>
-                    
+                    <div class="interior-wall" style="grid-column: 4; grid-row: 3;">
+                        <img class="img-interior-wall" src="Photos/Minimap/SS-22.png" alt="Background 1">
+                    </div>
                     <div class="source-room">
                         <label>
                             <input type="radio" name="Room" value="source-room" checked>
-                            <img class="img-source-room" src="Photos/Minimap/SASL-OFF-S.png" alt="Background 3">
+                            <img class="img-source-room" src="Photos/Minimap/source-room-S-Pause.png" alt="Background 3">
                         </label>
+                    </div>
+                    <div class="repeat-image" style="grid-column: 6; grid-row: 3;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 7; grid-row: 3;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 1; grid-row: 4;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 2; grid-row: 4;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 3; grid-row: 4;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 4; grid-row: 4;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="floor" style="grid-column: 5; grid-row: 4;">
+                        <img class="img-floor" src="Photos/Minimap/SS-22.png" alt="Background 1">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 6; grid-row: 4;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 7; grid-row: 4;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 1; grid-row: 5;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 2; grid-row: 5;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 3; grid-row: 5;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 4; grid-row: 5;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
                     </div>
                     <div class="receive-room-2">
                         <label>
                             <input type="radio" name="Room" value="receive-room-2">
-                            <img class="img-receive-room-2" src="Photos/Minimap/UASL-OFF-2.png" alt="Background 2">
+                            <img class="img-receive-room-2" src="Photos/Minimap/receive-room-2-U.png" alt="Background 2">
                         </label>
+                    </div>
+                    <div class="repeat-image" style="grid-column: 6; grid-row: 5;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 7; grid-row: 5;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 1; grid-row: 6;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 2; grid-row: 6;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 3; grid-row: 6;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 4; grid-row: 6;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 5; grid-row: 6;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 6; grid-row: 6;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 7; grid-row: 6;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 1; grid-row: 7;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 2; grid-row: 7;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 3; grid-row: 7;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 4; grid-row: 7;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 5; grid-row: 7;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 6; grid-row: 7;">
+                        <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
+                    </div>
+                    <div class="repeat-image" style="grid-column: 7; grid-row: 7;">
+                        <img src="Photos/Minimap/grey-filler.png" alt="Repeat Image" class="repeat-image">
                     </div>
                 </div>
             </div>
@@ -265,8 +392,8 @@
         <div class="footer-bottom">
             <div class="footer-bottom-lt">
             © 2025 RESONANCE ACOUSTICS. All Rights Reseved. &nbsp; | &nbsp; 
-            <a href="/privacy-policy/"> Privacy Policy </a> &nbsp; | &nbsp; 
-            <a href="/terms-conditions/"> Terms &amp; Conditions </a>
+            <a href="/privacy-policy"> Privacy Policy </a> &nbsp; | &nbsp; 
+            <a href="/terms-conditions"> Terms &amp; Conditions </a>
             </div>
             <div class="footer-bottom-rt">
                 <span>Website by <a href="https://statewp.com/"> StateWP </a> </span>
