@@ -21,7 +21,7 @@
     <script src="../scripts/dropdown_menu.js" defer></script>
     <script src="../scripts/multifamily_section_view.js" defer></script>
     <script src="../scripts/progress_bar.js" defer></script>
-    <script src="../scripts/unclickable_buttons.js" defer></script>
+    <script src="../scripts/multifamily_unclickable_buttons.js" defer></script>
     <!--This is the website navigation bar at the top of the screen-->
     <header>
       <a href="../index.html"><img src="../Office%20Speech%20Privacy/Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
@@ -45,7 +45,7 @@
     <h2 id="popup_title">Caution</h2>
     <p id="popup_content">The audio volume for this listening demonstration varies widely. For your safety, please use caution with the volume settings on your listening device.</p>
     <img id="popup_image" class="play_button" style="cursor: pointer;"/>
-    <audio id="audio_demo" src="Audio/source-room-R.wav"></audio>
+    <audio id="audio_demo" src="Audio/party-source-L.wav"></audio>
     <div class="navigation">
         <button id="left_arrow" class="nav_button">&lt;</button>
         <button id="right_arrow" class="nav_button">&gt;</button>
@@ -104,8 +104,8 @@
                         <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
                     </label>
                 </div>
-                <div class="title_container_door">
-                  <h2 class="switch_title_door">Floor Type</h2>
+                <div class="title_container_floor">
+                  <h2 class="switch_title_floor">Floor Type</h2>
                 </div>
                 <div class="multiple-choice">
                   <label class="choice-button-floor">
@@ -190,7 +190,7 @@
                         </label>
                     </div>
                     <div class="interior-wall" style="grid-column: 4; grid-row: 3;">
-                        <img class="img-interior-wall" src="Photos/Minimap/SS-22.png" alt="Background 1">
+                        <img class="img-interior-wall" src="Photos/Minimap/black-filler.png" alt="Background 1">
                     </div>
                     <div class="source-room">
                         <label>
@@ -217,7 +217,7 @@
                         <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
                     </div>
                     <div class="floor" style="grid-column: 5; grid-row: 4;">
-                        <img class="img-floor" src="Photos/Minimap/SS-22.png" alt="Background 1">
+                        <img class="img-floor" src="Photos/Minimap/black-filler.png" alt="Background 1">
                     </div>
                     <div class="repeat-image" style="grid-column: 6; grid-row: 4;">
                         <img src="Photos/Minimap/black-filler.png" alt="Repeat Image" class="repeat-image">
@@ -309,36 +309,14 @@
         </div>
   
     <!-- Partition Audio Elements --> 
-    <audio id="source-room-N" src="Audio/source-room-N.wav" preload="auto" loop></audio>
-    <audio id="source-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-1+1-OFF" src="Audio/receive-room-1-N-1+1-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-1+1-ON" src="Audio/receive-room-1-N-1+1-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-1+2-OFF" src="Audio/receive-room-1-N-1+2-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-1+2-ON" src="Audio/receive-room-1-N-1+2-ON.wav  " preload="auto" loop></audio>
-    <audio id="receive-room-1-N-2+2-OFF" src="Audio/receive-room-1-N-2+2-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-2+2-ON" src="Audio/receive-room-1-N-2+2-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-PH-OFF" src="Audio/receive-room-1-N-PH-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-PH-ON" src="Audio/receive-room-1-N-PH-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-1+1-OFF" src="Audio/receive-room-1-R-1+1-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-1+1-ON" src="Audio/receive-room-1-R-1+1-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-1+2-OFF" src="Audio/receive-room-1-R-1+2-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-1+2-ON" src="Audio/receive-room-1-R-1+2-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-2+2-OFF" src="Audio/receive-room-1-R-2+2-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-2+2-ON" src="Audio/receive-room-1-R-2+2-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-PH-OFF" src="Audio/receive-room-1-R-PH-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-PH-ON" src="Audio/receive-room-1-R-PH-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SL-OFF" src="Audio/receive-room-2-N-SL-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SL-ON" src="Audio/receive-room-2-N-SL-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SW-OFF" src="Audio/receive-room-2-N-SW-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SW-ON" src="Audio/receive-room-2-N-SW-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SW+-OFF" src="Audio/receive-room-2-N-SW+-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SW+-ON" src="Audio/receive-room-2-R-SW+-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SL-OFF" src="Audio/receive-room-2-R-SL-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SL-ON" src="Audio/receive-room-2-R-SL-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SW-OFF" src="Audio/receive-room-2-R-SW-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SW-ON" src="Audio/receive-room-2-R-SW-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SW+-OFF" src="Audio/receive-room-2-R-SW+-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SW+-ON" src="Audio/receive-room-2-R-SW+-ON" preload="auto" loop></audio>
+    <audio id="party-source-L" src="Audio/party-source-L.wav" preload="auto" loop></audio>
+    <audio id="party-source-N" src="Audio/party-source-N.wav" preload="auto" loop></audio>
+    <audio id="DS-11-L" src="Audio/DS-11-L.wav" preload="auto" loop></audio>
+    <audio id="DS-11-N" src="Audio/DS-11-N.wav" preload="auto" loop></audio>
+    <audio id="DS-22-L" src="Audio/DS-22-L.wav" preload="auto" loop></audio>
+    <audio id="DS-22-N" src="Audio/DS-22-N.wav" preload="auto" loop></audio>
+    <audio id="SS-22-L" src="Audio/SS-22-L.wav" preload="auto" loop></audio>
+    <audio id="SS-22-N" src="Audio/SS-22-N.wav" preload="auto" loop></audio>
   </div>
 </div>
   <footer>

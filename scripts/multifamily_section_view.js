@@ -1,6 +1,6 @@
 // Minimap functionality
 // Add event listeners to the switches
-document.querySelectorAll('input[name="Wall"], input[name="Room"], input[name="Floor"]').forEach(switchElement => {
+document.querySelectorAll('input[name="Volume"], input[name="Wall"], input[name="Room"], input[name="Floor"]').forEach(switchElement => {
     switchElement.addEventListener('change', handleSwitchChange);
 });
 
@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update Interior Wall image
         const wallImage = document.querySelector('.img-interior-wall');
-        wallImage.src = getWallImage(wall);
+        wallImage.src = getWallImage(wall, selectedRoom1);
 
         // Update Interior Wall image
         const floorImage = document.querySelector('.img-floor');
-        floorImage.src = getfloorImage(floor);
+        floorImage.src = getfloorImage(floor, selectedRoom2);
     }
 
     function getRoom1Image(room) {
@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function getWallImage(wall) {
-        return `Photos/Minimap/${wall}.png`;
+    function getWallImage(wall, selectedRoom1) {
+        return selectedRoom1 ? `Photos/Minimap/${wall}.png` : `Photos/Minimap/black-filler.png`;
     }
 
-    function getfloorImage(floor){
-        return `Photos/Minimap/${floor}.png`;
+    function getfloorImage(floor, selectedRoom2){
+        return selectedRoom2 ? `Photos/Minimap/${floor}.png` : `Photos/Minimap/black-filler.png`;
     }
 });
 
