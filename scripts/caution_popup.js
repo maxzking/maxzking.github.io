@@ -3,7 +3,8 @@ const cautionPopup = document.querySelector('.caution_popup');
 const cautionCover = document.querySelector('.caution_cover');
 const closeButton = document.querySelector('.close_button');
 const audioDemo = document.getElementById('audio_demo');
-const playButton = document.getElementById('popup_image'); // Assuming this is the play button
+const playButton = document.getElementById('popup_image');
+const toggleImagePicture = document.getElementById('toggle_Image');
 
 // Instructions Array
 const instructions = [
@@ -93,9 +94,13 @@ playButton.addEventListener('click', () => {
     if (audioDemo.paused) {
         audioDemo.play();
         playButton.src = 'Photos/Pause Button.png'; // Change to your pause icon
+        toggleImagePicture.src = 'Photos/Pause Button.png'
+        isPlaying = !isPlaying; // Toggle the state
     } else {
         audioDemo.pause();
         playButton.src = 'Photos/Play Button.png'; // Change to your play icon
+        toggleImagePicture.src = 'Photos/Play Button.png'
+        isPlaying = !isPlaying; // Toggle the state
     }
 });
 

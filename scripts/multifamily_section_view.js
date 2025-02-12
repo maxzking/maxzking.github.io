@@ -9,7 +9,7 @@ let isPlaying = false; // Track the state of the toggle
 let currentAudio = null; // Track the currently playing audio
 
 function toggleImage() {
-    const toggleImage = document.getElementById('toggleImage');
+    const toggleImage = document.getElementById('toggle_Image');
 
     if (isPlaying) {
         toggleImage.src = 'Photos/Play Button.png'; // Change to your "Play" image path
