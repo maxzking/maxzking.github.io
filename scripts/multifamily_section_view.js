@@ -30,15 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const wallRadios = document.querySelectorAll('input[name="Wall"]');
     const floorRadios = document.querySelectorAll('input[name="Floor"]');
     const roomRadios = document.querySelectorAll('input[name="Room"]');
-    const toggleImageElement = document.getElementById('toggleImage');
+    const toggleImageElement = document.getElementById('toggle_Image');
+    const popupImage = document.getElementById('popup_image');
 
     // Add event listeners to all relevant inputs
     wallRadios.forEach(radio => radio.addEventListener('change', updateImages));
     floorRadios.forEach(radio => radio.addEventListener('change', updateImages));
     roomRadios.forEach(radio => radio.addEventListener('change', updateImages));
     
-    // Add event listener for the toggle image
+    // Add event listener for the toggle and popup image
     toggleImageElement.addEventListener('click', () => {
+        updateImages(); // Call updateImages after toggling
+    });
+    popupImage.addEventListener('click', () => {
         updateImages(); // Call updateImages after toggling
     });
 
