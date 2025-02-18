@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style Exterior Facade.css" />
+    <link rel="stylesheet" href="../styles/basic.css" />
+    <link rel="stylesheet" href="../styles/caution_popup.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/switches.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/progress_bar.css" />
+    <link rel="stylesheet" href="../styles/exterior_mini_map.css" />
     <title>Resonance Acoustics - Listening Demonstrations</title>
     <link rel="icon" href="../Office%20Speech%20Privacy/Photos/RA_favicon.png" type="image/png"> <!-- Favicon -->
   </head>
   <body>
-    <script src="script Exterior Facade.js" defer></script>
+    <script src="../scripts/exterior_audio.js" defer></script>
+    <script src="../scripts/caution_popup.js" defer></script>
+    <script src="../scripts/dropdown_menu.js" defer></script>
+    <script src="../scripts/exterior_mini_map.js" defer></script>
+    <script src="../scripts/progress_bar.js" defer></script>
+    <script src="../scripts/unclickable_buttons.js" defer></script>
     <!--This is the website navigation bar at the top of the screen-->
     <header>
       <a href="../index.html"><img src="../Office%20Speech%20Privacy/Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
@@ -29,12 +40,168 @@
           </ul>
       </nav>
   </header>
-
-    <h1>Exterior Facade</h1>
-    <label class="toggle-switch">
-        <input type="checkbox" id="audioToggle">
-        <span class="slider"></span>
-    </label>
+  <div class="caution_popup">
+    <h2 id="popup_title">Caution</h2>
+    <p id="popup_content">The audio volume for this listening demonstration varies widely. For your safety, please use caution with the volume settings on your listening device.</p>
+    <img id="popup_image" class="play_button" style="cursor: pointer;"/>
+    <audio id="audio_demo" src="Audio/source-room-R.wav" preload="autio" loop></audio>
+    <div class="navigation">
+        <button id="left_arrow" class="nav_button">&lt;</button>
+        <button id="right_arrow" class="nav_button">&gt;</button>
+    </div>
+    <button class="close_button">Okay</button>
+</div>
+<div class="caution_cover"> <!-- Blocks acess to all other page functionality until the caution popup is closed--></div>
+<div id="content_wrapper">
+  <div class="flex-container"> <!-- New flex container -->
+        <!--Mini Map and Controls on the Left Side of the Screen-->
+        <div class="controls-container">
+            <div class="map-toggle" id="floorplan-menu">
+                <img class="floorplan_icon" src="Photos/Floorplan Icon.png">
+            </div>
+                <div class="title_container_volume">
+                  <h2 class="switch_title_volume">Source Type</h2>
+                </div>
+                <div class="multiple-choice">
+                    <label class="choice-button-speech">
+                        <input type="radio" name="Volume" value="Steady" checked>
+                        <span class="custom-radio"></span>
+                        <span class="choice-text">Steady State</span>
+                    </label>
+                    <label class="choice-button-speech">
+                        <input type="radio" name="Volume" value="Single">
+                        <span class="custom-radio"></span>
+                        <span class="choice-text">Single Event</span>
+                    </label>
+                </div>
+                <div class="title_container_wall">
+                    <h2 class="switch_title_wall">Window Glazing</h2>
+                  </div>
+                  <div class="multiple-choice">
+                      <label class="choice-button-wall">
+                          <input type="radio" name="Wall" value="1+1" id="Wall2">
+                          <span class="custom-radio"></span>
+                          <span class="choice-text">
+                              <div class="wall-1">Option 1</div>
+                          </span>
+                          <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
+                      </label>
+                      <label class="choice-button-wall-1-2">
+                          <input type="radio" name="Wall" value="1+2" id="Wall3">
+                          <span class="custom-radio"></span>
+                          <span class="choice-text">
+                              <div class="wall-2">Option 2</div>
+                          </span>
+                          <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
+                      </label>
+                      <label class="choice-button-wall-2-2">
+                          <input type="radio" name="Wall" value="2+2" id="Wall4">
+                          <span class="custom-radio"></span>
+                          <span class="choice-text">
+                              <div class="wall-3">Option 3</div>
+                          </span>
+                          <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
+                      </label>
+                  </div>
+                <div class="title_container_wall">
+                  <h2 class="switch_title_wall">Exterior Wall</h2>
+                </div>
+                <div class="multiple-choice">
+                    <label class="choice-button-wall">
+                        <input type="radio" name="Wall" value="1+1" id="Wall2">
+                        <span class="custom-radio"></span>
+                        <span class="choice-text">
+                            <div class="wall-1">1&1</div>
+                        </span>
+                        <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
+                    </label>
+                    <label class="choice-button-wall-1-2">
+                        <input type="radio" name="Wall" value="1+2" id="Wall3">
+                        <span class="custom-radio"></span>
+                        <span class="choice-text">
+                            <div class="wall-2">1&2</div>
+                        </span>
+                        <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
+                    </label>
+                    <label class="choice-button-wall-2-2">
+                        <input type="radio" name="Wall" value="2+2" id="Wall4">
+                        <span class="custom-radio"></span>
+                        <span class="choice-text">
+                            <div class="wall-3">2&2</div>
+                        </span>
+                        <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
+                    </label>
+                </div>
+        </div>
+        <div class="right-container"> <!-- New container for playback and listening path -->
+            <div class="listening-path-container"> <!-- Container for listening path title and image -->
+                <div class="help-container">
+                    <h1 class="background_title">Selected Listening Path</h1>
+                    <img id="help_button" src="Photos/round_help_button.png" alt="Help" />
+                </div>
+                <div class="grid">
+                    <div class="exterior">
+                        <label>
+                            <input type="radio" name="Room" value="exterior" checked>
+                            <img class="img-exterior" src="Photos/Minimap/exterior.png" alt="Background 3">
+                        </label>
+                    </div>
+                    <div class="interior">
+                        <label>
+                            <input type="radio" name="Room" value="interior">
+                            <img class="img-interior" src="Photos/Minimap/interior.png" alt="Background 1">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="playback-container">
+                <div class="toggle-container">
+                    <img id="toggle_Image" src="Photos/Play Button.png" alt="Pause Image" onclick="toggleImage(); playAudio()" />
+                </div>
+                <div class="progress-container">
+                    <div id="progress-subcontainer">
+                        <div id="progress-bar"></div>
+                    </div>
+                    <div id="time-progress-container">
+                        <span id="timestamp">0:00</span> / <span id="audiolength">0:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+    <!-- Partition Audio Elements --> 
+    <audio id="source-room-N" src="Audio/source-room-N.wav" preload="auto" loop></audio>
+    <audio id="source-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-N-1+1-OFF" src="Audio/receive-room-1-N-1+1-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-N-1+1-ON" src="Audio/receive-room-1-N-1+1-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-N-1+2-OFF" src="Audio/receive-room-1-N-1+2-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-N-1+2-ON" src="Audio/receive-room-1-N-1+2-ON.wav  " preload="auto" loop></audio>
+    <audio id="receive-room-1-N-2+2-OFF" src="Audio/receive-room-1-N-2+2-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-N-2+2-ON" src="Audio/receive-room-1-N-2+2-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-N-PH-OFF" src="Audio/receive-room-1-N-PH-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-N-PH-ON" src="Audio/receive-room-1-N-PH-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-R-1+1-OFF" src="Audio/receive-room-1-R-1+1-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-R-1+1-ON" src="Audio/receive-room-1-R-1+1-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-R-1+2-OFF" src="Audio/receive-room-1-R-1+2-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-R-1+2-ON" src="Audio/receive-room-1-R-1+2-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-R-2+2-OFF" src="Audio/receive-room-1-R-2+2-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-R-2+2-ON" src="Audio/receive-room-1-R-2+2-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-R-PH-OFF" src="Audio/receive-room-1-R-PH-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-1-R-PH-ON" src="Audio/receive-room-1-R-PH-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-N-SL-OFF" src="Audio/receive-room-2-N-SL-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-N-SL-ON" src="Audio/receive-room-2-N-SL-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-N-SW+-OFF" src="Audio/receive-room-2-N-SW+-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-N-SW+-ON" src="Audio/receive-room-2-N-SW+-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-N-SW-OFF" src="Audio/receive-room-2-N-SW-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-N-SW-ON" src="Audio/receive-room-2-N-SW-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-R-SL-OFF" src="Audio/receive-room-2-R-SL-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-R-SL-ON" src="Audio/receive-room-2-R-SL-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-R-SW+-OFF" src="Audio/receive-room-2-R-SW+-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-R-SW+-ON" src="Audio/receive-room-2-R-SW+-ON.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-R-SW-OFF" src="Audio/receive-room-2-R-SW-OFF.wav" preload="auto" loop></audio>
+    <audio id="receive-room-2-R-SW-ON" src="Audio/receive-room-2-R-SW-ON.wav" preload="auto" loop></audio>
+  </div>
+</div>
   <footer>
       <div class="footer-wrapper">
           <div class="footer-top">

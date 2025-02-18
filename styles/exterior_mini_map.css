@@ -1,0 +1,90 @@
+/* Mini Map Styling */
+.controls-container {
+    position: relative;
+    height: 70vh;
+    width: 30%;
+    left: 0;
+    background-color:#f0f0f0;
+    padding: 10px; /* Padding inside the mini-map */
+    padding-right: 0px;
+    padding-left: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000; /* Ensure it stays on top */
+    align-content: center;
+}
+
+.mini-map-title {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Font size for the title */
+    padding-bottom: 5px; /* Space between title and mini-map */
+    z-index: 1001; /* Ensure it stays on top of the mini-map */
+}
+
+:root {
+    --row-1-height: 400px;
+    
+    --column-1-width: calc(var(--row-1-height) * 0.4);
+    --column-2-width: calc(var(--row-1-height) * 0.6);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: var(--column-1-width) var(--column-2-width);
+    grid-template-rows: var(--row-1-height);
+    gap: 0; /* No gap between grid items */
+    padding-left: 10px;
+}
+
+.interior {
+    grid-column: 2; 
+    grid-row: 1; 
+}
+
+.exterior {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Different sizes for each image */
+.img-interior {
+    width: var(--column-2-width);
+    height: var(--row-1-height);
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s
+}
+.img-interior:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
+}
+.img-exterior {
+    width: var(--column-1-width);
+    height: var(--row-1-height);
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s
+}
+.img-exterior:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
+}
+
+/* Mini Map Toggle Button */
+.map-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.map-toggle .floorplan_icon {
+    height: 50px;
+    width: 50px;
+}
+
+.close-map {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: grey; /* Text color */
+    font-size: 24px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    align-self: flex-start; /* Align to the start of the mini map */
+    display: none; /* Hide by default */
+}
+
