@@ -21,22 +21,22 @@ function playAudio() {
     // Play a random sound first
     playSelectSound();
 
-    // Get selected options from Volume, Wall,and Room
-    const Volume = document.querySelector('input[name="Volume"]:checked').value;
+    // Get selected options from source-type, Wall,and Room
+    const source_type = document.querySelector('input[name="source-type"]:checked').value;
     const Wall = document.querySelector('input[name="Wall"]:checked').value;
     const Room = document.querySelector('input[name="Room"]:checked').value;
     const Floor = document.querySelector('input[name="Floor"]:checked').value;
     // Determine which audio to play based on the selected options
-    console.log(`Volume: ${Volume}, Wall: ${Wall}, Room: ${Room}, Floor: ${Floor}`);
+    console.log(`source-type: ${source_type}, Wall: ${Wall}, Room: ${Room}, Floor: ${Floor}`);
     let audioToPlay;
         if (Room === "source-room") {
-            audioToPlay = `party-source-${Volume}`;
+            audioToPlay = `party-source-L`;
         }
         if (Room === "receive-room-1") {
-            audioToPlay = `${Wall}-${Volume}`;
+            audioToPlay = `${Wall}-L`;
         }
         if (Room === "receive-room-2") {
-            audioToPlay = `${Floor}-${Volume}`;
+            audioToPlay = `${Floor}-L`;
         }
 
     // Play the selected Audio
