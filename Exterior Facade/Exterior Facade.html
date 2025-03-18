@@ -20,7 +20,6 @@
     <script src="../scripts/dropdown_menu.js" defer></script>
     <script src="../scripts/exterior_mini_map.js" defer></script>
     <script src="../scripts/progress_bar.js" defer></script>
-    <script src="../scripts/unclickable_buttons.js" defer></script>
     <!--This is the website navigation bar at the top of the screen-->
     <header>
       <a href="../index.html"><img src="../Office%20Speech%20Privacy/Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
@@ -44,7 +43,7 @@
     <h2 id="popup_title">Caution</h2>
     <p id="popup_content">The audio volume for this listening demonstration varies widely. For your safety, please use caution with the volume settings on your listening device.</p>
     <img id="popup_image" class="play_button" style="cursor: pointer;"/>
-    <audio id="audio_demo" src="Audio/source-room-R.wav" preload="autio" loop></audio>
+    <audio id="audio_demo" src="Audio/exterior_facade_soundscape.wav" preload="auto" loop></audio>
     <div class="navigation">
         <button id="left_arrow" class="nav_button">&lt;</button>
         <button id="right_arrow" class="nav_button">&gt;</button>
@@ -59,66 +58,64 @@
             <div class="map-toggle" id="floorplan-menu">
                 <img class="floorplan_icon" src="Photos/Floorplan Icon.png">
             </div>
-                <div class="title_container_volume">
-                  <h2 class="switch_title_volume">Source Type</h2>
-                </div>
-                <div class="multiple-choice">
-                    <label class="choice-button-speech">
-                        <input type="radio" name="Volume" value="Steady" checked>
-                        <span class="custom-radio"></span>
-                        <span class="choice-text">Steady State</span>
-                    </label>
-                    <label class="choice-button-speech">
-                        <input type="radio" name="Volume" value="Single">
-                        <span class="custom-radio"></span>
-                        <span class="choice-text">Single Event</span>
-                    </label>
-                </div>
-                <div class="title_container_wall">
-                    <h2 class="switch_title_wall">Window Glazing</h2>
-                  </div>
-                  <div class="multiple-choice">
-                      <label class="choice-button-wall">
-                          <input type="radio" name="Wall" value="1+1" id="Wall1">
-                          <span class="custom-radio"></span>
-                          <span class="choice-text">
-                              <div class="wall-1">Option 1</div>
-                          </span>
-                          <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
-                      </label>
-                      <label class="choice-button-wall-1-2">
-                          <input type="radio" name="Wall" value="1+2" id="Wall2">
-                          <span class="custom-radio"></span>
-                          <span class="choice-text">
-                              <div class="wall-2">Option 2</div>
-                          </span>
-                          <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
-                      </label>
-                      <label class="choice-button-wall-2-2">
-                          <input type="radio" name="Wall" value="2+2" id="Wall3">
-                          <span class="custom-radio"></span>
-                          <span class="choice-text">
-                              <div class="wall-3">Option 3</div>
-                          </span>
-                          <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
-                      </label>
-                      <label class="choice-button-wall-2-2">
-                        <input type="radio" name="Wall" value="2+2" id="Wall4">
-                        <span class="custom-radio"></span>
-                        <span class="choice-text">
-                            <div class="wall-3">Option 4</div>
-                        </span>
-                        <div class="color-rectangle" style="background-color: rgb(202, 0, 10);"></div>
-                    </label>
-                    <label class="choice-button-wall-2-2">
-                        <input type="radio" name="Wall" value="2+2" id="Wall5">
-                        <span class="custom-radio"></span>
-                        <span class="choice-text">
-                            <div class="wall-3">Option 5</div>
-                        </span>
-                        <div class="color-rectangle" style="background-color: rgb(206, 221, 0);"></div>
-                    </label>
-                  </div>
+            <div class="title_container_wall">
+                <h2 class="switch_title_wall">Punched Windows</h2>
+            </div>
+            <div class="multiple-choice">
+                <label class="choice-button-wall">
+                    <input type="radio" name="Window" value="window_1_4" id="Window1" checked>
+                    <span class="custom-radio"></span>
+                    <span class="choice-text">
+                        <div class="wall-1">STC 31: 1/4" plate glass</div>
+                    </span>
+                    <div class="color-rectangle" style="background-color: rgb(255, 153, 204);"></div>
+                </label>
+                <label class="choice-button-wall-1-2">
+                    <input type="radio" name="Window" value="window_1_4x1_2x1_4" id="Window2">
+                    <span class="custom-radio"></span>
+                    <span class="choice-text">
+                        <div class="wall-2">STC 35: 1/4" + 1/2" air + 1/4"</div>
+                    </span>
+                    <div class="color-rectangle" style="background-color: rgb(119, 221, 119);"></div>
+                </label>
+                <label class="choice-button-wall-2-2">
+                    <input type="radio" name="Window" value="window_5_16x1_2x3_16_1&2" id="Window3">
+                    <span class="custom-radio"></span>
+                    <span class="choice-text">
+                        <div class="wall-3">STC 42: 5/16" lam + 1/2" air + 3/16"</div>
+                    </span>
+                    <div class="color-rectangle" style="background-color: rgb(173, 216, 230);"></div>
+                </label>
+                <label class="choice-button-wall-2-2">
+                    <input type="radio" name="Window" value="window_5_16x1_2x3_16_2&2" id="Window4">
+                    <span class="custom-radio"></span>
+                    <span class="choice-text">
+                        <div class="wall-3">STC 42: 5/16" lam + 1/2" air + 3/16" + 2&2 Wall</div>
+                    </span>
+                    <div class="color-rectangle" style="background-color: rgb(249, 249, 155);"></div>
+                </label>
+            </div>
+            <div class="title_container_wall">
+                <h2 class="switch_title_wall">Curtain & Window Walls</h2>
+            </div>
+            <div class="multiple-choice">
+                <label class="choice-button-wall">
+                    <input type="radio" name="Window" value="curtain_wall" id="Window5">
+                    <span class="custom-radio"></span>
+                    <span class="choice-text">
+                        <div class="wall-1">STC 35: Curtain Wall</div>
+                    </span>
+                    <div class="color-rectangle" style="background-color: rgb(200, 162, 255);"></div>
+                </label>
+                <label class="choice-button-wall-1-2">
+                    <input type="radio" name="Window" value="window_wall" id="Window6">
+                    <span class="custom-radio"></span>
+                    <span class="choice-text">
+                        <div class="wall-2">STC 39: Window Wall</div>
+                    </span>
+                    <div class="color-rectangle" style="background-color: rgb(255, 204, 153);"></div>
+                </label>
+            </div>
         </div>
         <div class="right-container"> <!-- New container for playback and listening path -->
             <div class="listening-path-container"> <!-- Container for listening path title and image -->
@@ -127,16 +124,21 @@
                     <img id="help_button" src="Photos/round_help_button.png" alt="Help" />
                 </div>
                 <div class="grid">
+                    <div class="source">
+                        <label>
+                            <img class="img-source" src="Photos/Minimap/source.png" alt="Source">
+                        </label>
+                    </div>
                     <div class="exterior">
                         <label>
                             <input type="radio" name="Room" value="exterior" checked>
-                            <img class="img-exterior" src="Photos/Minimap/exterior.png" alt="Background 3">
+                            <img class="img-exterior" src="Photos/Minimap/exterior_selected.png" alt="Exterior">
                         </label>
                     </div>
                     <div class="interior">
                         <label>
                             <input type="radio" name="Room" value="interior">
-                            <img class="img-interior" src="Photos/Minimap/interior.png" alt="Background 1">
+                            <img class="img-interior" src="Photos/Minimap/window_1_4_unselected.png" alt="Interior">
                         </label>
                     </div>
                 </div>
@@ -157,36 +159,13 @@
         </div>
   
     <!-- Partition Audio Elements --> 
-    <audio id="source-room-N" src="Audio/source-room-N.wav" preload="auto" loop></audio>
-    <audio id="source-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-1+1-OFF" src="Audio/receive-room-1-N-1+1-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-1+1-ON" src="Audio/receive-room-1-N-1+1-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-1+2-OFF" src="Audio/receive-room-1-N-1+2-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-1+2-ON" src="Audio/receive-room-1-N-1+2-ON.wav  " preload="auto" loop></audio>
-    <audio id="receive-room-1-N-2+2-OFF" src="Audio/receive-room-1-N-2+2-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-2+2-ON" src="Audio/receive-room-1-N-2+2-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-PH-OFF" src="Audio/receive-room-1-N-PH-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-N-PH-ON" src="Audio/receive-room-1-N-PH-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-1+1-OFF" src="Audio/receive-room-1-R-1+1-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-1+1-ON" src="Audio/receive-room-1-R-1+1-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-1+2-OFF" src="Audio/receive-room-1-R-1+2-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-1+2-ON" src="Audio/receive-room-1-R-1+2-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-2+2-OFF" src="Audio/receive-room-1-R-2+2-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-2+2-ON" src="Audio/receive-room-1-R-2+2-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-PH-OFF" src="Audio/receive-room-1-R-PH-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-1-R-PH-ON" src="Audio/receive-room-1-R-PH-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SL-OFF" src="Audio/receive-room-2-N-SL-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SL-ON" src="Audio/receive-room-2-N-SL-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SW+-OFF" src="Audio/receive-room-2-N-SW+-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SW+-ON" src="Audio/receive-room-2-N-SW+-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SW-OFF" src="Audio/receive-room-2-N-SW-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-N-SW-ON" src="Audio/receive-room-2-N-SW-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SL-OFF" src="Audio/receive-room-2-R-SL-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SL-ON" src="Audio/receive-room-2-R-SL-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SW+-OFF" src="Audio/receive-room-2-R-SW+-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SW+-ON" src="Audio/receive-room-2-R-SW+-ON.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SW-OFF" src="Audio/receive-room-2-R-SW-OFF.wav" preload="auto" loop></audio>
-    <audio id="receive-room-2-R-SW-ON" src="Audio/receive-room-2-R-SW-ON.wav" preload="auto" loop></audio>
+    <audio id="exterior_facade_soundscape" src="Audio/exterior_facade_soundscape.wav" preload="auto" loop></audio>
+    <audio id="window_1_4" src="Audio/window_1_4.wav" preload="auto" loop></audio>
+    <audio id="window_1_4x1_2x1_4" src="Audio/window_1_4x1_2x1_4.wav" preload="auto" loop></audio>
+    <audio id="window_5_16x1_2x3_16_1&2" src="Audio/window_5_16x1_2x3_16_1&2.wav" preload="auto" loop></audio>
+    <audio id="window_5_16x1_2x3_16_2&2" src="Audio/window_5_16x1_2x3_16_2&2.wav" preload="auto" loop></audio>
+    <audio id="curtain_wall" src="Audio/curtain_wall.wav" preload="auto" loop></audio>
+    <audio id="window_wall" src="Audio/window_wall.wav" preload="auto" loop></audio>
   </div>
 </div>
   <footer>

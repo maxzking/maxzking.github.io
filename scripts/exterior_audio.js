@@ -44,25 +44,17 @@ function playAudio() {
     // Play a random sound first
     playSelectSound();
 
-    // Get selected options from Volume, Wall,and Room
-    const Volume = document.querySelector('input[name="Volume"]:checked').value;
-    const Wall = document.querySelector('input[name="Wall"]:checked').value;
+    // Get selected options from Volume, Window,and Room
+    const Window = document.querySelector('input[name="Window"]:checked').value;
     const Room = document.querySelector('input[name="Room"]:checked').value;
-    const Door = document.querySelector('input[name="Door"]:checked').value;
-    // Get the value of the toggle switch
-    const MaskingToggle = document.getElementById('Masking');
-    const Masking = MaskingToggle.checked ? 'ON' : 'OFF'; // Set value based on checked state
     // Determine which audio to play based on the selected options
-    console.log(`Volume: ${Volume}, Wall: ${Wall}, Masking: ${Masking}, Room: ${Room}, Door: ${Door}`);
+    console.log(`Window: ${Window}, Room: ${Room}`);
     let audioToPlay;
         if (Room === "exterior") {
-            audioToPlay = `exterior-${Volume}`;
+            audioToPlay = `exterior_facade_soundscape`;
         }
         if (Room === "interior") {
-            audioToPlay = `interior-${Volume}-${Wall}-${Masking}`;
-        }
-        if (Room === "receive-room-2") {
-            audioToPlay = `receive-room-2-${Volume}-${Door}-${Masking}`;
+            audioToPlay = `${Window}`;
         }
 
     // Play the selected Audio
