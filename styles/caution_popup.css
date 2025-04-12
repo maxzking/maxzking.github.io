@@ -12,14 +12,13 @@
     padding: 10px;
     padding-top: 30px;
     z-index: 1010;
-    opacity: 1; /* Start visible */
-    visibility: visible; /* Allow interaction when visible */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Transition for fade effect */
+    opacity: 0; /* Start invisible */
+    visibility: hidden; /* Prevent interaction when hidden */
 }
 
 .caution_popup.active {
-    opacity: 0; /* Fade out */
-    visibility: hidden; /* Prevent interaction when hidden */
+    opacity: 1; /* Make visible */
+    visibility: visible; /* Allow interaction when visible */
 }
 
 #popup_image {
@@ -45,14 +44,14 @@
     height: calc(100% - 88px);
     background-color: rgba(255, 255, 255, 0.7);
     z-index: 1009;
-    opacity: 1; /* Start visible */
-    visibility: visible; /* Allow interaction when visible */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Transition for fade effect */
+    opacity: 0; /* Start invisible */
+    visibility: hidden; /* Prevent interaction when hidden */
 }
 
+
 .caution_cover.active {
-    opacity: 0; /* Fade out */
-    visibility: hidden; /* Prevent interaction when hidden */
+    opacity: 1; /* Make visible */
+    visibility: visible; /* Allow interaction when visible */
 }
 
 .navigation {

@@ -25,7 +25,7 @@
     <!--This is the website navigation bar at the top of the screen-->
     <header>
       <a href="../index.html"><img src="../Office%20Speech%20Privacy/Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
-      <h2>Resonance Acoustics - Listening Demonstrations</h2>
+      <h2>Resonance Acoustics Simulations</h2>
       <nav>
           <div class="menu-toggle" id="mobile-menu">
               <span class="bar"></span>
@@ -83,7 +83,7 @@
                         <input type="radio" name="Wall" value="SS-22" id="Wall" checked>
                         <span class="custom-radio"></span>
                         <span class="choice-text">
-                            <div class="PH">Single Stud, 2 & 2</div>
+                            <div class="PH">STC 45 (Single-Stud, Two Layers Each Side)</div>
                         </span>
                         <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
                     </label>
@@ -91,7 +91,7 @@
                         <input type="radio" name="Wall" value="DS-11" id="Wall">
                         <span class="custom-radio"></span>
                         <span class="choice-text">
-                            <div class="wall-1">Double Stud, 1 & 1</div>
+                            <div class="wall-1">STC 55 (Double-stud, One Layer Each Side)</div>
                         </span>
                         <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
                     </label>
@@ -99,7 +99,7 @@
                         <input type="radio" name="Wall" value="DS-22" id="Wall">
                         <span class="custom-radio"></span>
                         <span class="choice-text">
-                            <div class="wall-2">Double Stud, 2 & 2</div>
+                            <div class="wall-2">STC 60 (Double-Stud, Two Layers Each Side)</div>
                         </span>
                         <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
                     </label>
@@ -111,27 +111,33 @@
                   <label class="choice-button-floor">
                       <input type="radio" name="Floor" value="SS-22" class="floor-option" checked>
                       <span class="custom-radio"></span>
-                      <span class="choice-text">Option 1</span>
+                      <span class="choice-text">STC 50/IIC 40 (LVT over 1" Gypsum Concrete, Resilient Channel Ceiling)</span>
                       <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
                   </label>
                   <label class="choice-button-floor">
                       <input type="radio" name="Floor" value="DS-11" class="floor-option">
                       <span class="custom-radio"></span>
-                      <span class="choice-text">Option 2</span>
+                      <span class="choice-text">STC 55/IIC 50 (Tile/hardwood over 1" Gypsum Concrete and 0.25" Underlayment, Single-Layer Resilient Channel Ceiling)</span>
                       <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
                   </label>
                   <label class="choice-button-floor">
                       <input type="radio" name="Floor" value="DS-22" class="floor-option">
                       <span class="custom-radio"></span>
-                      <span class="choice-text">Option 3</span>
+                      <span class="choice-text">STC 55/IIC 55 (LVT over 1" Gypsum Concrete and 0.25" Underlayment, Single-Layer Resilient Channel Ceiling)</span>
                       <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
                   </label>
+                  <label class="choice-button-floor">
+                    <input type="radio" name="Floor" value="DS-??" class="floor-option">
+                    <span class="custom-radio"></span>
+                    <span class="choice-text">STC 55/IIC 60(LVT over 1" Gypsum Concrete and 0.25" Underlayment, Single-Layer Clip Ceiling)</span>
+                    <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
+                </label>
                 </div>     
         </div>
         <div class="right-container"> <!-- New container for playback and listening path -->
             <div class="listening-path-container"> <!-- Container for listening path title and image -->
                 <div class="help-container">
-                    <h1 class="background_title">Selected Listening Path</h1>
+                    <h1 class="background_title">Simulation Location</h1>
                     <img id="help_button" src="Photos/round_help_button.png" alt="Help" />
                 </div>
                 <div class="grid"> <!--This is a 7x7 grid, so there are 49 div elements-->
@@ -319,12 +325,9 @@
     <audio id="SS-22-N" src="Audio/SS-22-N.wav" preload="auto" loop></audio>
   </div>
 </div>
-  <footer>
+<footer>
     <div class="footer-wrapper">
         <div class="footer-top">
-            <div class="footer-col1">
-                <a href="../index.html"><img src="https://resonanceac.com/wp-content/themes/resonance/images/logo-footer.png" alt=""></a>
-            </div>
             <div class="footer-col2">
                 <h5>SAN FRANCISCO</h5>
                 <p>364 Bush Street, 2nd Floor</p>
@@ -343,29 +346,6 @@
                     <a href="mailto: info.la@resonanceac.com"> E: info.la@resonanceac.com</a>
                 </p>
             </div>
-            <div class="footer-col4">
-                <div class="menu-footer-menu-container">
-                    <ul id="footer_menu_id" class="footer-menu">
-                        <li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"></li>
-                            <a href="https://resonanceac.com/services/">Services</a>
-                        <li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"></li>
-                            <a href="https://resonanceac.com/about/history/">About</a>
-                        <li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"></li>
-                            <a href="https://resonanceac.com/portfolio/">Portfolio</a>
-                        <li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"></li>
-                            <a href="https://resonanceac.com/news-resources/">News &amp; Resources</a>
-                        <li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"></li>
-                            <a href="https://resonanceac.com/contact-us/">Contact Us</a>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-col5">
-                <h5> We're Social</h5>
-                <p>
-                    <a href="https://instagram.com/resonanceacoustics?igshid=NTc4MTIwNjQ2YQ==" target="_blank"> <img decoding="async" src="https://resonanceac.com/wp-content/themes/resonance/images/inst.png" alt=""> </a>
-                    <a href="https://www.linkedin.com/company/resonanceac" target="_blank"><img decoding="async" src="https://resonanceac.com/wp-content/themes/resonance/images/in.png" alt=""> </a>
-                </p>
-            </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-lt">
@@ -378,5 +358,4 @@
             </div>
         </div>
     </div>
-</footer>
   </body>

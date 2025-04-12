@@ -22,7 +22,7 @@
   <!--This is the website navigation bar at the top of the screen-->
   <header>
       <a href="../index.html"><img src="Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
-      <h2>Resonance Acoustics - Listening Demonstrations</h2>
+      <h2>Resonance Acoustics Simulations</h2>
       <nav>
           <div class="menu-toggle" id="mobile-menu">
               <span class="bar"></span>
@@ -42,14 +42,13 @@
         <h2 id="popup_title">Caution</h2>
         <p id="popup_content">The audio volume for this listening demonstration varies widely. For your safety, please use caution with the volume settings on your listening device.</p>
         <img id="popup_image" class="play_button" style="cursor: pointer;"/>
-        <audio id="audio_demo" src="Audio/source-room-R.wav" preload="autio" loop></audio>
         <div class="navigation">
             <button id="left_arrow" class="nav_button">&lt;</button>
             <button id="right_arrow" class="nav_button">&gt;</button>
         </div>
         <button class="close_button">Okay</button>
     </div>
-  <div class="caution_cover"> <!-- Blocks acess to all other page functionality until the caution popup is closed--></div>
+  <div class="caution_cover"> <!-- Blocks access to all other page functionality until the caution popup is closed--></div>
   <div id="content_wrapper">
       <div class="flex-container"> <!-- New flex container -->
             <!--Mini Map and Controls on the Left Side of the Screen-->
@@ -90,7 +89,7 @@
                             <input type="radio" name="Wall" value="PH" id="Wall1" checked>
                             <span class="custom-radio"></span>
                             <span class="choice-text">
-                                <div class="PH">Partial Height</div>
+                                <div class="PH">STC 35 Partial-Height</div>
                             </span>
                             <div class="color-rectangle" style="background-color: rgb(128, 64, 64);"></div> 
                         </label>
@@ -98,7 +97,7 @@
                             <input type="radio" name="Wall" value="1+1" id="Wall2">
                             <span class="custom-radio"></span>
                             <span class="choice-text">
-                                <div class="wall-1">1&1</div>
+                                <div class="wall-1">STC 40 Single Layer Full-Height</div>
                             </span>
                             <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
                         </label>
@@ -106,7 +105,7 @@
                             <input type="radio" name="Wall" value="1+2" id="Wall3">
                             <span class="custom-radio"></span>
                             <span class="choice-text">
-                                <div class="wall-2">1&2</div>
+                                <div class="wall-2">STC 42 Double Layer One Side</div>
                             </span>
                             <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
                         </label>
@@ -114,7 +113,7 @@
                             <input type="radio" name="Wall" value="2+2" id="Wall4">
                             <span class="custom-radio"></span>
                             <span class="choice-text">
-                                <div class="wall-3">2&2</div>
+                                <div class="wall-3">STC 45 Double Layer Both Sides</div>
                             </span>
                             <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
                         </label>
@@ -143,8 +142,8 @@
             <div class="right-container"> <!-- New container for playback and listening path -->
                 <div class="listening-path-container"> <!-- Container for listening path title and image -->
                     <div class="help-container">
-                        <h1 class="background_title">Selected Listening Path</h1>
-                        <img id="help_button" src="Photos/round_help_button.png" alt="Help" />
+                        <h1 class="background_title">Listening Location</h1>
+                        <img id="help_button" src="Photos/round_help_button.png" alt="Help">
                     </div>
                     <div class="grid">
                         <div class="receive-room-1">
@@ -216,64 +215,38 @@
       </div>
   </div>
   <footer>
-      <div class="footer-wrapper">
-          <div class="footer-top">
-              <div class="footer-col1">
-                  <a href="../index.html"><img src="https://resonanceac.com/wp-content/themes/resonance/images/logo-footer.png" alt=""></a>
-              </div>
-              <div class="footer-col2">
-                  <h5>SAN FRANCISCO</h5>
-                  <p>364 Bush Street, 2nd Floor</p>
-                  <p>San Francisco, CA 94104</p>
-                  <p>
-                      <a href="tel+415 693 9800">P: 415 693 9800</a>
-                      <a href="mailto: info.sf@resonanceac.com"> E: info.sf@resonanceac.com</a>
-                  </p>
-              </div>
-              <div class="footer-col3">
-                  <h5>LOS ANGELES</h5>
-                  <p>610 E. Franklin Avenue</p>
-                  <p>Ell Segundo, CA 94025</p>
-                  <p>
-                      <a href="tel+310 821 9200">P: 310 821 9200</a>
-                      <a href="mailto: info.la@resonanceac.com"> E: info.la@resonanceac.com</a>
-                  </p>
-              </div>
-              <div class="footer-col4">
-                  <div class="menu-footer-menu-container">
-                      <ul id="footer_menu_id" class="footer-menu">
-                          <li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"></li>
-                              <a href="https://resonanceac.com/services/">Services</a>
-                          <li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"></li>
-                              <a href="https://resonanceac.com/about/history/">About</a>
-                          <li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"></li>
-                              <a href="https://resonanceac.com/portfolio/">Portfolio</a>
-                          <li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"></li>
-                              <a href="https://resonanceac.com/news-resources/">News &amp; Resources</a>
-                          <li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"></li>
-                              <a href="https://resonanceac.com/contact-us/">Contact Us</a>
-                      </ul>
-                  </div>
-              </div>
-              <div class="footer-col5">
-                  <h5> We're Social</h5>
-                  <p>
-                      <a href="https://instagram.com/resonanceacoustics?igshid=NTc4MTIwNjQ2YQ==" target="_blank"> <img decoding="async" src="https://resonanceac.com/wp-content/themes/resonance/images/inst.png" alt=""> </a>
-                      <a href="https://www.linkedin.com/company/resonanceac" target="_blank"><img decoding="async" src="https://resonanceac.com/wp-content/themes/resonance/images/in.png" alt=""> </a>
-                  </p>
-              </div>
-          </div>
-          <div class="footer-bottom">
-              <div class="footer-bottom-lt">
-              © 2025 RESONANCE ACOUSTICS. All Rights Reseved. &nbsp; | &nbsp; 
-              <a href="/privacy-policy"> Privacy Policy </a> &nbsp; | &nbsp; 
-              <a href="/terms-conditions"> Terms &amp; Conditions </a>
-              </div>
-              <div class="footer-bottom-rt">
-                  <span>Website by <a href="https://statewp.com/"> StateWP </a> </span>
-              </div>
-          </div>
-      </div>
-  </footer>
+    <div class="footer-wrapper">
+        <div class="footer-top">
+            <div class="footer-col2">
+                <h5>SAN FRANCISCO</h5>
+                <p>364 Bush Street, 2nd Floor</p>
+                <p>San Francisco, CA 94104</p>
+                <p>
+                    <a href="tel+415 693 9800">P: 415 693 9800</a>
+                    <a href="mailto: info.sf@resonanceac.com"> E: info.sf@resonanceac.com</a>
+                </p>
+            </div>
+            <div class="footer-col3">
+                <h5>LOS ANGELES</h5>
+                <p>610 E. Franklin Avenue</p>
+                <p>Ell Segundo, CA 94025</p>
+                <p>
+                    <a href="tel+310 821 9200">P: 310 821 9200</a>
+                    <a href="mailto: info.la@resonanceac.com"> E: info.la@resonanceac.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-lt">
+            © 2025 RESONANCE ACOUSTICS. All Rights Reseved. &nbsp; | &nbsp; 
+            <a href="/privacy-policy"> Privacy Policy </a> &nbsp; | &nbsp; 
+            <a href="/terms-conditions"> Terms &amp; Conditions </a>
+            </div>
+            <div class="footer-bottom-rt">
+                <span>Website by <a href="https://statewp.com/"> StateWP </a> </span>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

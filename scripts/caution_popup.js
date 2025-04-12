@@ -6,33 +6,13 @@ const audioDemo = document.getElementById('audio_demo');
 const playButton = document.getElementById('popup_image');
 const toggleImagePicture = document.getElementById('toggle_Image');
 
-// Instructions Array
+// Help Array
 const instructions = [
     {
-        title: "Instruction 1/5",
-        content: "Press play on the test audio below and adjust your listening device to a comfortable volume. The volume in this listening demonstration varies widely. For your safety, please use caution with the volume settings on your listening device.",
+        title: "Help",
+        content: "Select your Listening Location and press play to hear the audio. Select the Simulation Options to hear the differences based on each Simulation Location. The content will loop until you tap pause. The audio is calibrated to a default 50% volume. Use safety when adjusting the volume. ",
         img: "Photos/Play Button.png"
     },
-    {
-        title: "Instruction 2/5",
-        content: "The Selected Listening Path shows the source room (where the office conversation is happening) and the selected room (your location is highlighted in orange).",
-        img: "Photos/Instructions/selected_listening_path.png"
-    },
-    {
-        title: "Instruction 3/5",
-        content: "Use the mini-map on the left side of the screen to select which room you are listening from.",
-        img: "Photos/Instructions/mini-map.png"
-    },
-    {
-        title: "Instruction 4/5",
-        content: "Use the controls on the left side of the screen to change the volume of the source and the partitions between source and receive rooms.",
-        img: "Photos/Instructions/volume_settings.png"
-    },
-    {
-        title: "Instruction 5/5",
-        content: "Use the playbar at the bottom of the screen to scroll through and Pause/Play the audio.",
-        img: "Photos/Instructions/playbar.png"
-    }
 ];
 
 let currentIndex = 0;
@@ -58,16 +38,16 @@ function updatePopup() {
 
 // Function to show the caution popup
 function showCautionPopup() {
-    cautionPopup.classList.remove('active');
-    cautionCover.classList.remove('active');
+    cautionPopup.classList.add('active'); // Add active class to show
+    cautionCover.classList.add('active'); // Add active class to show
     document.body.classList.add('no-scroll'); // Disable scrolling
     updatePopup(); // Initialize the popup with the first instruction
 }
 
 // Function to hide the caution popup
 function hideCautionPopup() {
-    cautionPopup.classList.add('active');
-    cautionCover.classList.add('active');
+    cautionPopup.classList.remove('active'); // Remove active class to hide
+    cautionCover.classList.remove('active'); // Remove active class to hide
     document.body.classList.remove('no-scroll'); // Enable scrolling
 }
 
