@@ -30,13 +30,13 @@ function playAudio() {
     console.log(`source-type: ${source_type}, Wall: ${Wall}, Room: ${Room}, Floor: ${Floor}`);
     let audioToPlay;
         if (Room === "source-room") {
-            audioToPlay = `party-source-L`;
+            audioToPlay = `party-source`;
         }
         if (Room === "receive-room-1") {
-            audioToPlay = `${Wall}-L`;
+            audioToPlay = `${Wall}`;
         }
         if (Room === "receive-room-2") {
-            audioToPlay = `${Floor}-L`;
+            audioToPlay = `${Floor}`;
         }
 
     // Play the selected Audio

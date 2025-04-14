@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     roomRadios.forEach(radio => radio.addEventListener('change', updateImages));
 
     function updateImages() {
-        const selectedRoom1 = document.querySelector('input[name="Room"][value="receive-room-1"]').checked;
-        const selectedRoom2 = document.querySelector('input[name="Room"][value="receive-room-2"]').checked;
+        const selectedRoom1 = document.querySelector('input[name="Room"][value="receive1"]').checked;
+        const selectedRoom2 = document.querySelector('input[name="Room"][value="receive2"]').checked;
         const selectedSourceRoom = document.querySelector('input[name="Room"][value="source-room"]').checked;
         const Room = document.querySelector('input[name="Room"]:checked').value;
         const wall = document.querySelector('input[name="Wall"]:checked').value;
@@ -52,50 +52,46 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update Source Room Image
         const sourceImage = document.querySelector('.img-source-room');
         sourceImage.src = getSourceImage(selectedSourceRoom, wall, door);
-
-        // Update Background Image
-        var listening_path = document.querySelector('.listening_path');
-        listening_path.src = getListeningImage(Room, wall, door, masking);
     }
     
 
     function getRoom1Image(room, wall, door, masking) {
-        if (room === true && door === 'SW+') {
-            return `Photos/Minimap/S${wall}SW-${masking}-1.png`;
+        if (room === true && door === 'Sliding Glass') {
+            return `Photos/Minimap/S-${wall}-${door}-${masking}-1.png`;
         } else if (room === true) {
-            return `Photos/Minimap/S${wall}${door}-${masking}-1.png`;
-        } else if (room === false && door === 'SW+') {
-            return `Photos/Minimap/U${wall}SW-${masking}-1.png`;
+            return `Photos/Minimap/S-${wall}-SW-${masking}-1.png`;
+        } else if (room === false && door === 'Sliding Glass') {
+            return `Photos/Minimap/U-${wall}-${door}-${masking}-1.png`;
         } else if (room === false) {
-            return `Photos/Minimap/U${wall}${door}-${masking}-1.png`;
+            return `Photos/Minimap/U-${wall}-SW-${masking}-1.png`;
         } 
     }
 
     function getRoom2Image(room, door, masking) {
-        if (room === true && door === 'SW+') {
-            return `Photos/Minimap/SASW-${masking}-2.png`;
+        if (room === true && door === 'Sliding Glass') {
+            return `Photos/Minimap/SA-${door}-${masking}-2.png`;
         } else if (room === true) {
-            return `Photos/Minimap/SA${door}-${masking}-2.png`;
-        } else if (room === false && door === 'SW+') {
-            return `Photos/Minimap/UASW-${masking}-2.png`;
+            return `Photos/Minimap/SA-SW-${masking}-2.png`;
+        } else if (room === false && door === 'Sliding Glass') {
+            return `Photos/Minimap/UA-${door}-${masking}-2.png`;
         } else if (room === false) {
-            return `Photos/Minimap/UA${door}-${masking}-2.png`;
+            return `Photos/Minimap/UA-SW-${masking}-2.png`;
         }
     }
 
     function getSourceImage(room, wall, door) {
-        if (room === true && door === 'SL') {
-            return `Photos/Minimap/SA${door}-OFF-S.png`;
-        } else if (room === false && door === 'SL') {
-            return `Photos/Minimap/UA${door}-OFF-S.png`;
-        } else if (room === true && door === 'SW') {
-            return `Photos/Minimap/S${wall}${door}-OFF-S.png`;
-        } else if (room === true && door === 'SW+') {
-            return `Photos/Minimap/S${wall}SW-OFF-S.png`;
-        } else if (room === false && door === 'SW') {
-            return `Photos/Minimap/U${wall}${door}-OFF-S.png`;
-        } else if (room === false && door === 'SW+') {
-            return `Photos/Minimap/U${wall}SW-OFF-S.png`;
+        if (room === true && door === 'Sliding Glass') {
+            return `Photos/Minimap/SA-${door}-OFF-S.png`;
+        } else if (room === false && door === 'Sliding Glass') {
+            return `Photos/Minimap/UA-${door}-OFF-S.png`;
+        } else if (room === true && door === 'Swinging Door No Bottom Seal') {
+            return `Photos/Minimap/S-${wall}-SW-OFF-S.png`;
+        } else if (room === true && door === 'Full Perimeter Seals Drop Bottom') {
+            return `Photos/Minimap/S-${wall}-SW-OFF-S.png`;
+        } else if (room === false && door === 'Swinging Door No Bottom Seal') {
+            return `Photos/Minimap/U-${wall}-SW-OFF-S.png`;
+        } else if (room === false && door === 'Full Perimeter Seals Drop Bottom') {
+            return `Photos/Minimap/U-${wall}-SW-OFF-S.png`;
         }
     }
 })

@@ -1,0 +1,5 @@
+About the audio in this Folder:
+
+"select_sound" and "select_sound_plus_1" are audio files that play each time a button is pressed.
+
+The rest of the audio files are named after the text of their respective tile.

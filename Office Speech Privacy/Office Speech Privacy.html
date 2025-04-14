@@ -86,7 +86,7 @@
                     </div>
                     <div class="multiple-choice">
                         <label class="choice-button-wall">
-                            <input type="radio" name="Wall" value="PH" id="Wall1" checked>
+                            <input type="radio" name="Wall" value="Partial Height" id="Wall1" checked>
                             <span class="custom-radio"></span>
                             <span class="choice-text">
                                 <div class="PH">STC 35 Partial-Height</div>
@@ -94,7 +94,7 @@
                             <div class="color-rectangle" style="background-color: rgb(128, 64, 64);"></div> 
                         </label>
                         <label class="choice-button-wall">
-                            <input type="radio" name="Wall" value="1+1" id="Wall2">
+                            <input type="radio" name="Wall" value="Single Layer Full Height" id="Wall2">
                             <span class="custom-radio"></span>
                             <span class="choice-text">
                                 <div class="wall-1">STC 40 Single Layer Full-Height</div>
@@ -102,7 +102,7 @@
                             <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
                         </label>
                         <label class="choice-button-wall-1-2">
-                            <input type="radio" name="Wall" value="1+2" id="Wall3">
+                            <input type="radio" name="Wall" value="Double Layer One Side" id="Wall3">
                             <span class="custom-radio"></span>
                             <span class="choice-text">
                                 <div class="wall-2">STC 42 Double Layer One Side</div>
@@ -110,7 +110,7 @@
                             <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
                         </label>
                         <label class="choice-button-wall-2-2">
-                            <input type="radio" name="Wall" value="2+2" id="Wall4">
+                            <input type="radio" name="Wall" value="Double Layer Both Sides" id="Wall4">
                             <span class="custom-radio"></span>
                             <span class="choice-text">
                                 <div class="wall-3">STC 45 Double Layer Both Sides</div>
@@ -123,17 +123,17 @@
                     </div>
                     <div class="multiple-choice">
                       <label class="choice-button-door">
-                          <input type="radio" name="Door" value="SL" class="door-option" checked>
+                          <input type="radio" name="Door" value="Sliding Glass" class="door-option" checked>
                           <span class="custom-radio"></span>
                           <span class="choice-text">Sliding Glass</span>
                       </label>
                       <label class="choice-button-door">
-                          <input type="radio" name="Door" value="SW" class="door-option">
+                          <input type="radio" name="Door" value="Swinging Door No Bottom Seal" class="door-option">
                           <span class="custom-radio"></span>
                           <span class="choice-text">Swinging Door, No Bottom Seal</span>
                       </label>
                       <label class="choice-button-door">
-                          <input type="radio" name="Door" value="SW+" class="door-option">
+                          <input type="radio" name="Door" value="Full Perimeter Seals Drop Bottom" class="door-option">
                           <span class="custom-radio"></span>
                           <span class="choice-text">Full Perimeter Seals + Drop Bottom</span>
                       </label>
@@ -148,20 +148,20 @@
                     <div class="grid">
                         <div class="receive-room-1">
                             <label>
-                                <input type="radio" name="Room" value="receive-room-1">
-                                <img class="img-receive-room-1" src="Photos/Minimap/UPHSL-OFF-1.png" alt="Background 1">
+                                <input type="radio" name="Room" value="receive1">
+                                <img class="img-receive-room-1" src="Photos/Minimap/U-Partial%20Height-Sliding%20Glass-OFF-1.png" alt="Background 1">
                             </label>
                         </div>
                         <div class="source-room">
                             <label>
                                 <input type="radio" name="Room" value="source-room" checked>
-                                <img class="img-source-room" src="Photos/Minimap/SASL-OFF-S.png" alt="Background 3">
+                                <img class="img-source-room" src="Photos/Minimap/SA-Sliding%20Glass-OFF-S.png" alt="Background 3">
                             </label>
                         </div>
                         <div class="receive-room-2">
                             <label>
-                                <input type="radio" name="Room" value="receive-room-2" id="receive-room-2">
-                                <img class="img-receive-room-2" src="Photos/Minimap/UASL-OFF-2.png" alt="Background 2">
+                                <input type="radio" name="Room" value="receive2" id="receive-room-2">
+                                <img class="img-receive-room-2" src="Photos/Minimap/UA-Sliding%20Glass-OFF-2.png" alt="Background 2">
                             </label>
                         </div>
                     </div>
@@ -184,34 +184,34 @@
         <!-- Partition Audio Elements --> 
         <audio id="source-room-N" src="Audio/source-room-N.wav" preload="auto" loop></audio>
         <audio id="source-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N-1+1-OFF" src="Audio/receive-room-1-N-1+1-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N-1+1-ON" src="Audio/receive-room-1-N-1+1-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N-1+2-OFF" src="Audio/receive-room-1-N-1+2-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N-1+2-ON" src="Audio/receive-room-1-N-1+2-ON.wav  " preload="auto" loop></audio>
-        <audio id="receive-room-1-N-2+2-OFF" src="Audio/receive-room-1-N-2+2-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N-2+2-ON" src="Audio/receive-room-1-N-2+2-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N-PH-OFF" src="Audio/receive-room-1-N-PH-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-N-PH-ON" src="Audio/receive-room-1-N-PH-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R-1+1-OFF" src="Audio/receive-room-1-R-1+1-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R-1+1-ON" src="Audio/receive-room-1-R-1+1-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R-1+2-OFF" src="Audio/receive-room-1-R-1+2-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R-1+2-ON" src="Audio/receive-room-1-R-1+2-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R-2+2-OFF" src="Audio/receive-room-1-R-2+2-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R-2+2-ON" src="Audio/receive-room-1-R-2+2-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R-PH-OFF" src="Audio/receive-room-1-R-PH-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-1-R-PH-ON" src="Audio/receive-room-1-R-PH-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-N-SL-OFF" src="Audio/receive-room-2-N-SL-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-N-SL-ON" src="Audio/receive-room-2-N-SL-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-N-SW+-OFF" src="Audio/receive-room-2-N-SW+-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-N-SW+-ON" src="Audio/receive-room-2-N-SW+-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-N-SW-OFF" src="Audio/receive-room-2-N-SW-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-N-SW-ON" src="Audio/receive-room-2-N-SW-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-R-SL-OFF" src="Audio/receive-room-2-R-SL-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-R-SL-ON" src="Audio/receive-room-2-R-SL-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-R-SW+-OFF" src="Audio/receive-room-2-R-SW+-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-R-SW+-ON" src="Audio/receive-room-2-R-SW+-ON.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-R-SW-OFF" src="Audio/receive-room-2-R-SW-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive-room-2-R-SW-ON" src="Audio/receive-room-2-R-SW-ON.wav" preload="auto" loop></audio>
+        <audio id="receive1-N-Single Layer Full Height-OFF" src="Audio/receive1-N-Single%20Layer%20Full-Height-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive1-N-Single Layer Full Height-ON" src="Audio/receive1-N-Single%20Layer%20Full-Height-ON.wav" preload="auto" loop></audio>
+        <audio id="receive1-N-Double Layer One Side-OFF" src="Audio/receive1-N-Double%20Layer%20One%20Side-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive1-N-Double Layer One Side-ON" src="Audio/receive1-N-Double%20Layer%20One%20Side-ON.wav  " preload="auto" loop></audio>
+        <audio id="receive1-N-Double Layer Both Sides-OFF" src="Audio/receive1-N-Double%20Layer%20Both%20Sides-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive1-N-Double Layer Both Sides-ON" src="Audio/receive1-N-Double%20Layer%20Both%20Sides-ON.wav" preload="auto" loop></audio>
+        <audio id="receive1-N-Partial Height-OFF" src="Audio/receive1-N-Partial%20Height-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive1-N-Partial Height-ON" src="Audio/receive1-N-Partial%20Height-ON.wav" preload="auto" loop></audio>
+        <audio id="receive1-R-Single Layer Full Height-OFF" src="Audio/receive1-R-Single%20Layer%20Full-Height-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive1-R-Single Layer Full Height-ON" src="Audio/receive1-R-Single%20Layer%20Full-Height-ON.wav" preload="auto" loop></audio>
+        <audio id="receive1-R-Double Layer One Side-OFF" src="Audio/receive1-R-Double%20Layer%20One%20Side-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive1-R-Double Layer One Side-ON" src="Audio/receive1-R-Double%20Layer%20One%20Side-ON.wav" preload="auto" loop></audio>
+        <audio id="receive1-R-Double Layer Both Sides-OFF" src="Audio/receive1-R-Double%20Layer%20Both%20Sides-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive1-R-Double Layer Both Sides-ON" src="Audio/receive1-R-Double%20Layer%20Both%20Sides-ON.wav" preload="auto" loop></audio>
+        <audio id="receive1-R-Partial Height-OFF" src="Audio/receive1-R-Partial%20Height-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive1-R-Partial Height-ON" src="Audio/receive1-R-Partial%20Height-ON.wav" preload="auto" loop></audio>
+        <audio id="receive2-N-Sliding Glass-OFF" src="Audio/receive2-N-Sliding%20Glass-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive2-N-Sliding Glass-ON" src="Audio/receive2-N-Sliding%20Glass-ON.wav" preload="auto" loop></audio>
+        <audio id="receive2-N-Full Perimeter Seals Drop Bottom-OFF" src="Audio/receive2-N-Full%20Perimeter%20Seals%20Drop%20Bottom-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive2-N-Full Perimeter Seals Drop Bottom-ON" src="Audio/receive2-N-Full%20Perimeter%20Seals%20Drop%20Bottom-ON.wav" preload="auto" loop></audio>
+        <audio id="receive2-N-Swinging Door No Bottom Seal-OFF" src="Audio/receive2-N-Swinging%20Door%20No%20Bottom%20Seal-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive2-N-Swinging Door No Bottom Seal-ON" src="Audio/receive2-N-Swinging%20Door%20No%20Bottom%20Seal-ON.wav" preload="auto" loop></audio>
+        <audio id="receive2-R-Sliding Glass-OFF" src="Audio/receive2-R-Sliding%20Glass-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive2-R-Sliding Glass-ON" src="Audio/receive2-R-Sliding%20Glass-ON.wav" preload="auto" loop></audio>
+        <audio id="receive2-R-Full Perimeter Seals Drop Bottom-OFF" src="Audio/receive2-R-Full%20Perimeter%20Seals%20Drop%20Bottom-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive2-R-Full Perimeter Seals Drop Bottom-ON" src="Audio/receive2-R-Full%20Perimeter%20Seals%20Drop%20Bottom-ON.wav" preload="auto" loop></audio>
+        <audio id="receive2-R-Swinging Door No Bottom Seal-OFF" src="Audio/receive2-R-Swinging%20Door%20No%20Bottom%20Seal-OFF.wav" preload="auto" loop></audio>
+        <audio id="receive2-R-Swinging Door No Bottom Seal-ON" src="Audio/receive2-R-Swinging%20Door%20No%20Bottom%20Seal-ON.wav" preload="auto" loop></audio>
       </div>
   </div>
   <footer>
