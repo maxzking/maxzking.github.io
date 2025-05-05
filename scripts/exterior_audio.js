@@ -1,17 +1,14 @@
 // Array Of Audio File Paths for clicking sound effect
 const clickFiles = [
     'Audio/select_sound.wav',
-    'Audio/select_sound_plus1.wav'
 ];
 
 // Function to play a random click sound
 function playSelectSound() {
     // Generate a random index
-    const randomIndex = Math.floor(Math.random() * clickFiles.length);
-    const randomAudio = new Audio(clickFiles[randomIndex]);
+    const randomAudio = new Audio(clickFiles);
     randomAudio.play();
 }
-
 // Play-Pause button function
 let isPlaying = false; // Track the state of the toggle
 let currentAudio = null; // Track the currently playing audio
