@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../styles/progress_bar.css" />
   <link rel="stylesheet" href="../styles/mini_map.css" />
   <title>Resonance Acoustics - Office Speech Privacy</title>
-  <link rel="icon" href="Photos(1)/RA_favicon.png" type="image/png"> <!-- Favicon -->
+  <link rel="icon" href="Photos/RA_favicon.png" type="image/png"> <!-- Favicon -->
 </head>
 <body>
   <script src="../scripts/audio.js" defer></script>
@@ -21,7 +21,7 @@
   <script src="../scripts/unclickable_buttons.js" defer></script>
   <!--This is the website navigation bar at the top of the screen-->
   <header>
-      <a href="../index.html"><img src="Photos(1)/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
+      <a href="../index.html"><img src="Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
       <h2>Resonance Acoustics Simulations</h2>
       <nav>
           <div class="menu-toggle" id="mobile-menu">
@@ -54,7 +54,7 @@
             <!--Mini Map and Controls on the Left Side of the Screen-->
             <div class="controls-container">
                 <div class="map-toggle" id="floorplan-menu">
-                    <img class="floorplan_icon" src="Photos(1)/Floorplan%20Icon.png">
+                    <img class="floorplan_icon" src="Photos/Floorplan%20Icon.png">
                 </div>
                     <div class="title_container_volume">
                       <h2 class="switch_title_volume">Speech Volume</h2>
@@ -90,8 +90,7 @@
                             <span class="custom-radio"></span>
                             <span class="choice-text">
                                 <div class="PH">STC 35 Partial-Height</div>
-                            </span>
-                            <div class="color-rectangle" style="background-color: rgb(128, 64, 64);"></div> 
+                            </span> 
                         </label>
                         <label class="choice-button-wall">
                             <input type="radio" name="Wall" value="Single Layer Full Height" id="Wall2">
@@ -99,7 +98,6 @@
                             <span class="choice-text">
                                 <div class="wall-1">STC 40 Single Layer Full-Height</div>
                             </span>
-                            <div class="color-rectangle" style="background-color: rgb(144,255,144);"></div>
                         </label>
                         <label class="choice-button-wall-1-2">
                             <input type="radio" name="Wall" value="Double Layer One Side" id="Wall3">
@@ -107,15 +105,13 @@
                             <span class="choice-text">
                                 <div class="wall-2">STC 42 Double Layer One Side</div>
                             </span>
-                            <div class="color-rectangle" style="background-color: rgb(165,134,255);"></div>
                         </label>
                         <label class="choice-button-wall-2-2">
                             <input type="radio" name="Wall" value="Double Layer Both Sides" id="Wall4">
                             <span class="custom-radio"></span>
                             <span class="choice-text">
-                                <div class="wall-3">STC 45 Double Layer Both Sides</div>
+                                <div class="wall-3">STC 44 Double Layer Both Sides</div>
                             </span>
-                            <div class="color-rectangle" style="background-color: rgb(250,143,148);"></div>
                         </label>
                     </div>
                     <div class="title_container_door">
@@ -143,32 +139,21 @@
                 <div class="listening-path-container"> <!-- Container for listening path title and image -->
                     <div class="help-container">
                         <h1 class="background_title">Listening Location</h1>
-                        <img id="help_button" src="Photos(1)/round_help_button.png" alt="Help">
+                        <img id="help_button" src="Photos/round_help_button.png" alt="Help">
                     </div>
                     <div class="grid">
-                        <div class="receive-room-1">
+                        <div class="minimap">
                             <label>
-                                <input type="radio" name="Room" value="receive1">
-                                <img class="img-receive-room-1" src="Photos(1)/Minimap/U-Partial%20Height-Sliding%20Glass-OFF-1.png" alt="Background 1">
+                                <img class="img-minimap" src="Photos/Minimap/Source.png" usemap="#image-map" alt="Background 1" data-name="Room" data-value="Source">
                             </label>
                         </div>
-                        <div class="source-room">
-                            <label>
-                                <input type="radio" name="Room" value="source-room" checked>
-                                <img class="img-source-room" src="Photos(1)/Minimap/SA-Sliding%20Glass-OFF-S.png" alt="Background 3">
-                            </label>
-                        </div>
-                        <div class="receive-room-2">
-                            <label>
-                                <input type="radio" name="Room" value="receive2" id="receive-room-2">
-                                <img class="img-receive-room-2" src="Photos(1)/Minimap/UA-Sliding%20Glass-OFF-2.png" alt="Background 2">
-                            </label>
-                        </div>
+                        <map name="image-map">
+                        </map>
                     </div>
                 </div>
                 <div class="playback-container">
                     <div class="toggle-container">
-                        <img id="toggle_Image" src="Photos(1)/Play%20Button.png" alt="Pause Image" onclick="toggleImage(); playAudio()" />
+                        <img id="toggle_Image" src="Photos/Play%20Button.png" alt="Pause Image" onclick="toggleImage(); playAudio()" />
                     </div>
                     <div class="progress-container">
                         <div id="progress-subcontainer">
@@ -182,36 +167,36 @@
             </div>
       
         <!-- Partition Audio Elements --> 
-        <audio id="source-room-N" src="Audio/source-room-N.wav" preload="auto" loop></audio>
-        <audio id="source-room-R" src="Audio/source-room-R.wav" preload="auto" loop></audio>
-        <audio id="receive1-N-Single Layer Full Height-OFF" src="Audio/receive1-N-Single%20Layer%20Full-Height-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive1-N-Single Layer Full Height-ON" src="Audio/receive1-N-Single%20Layer%20Full-Height-ON.wav" preload="auto" loop></audio>
-        <audio id="receive1-N-Double Layer One Side-OFF" src="Audio/receive1-N-Double%20Layer%20One%20Side-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive1-N-Double Layer One Side-ON" src="Audio/receive1-N-Double%20Layer%20One%20Side-ON.wav  " preload="auto" loop></audio>
-        <audio id="receive1-N-Double Layer Both Sides-OFF" src="Audio/receive1-N-Double%20Layer%20Both%20Sides-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive1-N-Double Layer Both Sides-ON" src="Audio/receive1-N-Double%20Layer%20Both%20Sides-ON.wav" preload="auto" loop></audio>
-        <audio id="receive1-N-Partial Height-OFF" src="Audio/receive1-N-Partial%20Height-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive1-N-Partial Height-ON" src="Audio/receive1-N-Partial%20Height-ON.wav" preload="auto" loop></audio>
-        <audio id="receive1-R-Single Layer Full Height-OFF" src="Audio/receive1-R-Single%20Layer%20Full-Height-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive1-R-Single Layer Full Height-ON" src="Audio/receive1-R-Single%20Layer%20Full-Height-ON.wav" preload="auto" loop></audio>
-        <audio id="receive1-R-Double Layer One Side-OFF" src="Audio/receive1-R-Double%20Layer%20One%20Side-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive1-R-Double Layer One Side-ON" src="Audio/receive1-R-Double%20Layer%20One%20Side-ON.wav" preload="auto" loop></audio>
-        <audio id="receive1-R-Double Layer Both Sides-OFF" src="Audio/receive1-R-Double%20Layer%20Both%20Sides-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive1-R-Double Layer Both Sides-ON" src="Audio/receive1-R-Double%20Layer%20Both%20Sides-ON.wav" preload="auto" loop></audio>
-        <audio id="receive1-R-Partial Height-OFF" src="Audio/receive1-R-Partial%20Height-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive1-R-Partial Height-ON" src="Audio/receive1-R-Partial%20Height-ON.wav" preload="auto" loop></audio>
-        <audio id="receive2-N-Sliding Glass-OFF" src="Audio/receive2-N-Sliding%20Glass-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive2-N-Sliding Glass-ON" src="Audio/receive2-N-Sliding%20Glass-ON.wav" preload="auto" loop></audio>
-        <audio id="receive2-N-Full Perimeter Seals Drop Bottom-OFF" src="Audio/receive2-N-Full%20Perimeter%20Seals%20Drop%20Bottom-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive2-N-Full Perimeter Seals Drop Bottom-ON" src="Audio/receive2-N-Full%20Perimeter%20Seals%20Drop%20Bottom-ON.wav" preload="auto" loop></audio>
-        <audio id="receive2-N-Swinging Door No Bottom Seal-OFF" src="Audio/receive2-N-Swinging%20Door%20No%20Bottom%20Seal-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive2-N-Swinging Door No Bottom Seal-ON" src="Audio/receive2-N-Swinging%20Door%20No%20Bottom%20Seal-ON.wav" preload="auto" loop></audio>
-        <audio id="receive2-R-Sliding Glass-OFF" src="Audio/receive2-R-Sliding%20Glass-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive2-R-Sliding Glass-ON" src="Audio/receive2-R-Sliding%20Glass-ON.wav" preload="auto" loop></audio>
-        <audio id="receive2-R-Full Perimeter Seals Drop Bottom-OFF" src="Audio/receive2-R-Full%20Perimeter%20Seals%20Drop%20Bottom-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive2-R-Full Perimeter Seals Drop Bottom-ON" src="Audio/receive2-R-Full%20Perimeter%20Seals%20Drop%20Bottom-ON.wav" preload="auto" loop></audio>
-        <audio id="receive2-R-Swinging Door No Bottom Seal-OFF" src="Audio/receive2-R-Swinging%20Door%20No%20Bottom%20Seal-OFF.wav" preload="auto" loop></audio>
-        <audio id="receive2-R-Swinging Door No Bottom Seal-ON" src="Audio/receive2-R-Swinging%20Door%20No%20Bottom%20Seal-ON.wav" preload="auto" loop></audio>
+        <audio id="Source-N" src="Audio/Source-N.wav" preload="auto" loop></audio>
+        <audio id="Source-R" src="Audio/Source-R.wav" preload="auto" loop></audio>
+        <audio id="Receive1-N-Single Layer Full Height-OFF" src="Audio/Receive1-N-STC%2040-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive1-N-Single Layer Full Height-ON" src="Audio/Receive1-N-STC%2040-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive1-N-Double Layer One Side-OFF" src="Audio/Receive1-N-STC%2042-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive1-N-Double Layer One Side-ON" src="Audio/Receive1-N-STC%2042-ON.wav  " preload="auto" loop></audio>
+        <audio id="Receive1-N-Double Layer Both Sides-OFF" src="Audio/Receive1-N-STC%2044-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive1-N-Double Layer Both Sides-ON" src="Audio/Receive1-N-STC%2044-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive1-N-Partial Height-OFF" src="Audio/Receive1-N-STC%2035-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive1-N-Partial Height-ON" src="Audio/Receive1-N-STC%2035-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive1-R-Single Layer Full Height-OFF" src="Audio/Receive1-R-STC%2040-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive1-R-Single Layer Full Height-ON" src="Audio/Receive1-R-STC%2040-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive1-R-Double Layer One Side-OFF" src="Audio/Receive1-R-STC%2042-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive1-R-Double Layer One Side-ON" src="Audio/Receive1-R-STC%2042-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive1-R-Double Layer Both Sides-OFF" src="Audio/Receive1-R-STC%2044-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive1-R-Double Layer Both Sides-ON" src="Audio/Receive1-R-STC%2044-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive1-R-Partial Height-OFF" src="Audio/Receive1-R-STC%2035-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive1-R-Partial Height-ON" src="Audio/Receive1-R-STC%2035-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive2-N-Sliding Glass-OFF" src="Audio/Receive2-N-Sliding-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive2-N-Sliding Glass-ON" src="Audio/Receive2-N-Sliding-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive2-N-Full Perimeter Seals Drop Bottom-OFF" src="Audio/Receive2-N-Swing%20Bottom-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive2-N-Full Perimeter Seals Drop Bottom-ON" src="Audio/Receive2-N-Swing%20Bottom-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive2-N-Swinging Door No Bottom Seal-OFF" src="Audio/Receive2-N-Swing-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive2-N-Swinging Door No Bottom Seal-ON" src="Audio/Receive2-N-Swing-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive2-R-Sliding Glass-OFF" src="Audio/Receive2-R-Sliding-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive2-R-Sliding Glass-ON" src="Audio/Receive2-R-Sliding-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive2-R-Full Perimeter Seals Drop Bottom-OFF" src="Audio/Receive2-R-Swing%20Bottom-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive2-R-Full Perimeter Seals Drop Bottom-ON" src="Audio/Receive2-R-Swing%20Bottom-ON.wav" preload="auto" loop></audio>
+        <audio id="Receive2-R-Swinging Door No Bottom Seal-OFF" src="Audio/Receive2-R-Swing-OFF.wav" preload="auto" loop></audio>
+        <audio id="Receive2-R-Swinging Door No Bottom Seal-ON" src="Audio/Receive2-R-Swing-ON.wav" preload="auto" loop></audio>
       </div>
   </div>
   <footer>

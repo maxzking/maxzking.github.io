@@ -30,13 +30,6 @@
     background-color: rgba(250, 250, 250, 0.848); /* Hover background */
 }
 
-.color-rectangle {
-    width: 20px; /* Width of the rectangle */
-    height: 20px; /* Height of the rectangle */
-    margin-left: 5px; /* Space between text and rectangle */
-    border: 2px solid black; /* Black outline */
-}
-
 input[type="radio"] {
     display: none; /* Hide the default radio button */
 }

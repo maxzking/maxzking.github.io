@@ -22,63 +22,28 @@
 }
 
 :root {
-    --row-1-height: 30vh; /* This is your dynamic variable */
-    --row-2-height: calc(var(--row-1-height) * 194.25 / 238.4);
-    
-    --column-1-width: calc(var(--row-1-height) * 130.2 / 238.4);
-    --column-2-width: calc(var(--row-1-height) * 167 / 238.4);
+    --row-1-height: 50vh; /* This is your dynamic variable */
+    --column-1-width: calc(var(--row-1-height) * 1150 / 1727);
 }
 
 .grid {
     display: grid;
-    grid-template-columns: var(--column-1-width) var(--column-2-width); /* Two columns: Room A and Room C */
-    grid-template-rows: var(--row-1-height) var(--row-2-height); /* First row height, second row fixed height for Room B */
+    grid-template-columns: var(--column-1-width);
+    grid-template-rows: var(--row-1-height);
     gap: 0; /* No gap between grid items */
     padding-left: 10px;
 }
 
-.receive-room-1 {
-    grid-column: 2; 
-    grid-row: 2; 
-}
-
-.receive-room-2 {
-    grid-column: 1 / span 2; /* Receive Room 1 spans both columns */
+.minimap {
+    grid-column: 1; 
     grid-row: 1; 
 }
 
-.source-room {
-    grid-column: 1;
-    grid-row: 2;
-}
-
 /* Different sizes for each image */
-.img-receive-room-1 {
-    width: var(--column-2-width);
-    height: var(--row-2-height);
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: transform 0.2s
-}
-.img-receive-room-1:hover {
-    transform: scale(1.05); /* Scale up the image on hover */
-}
-.img-receive-room-2 {
-    width: calc(var(--column-1-width)+var(--column-2-width));
+.img-minimap {
+    width: var(--column-1-width);
     height: var(--row-1-height);
     cursor: pointer; /* Pointer cursor on hover */
-    transition: transform 0.2s
-}
-.img-receive-room-2:hover {
-    transform: scale(1.05); /* Scale up the image on hover */
-}
-.img-source-room {
-    width: var(--column-1-width);
-    height: var(--row-2-height);
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: transform 0.2s
-}
-.img-source-room:hover {
-    transform: scale(1.05); /* Scale up the image on hover */
 }
 
 /* Mini Map Toggle Button */

@@ -84,12 +84,6 @@ playButton.addEventListener('click', () => {
     }
 });
 
-// Event listener for clicks outside the caution popup
-document.addEventListener('click', (event) => {
-    if (!cautionPopup.contains(event.target) && !cautionCover.contains(event.target)) {
-        audioDemo.pause(); // Pause the audio
-    }
-});
 
 // Example of showing the popup (you can call this function when needed)
 showCautionPopup();

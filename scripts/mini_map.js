@@ -1,8 +1,4 @@
 // Minimap functionality
-// Add event listeners to the switches
-document.querySelectorAll('input[name="Volume"], input[name="Wall"], input[name="Room"], input[name="Door"], #Masking').forEach(switchElement => {
-    switchElement.addEventListener('change', handleSwitchChange);
-});
 
 // Update Toggle Switch Value
 function updateToggleValue() {
@@ -22,79 +18,30 @@ function updateToggleValue() {
 // Updating MiniMap image based on user-selections
 document.addEventListener('DOMContentLoaded', () => {
     const maskingToggle = document.getElementById('Masking');
-    const wallRadios = document.querySelectorAll('input[name="Wall"]');
-    const doorRadios = document.querySelectorAll('input[name="Door"]');
-    const roomRadios = document.querySelectorAll('input[name="Room"]');
 
-    // Add event listeners to all relevant inputs
+    // Add event to the masking toggle
     maskingToggle.addEventListener('change', updateImages);
-    wallRadios.forEach(radio => radio.addEventListener('change', updateImages));
-    doorRadios.forEach(radio => radio.addEventListener('change', updateImages));
-    roomRadios.forEach(radio => radio.addEventListener('change', updateImages));
-
-    function updateImages() {
-        const selectedRoom1 = document.querySelector('input[name="Room"][value="receive1"]').checked;
-        const selectedRoom2 = document.querySelector('input[name="Room"][value="receive2"]').checked;
-        const selectedSourceRoom = document.querySelector('input[name="Room"][value="source-room"]').checked;
-        const Room = document.querySelector('input[name="Room"]:checked').value;
-        const wall = document.querySelector('input[name="Wall"]:checked').value;
-        const door = document.querySelector('input[name="Door"]:checked').value;
-        const masking = maskingToggle.checked ? 'ON' : 'OFF';
-
-        // Update Room 1 Image
-        const room1Image = document.querySelector('.img-receive-room-1');
-        room1Image.src = getRoom1Image(selectedRoom1, wall, door, masking);
-
-        // Update Room 2 Image
-        const room2Image = document.querySelector('.img-receive-room-2');
-        room2Image.src = getRoom2Image(selectedRoom2, door, masking);
-
-        // Update Source Room Image
-        const sourceImage = document.querySelector('.img-source-room');
-        sourceImage.src = getSourceImage(selectedSourceRoom, wall, door);
-    }
-    
-
-    function getRoom1Image(room, wall, door, masking) {
-        if (room === true && door === 'Sliding Glass') {
-            return `Photos/Minimap/S-${wall}-${door}-${masking}-1.png`;
-        } else if (room === true) {
-            return `Photos/Minimap/S-${wall}-SW-${masking}-1.png`;
-        } else if (room === false && door === 'Sliding Glass') {
-            return `Photos/Minimap/U-${wall}-${door}-${masking}-1.png`;
-        } else if (room === false) {
-            return `Photos/Minimap/U-${wall}-SW-${masking}-1.png`;
-        } 
-    }
-
-    function getRoom2Image(room, door, masking) {
-        if (room === true && door === 'Sliding Glass') {
-            return `Photos/Minimap/SA-${door}-${masking}-2.png`;
-        } else if (room === true) {
-            return `Photos/Minimap/SA-SW-${masking}-2.png`;
-        } else if (room === false && door === 'Sliding Glass') {
-            return `Photos/Minimap/UA-${door}-${masking}-2.png`;
-        } else if (room === false) {
-            return `Photos/Minimap/UA-SW-${masking}-2.png`;
-        }
-    }
-
-    function getSourceImage(room, wall, door) {
-        if (room === true && door === 'Sliding Glass') {
-            return `Photos/Minimap/SA-${door}-OFF-S.png`;
-        } else if (room === false && door === 'Sliding Glass') {
-            return `Photos/Minimap/UA-${door}-OFF-S.png`;
-        } else if (room === true && door === 'Swinging Door No Bottom Seal') {
-            return `Photos/Minimap/S-${wall}-SW-OFF-S.png`;
-        } else if (room === true && door === 'Full Perimeter Seals Drop Bottom') {
-            return `Photos/Minimap/S-${wall}-SW-OFF-S.png`;
-        } else if (room === false && door === 'Swinging Door No Bottom Seal') {
-            return `Photos/Minimap/U-${wall}-SW-OFF-S.png`;
-        } else if (room === false && door === 'Full Perimeter Seals Drop Bottom') {
-            return `Photos/Minimap/U-${wall}-SW-OFF-S.png`;
-        }
-    }
 })
+
+const maskingToggle = document.getElementById('Masking');
+
+function updateImages() {
+    const minimapImage = document.querySelector('.img-minimap');
+    const room = minimapImage.getAttribute('data-value'); // Get the data-value from the image
+    const masking = maskingToggle.checked ? 'ON' : 'OFF';
+
+    // Update Minimap image
+    minimapImage.src = getRoom1Image(room, masking);
+}
+
+
+function getRoom1Image(room, masking) {
+    if (room === 'Source') {
+        return `Photos/Minimap/${room}.png`;
+    } else if (room === 'Receive1' || room === 'Receive2') {
+        return `Photos/Minimap/${room}-${masking}.png`;
+    }
+}
 
 // Select the necessary elements from the DOM
 const floorplan_menu = document.getElementById('floorplan-menu');
@@ -121,18 +68,6 @@ floorplan_menu.addEventListener('click', () => {
     mini_map.classList.toggle('active'); // Add this line to toggle the mini-map's active state
 });
 
-// Hide the map when the "X" close button is clicked
-close_map.addEventListener('click', () => {
-    // Remove active class from all rooms and reset the toggle
-    receive_room_1.classList.remove('active');
-    receive_room_2.classList.remove('active');
-    source_room.classList.remove('active');
-    floorplan_menu.classList.remove('active');
-    grid.classList.remove('active');
-    mini_map_title.classList.remove('active');
-    close_map.classList.remove('active'); // Hide the close button
-    mini_map.classList.remove('active'); // Hide the mini-map
-});
 
 // Function to change the label of the sound masking switch
 function toggleLabel() {
@@ -145,3 +80,63 @@ function toggleLabel() {
         label.textContent = 'Off'; // Change text to "Off"
     }
 }
+
+function setRoomValue(value) {
+    const img = document.querySelector('.img-minimap'); // Select the image
+    img.setAttribute('data-value', value); // Update the data-value attribute
+    toggleDoorOptions();
+}
+
+function regionOneFunction() {
+    setRoomValue("Receive2"); // Change to the appropriate value for Region One
+    updateImages();
+    playAudio();
+}
+
+function regionTwoFunction() {
+    setRoomValue("Source"); // Change to the appropriate value for Region Two
+    updateImages();
+    playAudio();
+}
+
+function regionThreeFunction() {
+    setRoomValue("Receive1"); // Change to the appropriate value for Region Three
+    updateImages();
+    playAudio();
+}
+
+function getCoords(percentageCoords, imgWidth, imgHeight) {
+    return percentageCoords.map((percentage, index) => {
+        // For x-coordinates (0 and 2), use imgWidth; for y-coordinates (1 and 3), use imgHeight
+        return index % 2 === 0 ? Math.round(percentage * imgWidth / 100) : Math.round(percentage * imgHeight / 100);
+    });
+}
+
+function setupImageMap() {
+    const img = document.querySelector('.img-minimap'); // Select the image using the class
+    const imgWidth = img.clientWidth;
+    const imgHeight = img.clientHeight;
+
+    // Define regions in percentages
+    const regions = [
+        { coords: [0, 0, 100, 55], func: regionOneFunction }, // Region One
+        { coords: [0, 55, 48, 100], func: regionTwoFunction }, // Region Two
+        { coords: [48, 55, 100, 100], func: regionThreeFunction } // Region Three
+    ];
+
+    // Create area elements dynamically
+    const map = document.querySelector('map[name="image-map"]'); // Select the map by name
+    map.innerHTML = ''; // Clear existing areas if any
+    regions.forEach(region => {
+        const coords = getCoords(region.coords, imgWidth, imgHeight);
+        const area = document.createElement('area');
+        area.shape = 'rect';
+        area.coords = coords.join(',');
+        area.href = 'javascript:void(0);';
+        area.alt = `Region ${regions.indexOf(region) + 1}`;
+        area.onclick = region.func;
+        map.appendChild(area);
+    });
+}
+
+window.onload = setupImageMap; // Call setupImageMap when the window loads

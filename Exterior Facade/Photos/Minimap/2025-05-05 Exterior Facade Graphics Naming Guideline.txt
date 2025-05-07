@@ -1,0 +1,4 @@
+The graphics for the exterior facade have the following naming format: window-location
+
+Window can take one of two values: Punched, Curtain
+Location can take one of two values: Interior, Exterior

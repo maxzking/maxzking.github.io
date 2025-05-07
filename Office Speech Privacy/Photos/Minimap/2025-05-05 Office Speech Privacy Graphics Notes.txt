@@ -1,0 +1,7 @@
+About the graphics in this folder:
+
+The graphics follow this name structure: location-masking
+The values for location are: Receive1, Receive2, source
+The values for masking are: ON, OFF
+
+The source room has the same graphic for both the "On" and "Off" state of sound masking

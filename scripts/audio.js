@@ -45,22 +45,28 @@ function playAudio() {
     // Get selected options from Volume, Wall,and Room
     const Volume = document.querySelector('input[name="Volume"]:checked').value;
     const Wall = document.querySelector('input[name="Wall"]:checked').value;
-    const Room = document.querySelector('input[name="Room"]:checked').value;
+    const minimapImage = document.querySelector('.img-minimap');
+    const Room = minimapImage.getAttribute('data-value'); // Get the data-value from the image
     const Door = document.querySelector('input[name="Door"]:checked').value;
+    // Event Listeners
+    maskingToggle.addEventListener('change', updateImages);
     // Get the value of the toggle switch
     const MaskingToggle = document.getElementById('Masking');
     const Masking = MaskingToggle.checked ? 'ON' : 'OFF'; // Set value based on checked state
     // Determine which audio to play based on the selected options
     console.log(`Volume: ${Volume}, Wall: ${Wall}, Masking: ${Masking}, Room: ${Room}, Door: ${Door}`);
     let audioToPlay;
-        if (Room === "source-room") {
-            audioToPlay = `source-room-${Volume}`;
+        if (Room === "Source") {
+            audioToPlay = `${Room}-${Volume}`;
+            console.log(audioToPlay)
         }
-        if (Room === "receive1") {
-            audioToPlay = `receive1-${Volume}-${Wall}-${Masking}`;
+        if (Room === 'Receive1') {
+            audioToPlay = `${Room}-${Volume}-${Wall}-${Masking}`;
+            console.log(audioToPlay)
         }
-        if (Room === "receive2") {
-            audioToPlay = `receive2-${Volume}-${Door}-${Masking}`;
+        if (Room === 'Receive2') {
+            audioToPlay = `${Room}-${Volume}-${Door}-${Masking}`;
+            console.log(audioToPlay)
         }
 
     // Play the selected Audio
@@ -86,6 +92,11 @@ function stopAudio() {
     }
 }
 
+// Add event listeners to the switches
+document.querySelectorAll('input[name="Volume"], input[name="Wall"], input[name="Door"], #Masking').forEach(switchElement => {
+    switchElement.addEventListener('change', handleSwitchChange);
+});
+
 // Function to handle switch changes
 function handleSwitchChange() {
     // If not playing, prevent any audio from starting
@@ -96,6 +107,5 @@ function handleSwitchChange() {
     }
     // If playing, you can call playAudio() here if needed
     // Uncomment the next line if you want to play audio when switches change while in play mode
-    
     playAudio(); 
 }
