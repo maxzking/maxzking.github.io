@@ -1,6 +1,6 @@
 // Minimap functionality
 // Add event listeners to the switches
-document.querySelectorAll('input[name="Volume"], input[name="Wall"], input[name="Room"], input[name="Floor"]').forEach(switchElement => {
+document.querySelectorAll('input[name="Volume"], input[name="Wall"], input[name="Floor"]').forEach(switchElement => {
     switchElement.addEventListener('change', handleSwitchChange);
 });
 
@@ -45,98 +45,79 @@ document.addEventListener('DOMContentLoaded', () => {
     popupImage.addEventListener('click', () => {
         updateImages(); // Call updateImages after toggling
     });
-
-    function updateImages() {
-        const selectedRoom1 = document.querySelector('input[name="Room"][value="receive-room-1"]').checked;
-        const selectedRoom2 = document.querySelector('input[name="Room"][value="receive-room-2"]').checked;
-        const selectedSourceRoom = document.querySelector('input[name="Room"][value="source-room"]').checked;
-        const wall = document.querySelector('input[name="Wall"]:checked').value;
-        const floor = document.querySelector('input[name="Floor"]:checked').value;
-
-        // Update Room 1 Image
-        const room1Image = document.querySelector('.img-receive-room-1');
-        room1Image.src = getRoom1Image(selectedRoom1);
-
-        // Update Room 2 Image
-        const room2Image = document.querySelector('.img-receive-room-2');
-        room2Image.src = getRoom2Image(selectedRoom2);
-
-        // Update Source Room Image
-        const sourceImage = document.querySelector('.img-source-room');
-        sourceImage.src = getSourceImage(selectedSourceRoom, isPlaying);
-
-        // Update Interior Wall image
-        const wallImage = document.querySelector('.img-interior-wall');
-        wallImage.src = getWallImage(wall, selectedRoom1);
-
-        // Update Interior Wall image
-        const floorImage = document.querySelector('.img-floor');
-        floorImage.src = getfloorImage(floor, selectedRoom2);
-    }
-
-    function getRoom1Image(room) {
-        return room ? `Photos/Minimap/receive-room-1-S.png` : `Photos/Minimap/receive-room-1-U.png`;
-    }
-
-    function getRoom2Image(room) {
-        return room ? `Photos/Minimap/receive-room-2-S.png` : `Photos/Minimap/receive-room-2-U.png`;
-    }
-
-    function getSourceImage(room, isPlaying) {
-        if (room && isPlaying) {
-            return `Photos/Minimap/source-room-S-Play.png`;
-        } else if (room && !isPlaying) {
-            return `Photos/Minimap/source-room-S-Pause.png`;
-        } else if (!room && isPlaying) {
-            return `Photos/Minimap/source-room-U-Play.png`;
-        } else if (!room && !isPlaying) {
-            return `Photos/Minimap/source-room-U-Pause.png`;
-        }
-    }
-
-    function getWallImage(wall, selectedRoom1) {
-        return selectedRoom1 ? `Photos/Minimap/${wall}.png` : `Photos/Minimap/black-filler.png`;
-    }
-
-    function getfloorImage(floor, selectedRoom2){
-        return selectedRoom2 ? `Photos/Minimap/${floor}.png` : `Photos/Minimap/black-filler.png`;
-    }
 });
+
+function updateImages() {
+    const minimapImage = document.querySelector('.img-minimap');
+    const room = minimapImage.getAttribute('data-value'); // Get the data-value from the imagee;
+
+    // Update Minimap Image
+    minimapImage.src = getMinimapImage(room);
+    }
+
+function getMinimapImage(room) {
+    return `Photos/Minimap/${room}.png`;
+}
 
 // Select the necessary elements from the DOM
-const floorplan_menu = document.getElementById('floorplan-menu');
 const mini_map = document.querySelector('.mini-map'); // Select the mini-map element
-const receive_room_1 = document.querySelector('.receive-room-1');
-const receive_room_2 = document.querySelector('.receive-room-2');
-const source_room = document.querySelector('.source-room');
-const grid = document.querySelector('.grid');
 const mini_map_title = document.querySelector('.mini-map-title');
-const close_map = document.getElementById('close-map');
 
-// Event listener for the floorplan menu icon
-floorplan_menu.addEventListener('click', () => {
-    // Toggle the active class for the rooms and other elements
-    receive_room_1.classList.toggle('active'); // Toggle visibility of receive room 1
-    receive_room_2.classList.toggle('active'); // Toggle visibility of receive room 2
-    source_room.classList.toggle('active'); // Toggle visibility of source room
-    floorplan_menu.classList.toggle('active'); // Toggle visibility of the floorplan menu icon
-    grid.classList.toggle('active'); // Toggle visibility of the grid
-    mini_map_title.classList.toggle('active'); // Toggle visibility of the mini-map title
-    close_map.classList.toggle('active'); // Toggle visibility of the close button
+function setRoomValue(value) {
+    const img = document.querySelector('.img-minimap'); // Select the image
+    img.setAttribute('data-value', value); // Update the data-value attribute
+}
 
-    // Toggle the active class for the mini-map
-    mini_map.classList.toggle('active'); // Add this line to toggle the mini-map's active state
-});
+function regionOneFunction() {
+    setRoomValue("Receive1"); // Change to the appropriate value for Region One
+    updateImages();
+    playAudio();
+}
 
-// Hide the map when the "X" close button is clicked
-close_map.addEventListener('click', () => {
-    // Remove active class from all rooms and reset the toggle
-    receive_room_1.classList.remove('active');
-    receive_room_2.classList.remove('active');
-    source_room.classList.remove('active');
-    floorplan_menu.classList.remove('active');
-    grid.classList.remove('active');
-    mini_map_title.classList.remove('active');
-    close_map.classList.remove('active'); // Hide the close button
-    mini_map.classList.remove('active'); // Hide the mini-map
-});
+function regionTwoFunction() {
+    setRoomValue("Source"); // Change to the appropriate value for Region Two
+    updateImages();
+    playAudio();
+}
+
+function regionThreeFunction() {
+    setRoomValue("Receive2"); // Change to the appropriate value for Region Two
+    updateImages();
+    playAudio();
+}
+
+function getCoords(percentageCoords, imgWidth, imgHeight) {
+    return percentageCoords.map((percentage, index) => {
+        // For x-coordinates (0 and 2), use imgWidth; for y-coordinates (1 and 3), use imgHeight
+        return index % 2 === 0 ? Math.round(percentage * imgWidth / 100) : Math.round(percentage * imgHeight / 100);
+    });
+}
+
+function setupImageMap() {
+    const img = document.querySelector('.img-minimap'); // Select the image using the class
+    const imgWidth = img.clientWidth;
+    const imgHeight = img.clientHeight;
+
+    // Define regions in percentages
+    const regions = [
+        { coords: [10, 10, 50, 50], func: regionOneFunction }, // Region One
+        { coords: [50, 10, 90, 50], func: regionTwoFunction }, // Region Two
+        { coords: [50, 50, 90, 90], func: regionThreeFunction }, // Region Two
+    ];
+
+    // Create area elements dynamically
+    const map = document.querySelector('map[name="image-map"]'); // Select the map by name
+    map.innerHTML = ''; // Clear existing areas if any
+    regions.forEach(region => {
+        const coords = getCoords(region.coords, imgWidth, imgHeight);
+        const area = document.createElement('area');
+        area.shape = 'rect';
+        area.coords = coords.join(',');
+        area.href = 'javascript:void(0);';
+        area.alt = `Region ${regions.indexOf(region) + 1}`;
+        area.onclick = region.func;
+        map.appendChild(area);
+    });
+}
+
+window.onload = setupImageMap; // Call setupImageMap when the window loads

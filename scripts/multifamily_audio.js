@@ -19,21 +19,22 @@ function playAudio() {
     // Play a random sound first
     playSelectSound();
 
-    // Get selected options from source-type, Wall,and Room
+    // Get selected options from source-type, Wall, and Room
     const source_type = document.querySelector('input[name="source-type"]:checked').value;
     const Wall = document.querySelector('input[name="Wall"]:checked').value;
-    const Room = document.querySelector('input[name="Room"]:checked').value;
+    const minimapImage = document.querySelector('.img-minimap');
+    const Room = minimapImage.getAttribute('data-value'); // Get the data-value from the image
     const Floor = document.querySelector('input[name="Floor"]:checked').value;
     // Determine which audio to play based on the selected options
     console.log(`source-type: ${source_type}, Wall: ${Wall}, Room: ${Room}, Floor: ${Floor}`);
     let audioToPlay;
-        if (Room === "source-room") {
+        if (Room === "Source") {
             audioToPlay = `party-source`;
         }
-        if (Room === "receive-room-1") {
+        if (Room === "Receive1") {
             audioToPlay = `${Wall}`;
         }
-        if (Room === "receive-room-2") {
+        if (Room === "Receive2") {
             audioToPlay = `${Floor}`;
         }
 

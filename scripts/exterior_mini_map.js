@@ -1,8 +1,4 @@
 // Minimap functionality
-// Add event listeners to the switches
-document.querySelectorAll('input[name="Window"], input[name="Room"]').forEach(switchElement => {
-    switchElement.addEventListener('change', handleSwitchChange);
-});
 
 // Updating MiniMap image based on user-selections
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,83 +8,77 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listeners to all relevant inputs
     windowRadios.forEach(radio => radio.addEventListener('change', updateImages));
     roomRadios.forEach(radio => radio.addEventListener('change', updateImages));
-
-    function updateImages() {
-        const room = document.querySelector('input[name="Room"]:checked').value;
-        const window = document.querySelector('input[name="Window"]:checked').value;
-
-        // Update Exterior Image
-        const exteriorImage = document.querySelector('.img-exterior');
-        exteriorImage.src = getExteriorImage(room);
-
-        // Update Interior Image
-        var interiorImage = document.querySelector('.img-interior');
-        interiorImage.src = getInteriorImage(room, window);
-    }
-
-    function getExteriorImage(room) {
-        if (room === "exterior") {
-            return `Photos/Minimap/exterior_selected.png`;
-        } else if (room !== 'exterior') {
-            return `Photos/Minimap/exterior_unselected.png`;
-        }
-    }
-
-    function getInteriorImage(room, window) {
-        if (room === "interior") {
-            return `Photos/Minimap/${window}_selected.png`;
-        } else if (room !== "interior") {
-            return `Photos/Minimap/${window}_unselected.png`;
-        }
-    }
 });
 
-// Select the necessary elements from the DOM
-const floorplan_menu = document.getElementById('floorplan-menu');
-const mini_map = document.querySelector('.mini-map'); // Select the mini-map element
-const receive_room_1 = document.querySelector('.interior');
-const receive_room_2 = document.querySelector('.receive-room-2');
-const source_room = document.querySelector('.exterior');
-const grid = document.querySelector('.grid');
-const mini_map_title = document.querySelector('.mini-map-title');
-const close_map = document.getElementById('close-map');
+function updateImages() {
+    const minimapImage = document.querySelector('.img-minimap');
+    const room = minimapImage.getAttribute('data-value'); // Get the data-value from the image
+    const window = document.querySelector('input[name="Window"]:checked').value;
 
-// Event listener for the floorplan menu icon
-floorplan_menu.addEventListener('click', () => {
-    // Toggle the active class for the rooms and other elements
-    receive_room_1.classList.toggle('active'); // Toggle visibility of receive room 1
-    receive_room_2.classList.toggle('active'); // Toggle visibility of receive room 2
-    source_room.classList.toggle('active'); // Toggle visibility of source room
-    floorplan_menu.classList.toggle('active'); // Toggle visibility of the floorplan menu icon
-    grid.classList.toggle('active'); // Toggle visibility of the grid
-    mini_map_title.classList.toggle('active'); // Toggle visibility of the mini-map title
-    close_map.classList.toggle('active'); // Toggle visibility of the close button
+    // Update Minimap Image
+    minimapImage.src = getMinimapImage(room, window);
+}
 
-    // Toggle the active class for the mini-map
-    mini_map.classList.toggle('active'); // Add this line to toggle the mini-map's active state
-});
-
-// Hide the map when the "X" close button is clicked
-close_map.addEventListener('click', () => {
-    // Remove active class from all rooms and reset the toggle
-    receive_room_1.classList.remove('active');
-    receive_room_2.classList.remove('active');
-    source_room.classList.remove('active');
-    floorplan_menu.classList.remove('active');
-    grid.classList.remove('active');
-    mini_map_title.classList.remove('active');
-    close_map.classList.remove('active'); // Hide the close button
-    mini_map.classList.remove('active'); // Hide the mini-map
-});
-
-// Function to change the label of the sound masking switch
-function toggleLabel() {
-    const checkbox = document.getElementById('Masking');
-    const label = document.getElementById('switchLabel');
-    
-    if (checkbox.checked) {
-        label.textContent = 'On'; // Change text to "On"
-    } else {
-        label.textContent = 'Off'; // Change text to "Off"
+function getMinimapImage(room, window) {
+    if (window === "Curtain STC 36"|| window === 'Curtain STC 43') {
+        return `Photos/Minimap/Curtain-${room}.png`;
+    } else if (window === 'Punched STC 36'|| window === 'Punched STC 39'|| window === 'Punched STC 42'|| window === 'Punched STC 46') {
+        return `Photos/Minimap/Punched-${room}.png`;
     }
 }
+
+// Select the necessary elements from the DOM
+const mini_map = document.querySelector('.mini-map'); // Select the mini-map element
+const mini_map_title = document.querySelector('.mini-map-title');
+
+function setRoomValue(value) {
+    const img = document.querySelector('.img-minimap'); // Select the image
+    img.setAttribute('data-value', value); // Update the data-value attribute
+}
+
+function regionOneFunction() {
+    setRoomValue("Exterior"); // Change to the appropriate value for Region One
+    updateImages();
+    playAudio();
+}
+
+function regionTwoFunction() {
+    setRoomValue("Interior"); // Change to the appropriate value for Region Two
+    updateImages();
+    playAudio();
+}
+
+function getCoords(percentageCoords, imgWidth, imgHeight) {
+    return percentageCoords.map((percentage, index) => {
+        // For x-coordinates (0 and 2), use imgWidth; for y-coordinates (1 and 3), use imgHeight
+        return index % 2 === 0 ? Math.round(percentage * imgWidth / 100) : Math.round(percentage * imgHeight / 100);
+    });
+}
+
+function setupImageMap() {
+    const img = document.querySelector('.img-minimap'); // Select the image using the class
+    const imgWidth = img.clientWidth;
+    const imgHeight = img.clientHeight;
+
+    // Define regions in percentages
+    const regions = [
+        { coords: [0, 0, 62, 100], func: regionOneFunction }, // Region One
+        { coords: [62, 0, 100, 100], func: regionTwoFunction }, // Region Two
+    ];
+
+    // Create area elements dynamically
+    const map = document.querySelector('map[name="image-map"]'); // Select the map by name
+    map.innerHTML = ''; // Clear existing areas if any
+    regions.forEach(region => {
+        const coords = getCoords(region.coords, imgWidth, imgHeight);
+        const area = document.createElement('area');
+        area.shape = 'rect';
+        area.coords = coords.join(',');
+        area.href = 'javascript:void(0);';
+        area.alt = `Region ${regions.indexOf(region) + 1}`;
+        area.onclick = region.func;
+        map.appendChild(area);
+    });
+}
+
+window.onload = setupImageMap; // Call setupImageMap when the window loads

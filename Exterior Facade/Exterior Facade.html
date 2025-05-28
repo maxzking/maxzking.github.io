@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../styles/progress_bar.css" />
     <link rel="stylesheet" href="../styles/exterior_mini_map.css" />
     <title>Resonance Acoustics - Listening Demonstrations</title>
-    <link rel="icon" href="../Office%20Speech%20Privacy/Photos(1)/RA_favicon.png" type="image/png"> <!-- Favicon -->
+    <link rel="icon" href="../Office%20Speech%20Privacy/Photos/RA_favicon.png" type="image/png"> <!-- Favicon -->
   </head>
   <body>
     <script src="../scripts/exterior_audio.js" defer></script>
@@ -22,7 +22,7 @@
     <script src="../scripts/progress_bar.js" defer></script>
     <!--This is the website navigation bar at the top of the screen-->
     <header>
-      <a href="../index.html"><img src="../Office%20Speech%20Privacy/Photos(1)/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
+      <a href="../index.html"><img src="../Office%20Speech%20Privacy/Photos/RA_Logo.png" alt="RA Logo" width="143" height="47"></a>
       <h2>Resonance Acoustics Simulations</h2>
       <nav>
           <div class="menu-toggle" id="mobile-menu">
@@ -63,7 +63,7 @@
             </div>
             <div class="multiple-choice">
                 <label class="choice-button-wall">
-                    <input type="radio" name="Window" value="window_1_4" id="Window1" checked>
+                    <input type="radio" name="Window" value="Punched STC 36" id="Window1" checked>
                     <span class="custom-radio"></span>
                     <span class="choice-text">
                         <div class="wall-1">STC 36: 3/4" Insulating Glazing</div>
@@ -71,7 +71,7 @@
                     <div class="color-rectangle" style="background-color: rgb(255, 153, 204);"></div>
                 </label>
                 <label class="choice-button-wall-1-2">
-                    <input type="radio" name="Window" value="window_1_4x1_2x1_4" id="Window2">
+                    <input type="radio" name="Window" value="Punched STC 39" id="Window2">
                     <span class="custom-radio"></span>
                     <span class="choice-text">
                         <div class="wall-2">STC 39: 1" Insulating Glazing</div>
@@ -79,7 +79,7 @@
                     <div class="color-rectangle" style="background-color: rgb(119, 221, 119);"></div>
                 </label>
                 <label class="choice-button-wall-2-2">
-                    <input type="radio" name="Window" value="window_5_16x1_2x3_16_1&2" id="Window3">
+                    <input type="radio" name="Window" value="Punched STC 42" id="Window3">
                     <span class="custom-radio"></span>
                     <span class="choice-text">
                         <div class="wall-3">STC 42: 1" Insulating Laminated Glazing</div>
@@ -87,7 +87,7 @@
                     <div class="color-rectangle" style="background-color: rgb(173, 216, 230);"></div>
                 </label>
                 <label class="choice-button-wall-2-2">
-                    <input type="radio" name="Window" value="window_5_16x1_2x3_16_RC" id="Window4">
+                    <input type="radio" name="Window" value="Punched STC 46" id="Window4">
                     <span class="custom-radio"></span>
                     <span class="choice-text">
                         <div class="wall-3">STC 46: Upgraded Exterior Wall</div>
@@ -100,15 +100,15 @@
             </div>
             <div class="multiple-choice">
                 <label class="choice-button-wall">
-                    <input type="radio" name="Window" value="curtain_wall" id="Window5">
+                    <input type="radio" name="Window" value="Curtain STC 36" id="Window5">
                     <span class="custom-radio"></span>
                     <span class="choice-text">
-                        <div class="wall-1">STC 35: 1" Insulating Glazing</div>
+                        <div class="wall-1">STC 36: 1" Insulating Glazing</div>
                     </span>
                     <div class="color-rectangle" style="background-color: rgb(200, 162, 255);"></div>
                 </label>
                 <label class="choice-button-wall-1-2">
-                    <input type="radio" name="Window" value="window_wall" id="Window6">
+                    <input type="radio" name="Window" value="Curtain STC 43" id="Window6">
                     <span class="custom-radio"></span>
                     <span class="choice-text">
                         <div class="wall-2">STC 43: 1-5/8" Insulating Laminated Glazing</div>
@@ -123,25 +123,10 @@
                     <h1 class="background_title">Listening Location</h1>
                     <img id="help_button" src="Photos/round_help_button.png" alt="Help" />
                 </div>
-                <div class="grid">
-                    <div class="source">
-                        <label>
-                            <img class="img-source" src="Photos/Minimap/source.png" alt="Source">
-                        </label>
-                    </div>
-                    <div class="exterior">
-                        <label>
-                            <input type="radio" name="Room" value="exterior" checked>
-                            <img class="img-exterior" src="Photos/Minimap/exterior_selected.png" alt="Exterior">
-                        </label>
-                    </div>
-                    <div class="interior">
-                        <label>
-                            <input type="radio" name="Room" value="interior">
-                            <img class="img-interior" src="Photos/Minimap/window_1_4_unselected.png" alt="Interior">
-                        </label>
-                    </div>
+                <div class="minimap">
+                    <img class="img-minimap" src="Photos/Minimap/Punched-Exterior.png" usemap="#image-map" alt="Exterior" data-name="Room" data-value="Exterior">
                 </div>
+                <map name="image-map"></map>
             </div>
             <div class="playback-container">
                 <div class="toggle-container">
@@ -159,13 +144,13 @@
         </div>
   
     <!-- Partition Audio Elements --> 
-    <audio id="exterior_facade_soundscape" src="Audio/2025-03-19 exterior facade soundscape.wav" preload="auto" loop></audio>
-    <audio id="window_1_4" src="Audio/STC%2036%203_4%20Insulating%20Glazing.wav" preload="auto" loop></audio>
-    <audio id="window_1_4x1_2x1_4" src="Audio/STC%2039%201%20Insulating%20Glazing.wav" preload="auto" loop></audio>
-    <audio id="window_5_16x1_2x3_16_1&2" src="Audio/STC%2042%201%20Insulating%20Laminated%20Glazing.wav" preload="auto" loop></audio>
-    <audio id="window_5_16x1_2x3_16_RC" src="Audio/STC%2046%20Upgraded%20Exterior%20Wall.wav" preload="auto" loop></audio>
-    <audio id="curtain_wall" src="Audio/Curtain%20Wall%20STC%2035%201%20Insulating%20Glazing.wav" preload="auto" loop></audio>
-    <audio id="window_wall" src="Audio/Curtain%20Wall%20STC%2042%20Insulating%20Laminated%20Glazing.wav" preload="auto" loop></audio>
+    <audio id="2025-03-19 exterior_facade_soundscape" src="Audio/2025-03-19 exterior facade soundscape.wav" preload="auto" loop></audio>
+    <audio id="Punched STC 36" src="Audio/Curtain STC 36.wav" preload="auto" loop></audio>
+    <audio id="Punched STC 39" src="Audio/Punched STC 39.wav" preload="auto" loop></audio>
+    <audio id="Punched STC 42" src="Audio/Punched STC 42.wav" preload="auto" loop></audio>
+    <audio id="Punched STC 46" src="Audio/Punched STC 46.wav" preload="auto" loop></audio>
+    <audio id="Curtain STC 36" src="Audio/Curtain STC 36.wav" preload="auto" loop></audio>
+    <audio id="Curtain STC 43" src="Audio/Curtain STC 43.wav" preload="auto" loop></audio>
   </div>
 </div>
 <footer>

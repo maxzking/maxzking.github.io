@@ -44,14 +44,15 @@ function playAudio() {
 
     // Get selected options from Volume, Window,and Room
     const Window = document.querySelector('input[name="Window"]:checked').value;
-    const Room = document.querySelector('input[name="Room"]:checked').value;
+    const minimapImage = document.querySelector('.img-minimap');
+    const Room = minimapImage.getAttribute('data-value'); // Get the data-value from the image
     // Determine which audio to play based on the selected options
     console.log(`Window: ${Window}, Room: ${Room}`);
     let audioToPlay;
-        if (Room === "exterior") {
-            audioToPlay = `exterior_facade_soundscape`;
+        if (Room === "Exterior") {
+            audioToPlay = `2025-03-19 exterior_facade_soundscape`;
         }
-        if (Room === "interior") {
+        if (Room === "Interior") {
             audioToPlay = `${Window}`;
         }
 
@@ -77,6 +78,11 @@ function stopAudio() {
         currentAudio.pause(); // Pause the currently playing audio
     }
 }
+
+// Add event listeners to the switches
+document.querySelectorAll('input[name="Window"]').forEach(switchElement => {
+    switchElement.addEventListener('change', handleSwitchChange);
+});
 
 // Function to handle switch changes
 function handleSwitchChange() {

@@ -34,7 +34,6 @@ function updateImages() {
     minimapImage.src = getRoom1Image(room, masking);
 }
 
-
 function getRoom1Image(room, masking) {
     if (room === 'Source') {
         return `Photos/Minimap/${room}.png`;
