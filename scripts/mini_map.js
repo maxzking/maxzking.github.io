@@ -28,7 +28,7 @@ const maskingToggle = document.getElementById('Masking');
 function updateImages() {
     const minimapImage = document.querySelector('.img-minimap');
     const room = minimapImage.getAttribute('data-value'); // Get the data-value from the image
-    const masking = maskingToggle.checked ? 'ON' : 'OFF';
+    const masking = maskingToggle.checked ? 'ON' : 'OFF'; // Need to fix how images appear on the Office Speech Privacy Page
 
     // Update Minimap image
     minimapImage.src = getRoom1Image(room, masking);
