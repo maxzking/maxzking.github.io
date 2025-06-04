@@ -38,13 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     floorRadios.forEach(radio => radio.addEventListener('change', updateImages));
     roomRadios.forEach(radio => radio.addEventListener('change', updateImages));
     
-    // Add event listener for the toggle and popup image
-    toggleImageElement.addEventListener('click', () => {
-        updateImages(); // Call updateImages after toggling
-    });
-    popupImage.addEventListener('click', () => {
-        updateImages(); // Call updateImages after toggling
-    });
 });
 
 function updateImages() {

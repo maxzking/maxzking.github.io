@@ -1,5 +1,6 @@
 // Function to toggle the unclickable class based on the selected room
 function toggleDoorOptions() {
+    console.log("minimap has been clicked")
     const minimapImage = document.querySelector('.img-minimap');
     const Room = minimapImage.getAttribute('data-value'); // Get the data-value from the image
     const doors = document.querySelectorAll('.choice-button-door');
