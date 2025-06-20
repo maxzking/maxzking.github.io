@@ -5,5 +5,5 @@ About the audio in this Folder:
 The rest of the audio follows this name structure: location-volume-partition-masking
 The values for location are: receive1, receive2, source-room
 The values for volume are: N (normal speech), R (raised speech)
-The values for partition (wall and door types) are: Partial Height, Single Layer Full Height, Double Layer One Side, Double Layer Both Sides, Sliding Glass, Swinging Door No Bottom Seal, Full Perimeter Seals and Drop Bottom
+The values for partition (wall and door types) are: Partial Height, Single Layer Full Height, Double Layer One Side, Double Layer Both Sides, Sliding, Swing (Swing door, Bursh seals, no drop bottom), swing+ (swing door, bulb seals, drop bottom)
 The values for masking are: ON, OFF
