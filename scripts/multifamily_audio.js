@@ -35,7 +35,7 @@ function playAudio() {
             audioToPlay = `${Wall}`;
         }
         if (Room === "Receive2") {
-            audioToPlay = `${Floor}`;
+            audioToPlay = `${Floor} ${source_type}`;
         }
 
     // Play the selected Audio
