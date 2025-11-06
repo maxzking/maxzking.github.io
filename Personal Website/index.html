@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet" />
+    <title>Max King</title>
+    <link rel="icon" href="/Photos/favicon2.png" type="image/png" />
+    <!-- Favicon colors, 0097b2, 0cc0df-->
+  </head>
+  <body>
+    <script src="Scripts/script.js" defer></script>
+    <!--This is the website navigation bar at the top of the screen-->
+    <header>
+      <div class="page-title">
+        <a class="selected-page" href="index.html"><h2>Max King</h2></a>
+        <nav class="header-nav">
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul>
+            <li><a href="projects/projects.html">Projects</a></li>
+            <li><a href="Posters/posters.html">Posters</a></li>
+            <li><a href="Music/music.html">Music</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="main">
+      <div class="about-section">
+        <div class="bio-text">
+          <p class="bio">
+            <strong>Max</strong> is a bay-area based musician. He is an acoustician at
+            <a href="https://resonanceac.com/">Resonance Acoustics</a> - an acoustical consulting firm in San Francisco.
+          </p>
+          <p class="bio">He holds a BA in physics and BA in music from the University of California, Berkeley.</p>
+        </div>
+        <div class="portrait-container">
+          <img class="arrow" src="Photos/arrow.png" />
+          <img class="portrait" alt="portrait" src="Photos/portrait.jpg" />
+        </div>
+      </div>
+      <section class="projects-section">
+        <h2 class="projects-title">Featured Projects -></h2>
+        <div class="projects-scroll">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <img src="Photos/spectraphone.png" alt="Spectraphone" />
+            <p class="project-desc">Spectraphone</p>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="Photos/portrait.JPG" alt="Resonance Acoustics Simulation" />
+            <p class="project-desc">Resonance Acoustics Simulations</p>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <img src="Photos/circuitdiagram.png" alt="Class AB Audio Amplifier" />
+            <p class="project-desc">Class AB Audio Amplifier</p>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card">
+            <img src="Photos/clocktowersimulation.png" alt="Clocktower Sound Simulation" />
+            <p class="project-desc">Clocktower Sound Simulation</p>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card">
+            <img src="Photos/project3.png" alt="FFT Thingy" />
+            <p class="project-desc">FFt thingy</p>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card">
+            <img src="/Posters/Photos/BPURS_Spring_2024_Poster.png" alt="Poster Example" />
+            <p class="project-desc">Research Posters</p>
+          </div>
+
+          <!-- Final “More Projects” button -->
+          <a href="Projects/projects.html" class="more-projects">
+            <span>More Projects →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="footer-text">
+        <p>Made by Max. Thanks for visiting!</p>
+        <p class="contact"><a href="mailto:maxwellzking@berkeley.edu">Contact me</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
