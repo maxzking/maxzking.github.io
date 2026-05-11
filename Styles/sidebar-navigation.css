@@ -2,18 +2,27 @@
 .sidebar-layout {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
-  padding: 0;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
   scroll-behavior: smooth; /* enables smooth anchor scrolling */
+  flex-shrink: 0; /* prevents sidebar from squishing */
   min-height: fit-content; /* ensure nav grows with links */
+  border-right: 1px solid rgb(136, 136, 136);
+  padding-right: 20px; /* adds breathing room between content and the line */
+}
+
+.sidebar-layout .read-more {
+  margin-top: 20px; /* gap at the top */
+  margin-bottom: 0; /* reduce gap beneath */
 }
 
 /* Left navigation menu */
 .sidebar-nav {
-  position: sticky;
   top: 2rem; /* stays visible while scrolling */
   flex: 0 0 200px;
   padding-top: 30px;
+  position: sticky;
 }
 
 .sidebar-nav ul {
@@ -44,7 +53,6 @@
 
 .sidebar-nav li {
   display: block; /* ensure each takes full width */
-  text-decoration: underline;
   margin: 0;
 }
 
@@ -52,8 +60,8 @@
   display: block; /* click area spans full row */
   text-decoration: none;
   color: #333;
-  line-height: 1.3;
-  font-size: 1.4vw;
+  line-height: 1.1;
+  font-size: 1vw;
 }
 
 /* Content section styling */
@@ -63,7 +71,7 @@
 
 /* Poster blocks */
 .sidebar-section {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .sidebar-section img {
@@ -74,7 +82,7 @@
 }
 
 .sidebar-section .project {
-  max-width: 50%;
+  max-width: 100%;
   height: auto;
 }
 

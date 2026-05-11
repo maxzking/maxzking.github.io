@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="/Styles/footer.css" />
     <link rel="stylesheet" href="/Styles/main.css" />
     <link rel="stylesheet" href="/Styles/sidebar-navigation.css" />
-    <link rel="stylesheet" href="/Styles/project-list.css" />
+    <link rel="stylesheet" href="/Styles/projects.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <title>Max King</title>
     <link rel="icon" href="/Photos/favicon2.png" type="image/png" />
     <!-- Favicon colors, 0097b2, 0cc0df-->
@@ -30,72 +31,281 @@
             <span class="bar"></span>
           </div>
           <ul>
-            <li><a class="selected-page" href="/Projects/projects.html">Projects</a></li>
+            <li>
+              <a class="selected-page" href="/Projects/projects.html"
+                >Projects</a
+              >
+            </li>
             <li><a href="/Posters/posters.html">Posters</a></li>
             <li><a href="/Music/music.html">Music</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <div class="sidebar-layout">
-      <!-- Left Navigation -->
-      <nav class="sidebar-nav">
-        <ul>
-          <li><a href="#project1">Spectraphone</a></li>
-          <li><a href="#project2">Class AB Audio Amplifier</a></li>
-          <li><a href="#project3">Clocktower Sound Simulation</a></li>
-          <li><a href="#project4">Honors Thesis</a></li>
-          <li><a href="#project5">Resonance Acoustics</a></li>
-        </ul>
-      </nav>
+    <div class="page-layout">
+      <div class="sidebar-layout">
+        <!-- Left Navigation -->
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="#project1">Spectraphone</a></li>
+            <li><a href="#project2">Class AB Audio Amplifier</a></li>
+            <li><a href="#project3">Clocktower Sound Simulation</a></li>
+            <li><a href="#project4">Honors Thesis</a></li>
+            <li><a href="#project5">Resonance Acoustics</a></li>
+            <li><a href="#project6">Gravitational Synthesizer</a></li>
+          </ul>
+        </nav>
+      </div>
 
       <!-- Right Content -->
       <div class="sidebar-content">
         <section id="project1" class="sidebar-section">
-          <h2>Spectraphone</h2>
-          <p>Designing a musical instrument that is played with light.</p>
-          <a href="/Projects/Projects/spectraphone.html">
-            <img src="/Photos/SpectraphonePatch.png" alt="Spectraphone" class="project" />
-          </a>
+          <div class="project-card">
+            <div class="project-card-image">
+              <a href="/Projects/Projects/spectraphone.html">
+                <img src="/Photos/SpectraphonePatch.png" alt="Spectraphone" />
+              </a>
+            </div>
+            <div class="project-card-content">
+              <p class="project-meta">Personal Project — 2023</p>
+              <div class="project-card-header">
+                <h2>Spectraphone</h2>
+                <a
+                  href="/Projects/Projects/spectraphone.html"
+                  class="read-more"
+                >
+                  Read More <span class="read-more-arrow">›</span>
+                </a>
+              </div>
+              <p class="project-description">
+                Designing a musical instrument that is played with light.
+              </p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <span class="stat-label">Role</span>
+                  <span class="stat-value">Sole Designer</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Tools</span>
+                  <span class="stat-value">Max/MSP, Circuit Design</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Team</span>
+                  <span class="stat-value">Independent</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="project2" class="sidebar-section">
-          <h2>Class AB Audio Amplifier</h2>
-          <p>Designed and built a class AB stereo audio amplifier for a class project and home use.</p>
-          <a href="/Projects/Projects/amplifier.html">
-            <img src="/Photos/circuitdiagram.png" alt="Class AB Audio Amplifier" class="project" />
-          </a>
+          <div class="project-card">
+            <div class="project-card-image">
+              <a href="/Projects/Projects/amplifier.html">
+                <img src="/Photos/circuitdiagram.png" alt="Circuit Diagram" />
+              </a>
+            </div>
+            <div class="project-card-content">
+              <p class="project-meta">Personal Project — 2023</p>
+              <div class="project-card-header">
+                <h2>Class AB Audio Amplifier</h2>
+                <a href="/Projects/Projects/amplifier.html" class="read-more">
+                  Read More <span class="read-more-arrow">›</span>
+                </a>
+              </div>
+              <p class="project-description">
+                Designed and built a class AB stereo audio amplifier for a class
+                project and home use.
+              </p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <span class="stat-label">Role</span>
+                  <span class="stat-value">Sole Designer</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Tools</span>
+                  <span class="stat-value">Max/MSP, Circuit Design</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Team</span>
+                  <span class="stat-value">Independent</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="project3" class="sidebar-section">
-          <h2>Clocktower Sound Simulation</h2>
-          <p>Created a 3D simulation of sound sources to study reflections across Berkeley's campus.</p>
-          <a href="/Projects/Projects/clocktowersimulation.html">
-            <img src="/Photos/clocktowersimulation.png" alt="Clocktower Sound Simulation" class="project" />
-          </a>
+          <div class="project-card">
+            <div class="project-card-image">
+              <a href="/Projects/Projects/clocktowersimulation.html">
+                <img
+                  src="/Photos/clocktowersimulation.png"
+                  alt="Clocktower Photo"
+                />
+              </a>
+            </div>
+            <div class="project-card-content">
+              <p class="project-meta">Personal Project — 2023</p>
+              <div class="project-card-header">
+                <h2>Clocktower Sound Simulation</h2>
+                <a
+                  href="/Projects/Projects/clocktowersimulation.html"
+                  class="read-more"
+                >
+                  Read More <span class="read-more-arrow">›</span>
+                </a>
+              </div>
+              <p class="project-description">
+                Created a 3D simulation of sound sources to study reflections
+                across Berkeley's campus.
+              </p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <span class="stat-label">Role</span>
+                  <span class="stat-value">Sole Designer</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Tools</span>
+                  <span class="stat-value">Max/MSP, Circuit Design</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Team</span>
+                  <span class="stat-value">Independent</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="project4" class="sidebar-section">
-          <h2>Honor's Thesis</h2>
-          <p>Undergraduate honor's thesis on research conducted at Project IRENE.</p>
-          <a href="/Projects/Projects/thesis.html">
-            <img src="/Photos/honorsthesis.png" alt="Honor's Thesis Picture" class="project" />
-          </a>
+          <div class="project-card">
+            <div class="project-card-image">
+              <a href="/Projects/Projects/thesis.html">
+                <img src="/Photos/honorsthesis.png" alt="Honor's Thesis" />
+              </a>
+            </div>
+            <div class="project-card-content">
+              <p class="project-meta">Personal Project — 2023</p>
+              <div class="project-card-header">
+                <h2>Honor's Thesis</h2>
+                <a href="/Projects/Projects/thesis.html" class="read-more">
+                  Read More <span class="read-more-arrow">›</span>
+                </a>
+              </div>
+              <p class="project-description">
+                Undergraduate honor's thesis on research conducted at Project
+                IRENE.
+              </p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <span class="stat-label">Role</span>
+                  <span class="stat-value">Sole Designer</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Tools</span>
+                  <span class="stat-value">Max/MSP, Circuit Design</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Team</span>
+                  <span class="stat-value">Independent</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="project5" class="sidebar-section">
-          <h2>Resonance Acoustics</h2>
-          <p>Job experience as a full-time acoustical consultant.</p>
-          <a href="resonanceacoustics.html">
-            <img src="/Photos/ResonanceLogo.png" alt="Resonance Logo" class="project" />
-          </a>
+          <div class="project-card">
+            <div class="project-card-image">
+              <a href="/Projects/Projects/resonanceacoustics.html">
+                <img
+                  src="/Photos/ResonanceLogo.png"
+                  alt="Resonance Acoustics"
+                />
+              </a>
+            </div>
+            <div class="project-card-content">
+              <p class="project-meta">Personal Project — 2023</p>
+              <div class="project-card-header">
+                <h2>Resonance Acoustics</h2>
+                <a
+                  href="/Projects/Projects/resonanceacoustics.html"
+                  class="read-more"
+                >
+                  Read More <span class="read-more-arrow">›</span>
+                </a>
+              </div>
+              <p class="project-description">
+                Work experience as a full-time acoustical consultant.
+              </p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <span class="stat-label">Role</span>
+                  <span class="stat-value">Sole Designer</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Tools</span>
+                  <span class="stat-value">Max/MSP, Circuit Design</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Team</span>
+                  <span class="stat-value">Independent</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="project6" class="sidebar-section">
+          <div class="project-card">
+            <div class="project-card-image">
+              <a href="/Projects/Projects/clocktowersimulation.html">
+                <img
+                  src="/Photos/ResonanceLogo.png"
+                  alt="Gravitational Synthesizer"
+                />
+              </a>
+            </div>
+            <div class="project-card-content">
+              <p class="project-meta">Personal Project — 2023</p>
+              <div class="project-card-header">
+                <h2>Gravitational Synthesizer</h2>
+                <a
+                  href="/Projects/Projects/clocktowersimulation.html"
+                  class="read-more"
+                >
+                  Read More <span class="read-more-arrow">›</span>
+                </a>
+              </div>
+              <p class="project-description">
+                A synthesizer controlled by the laws of planetary motion!
+              </p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <span class="stat-label">Role</span>
+                  <span class="stat-value">Sole Designer</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Tools</span>
+                  <span class="stat-value">Max/MSP, Circuit Design</span>
+                </div>
+                <div class="project-stat">
+                  <span class="stat-label">Team</span>
+                  <span class="stat-value">Independent</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </div>
     <footer>
       <div class="footer-text">
         <p>Made by Max. Thanks for visiting!</p>
-        <p class="contact"><a href="mailto:maxwellzking@berkeley.edu">Contact me</a></p>
+        <p class="contact">
+          <a href="mailto:maxwellzking@berkeley.edu">Contact me</a>
+        </p>
       </div>
     </footer>
   </body>
