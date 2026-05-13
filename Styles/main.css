@@ -73,13 +73,13 @@ body {
   scrollbar-width: none;
 }
 
-.project-card {
+.card {
   flex: 0 0 auto; /* prevent shrinking */
   width: 250px;
   text-align: center;
 }
 
-.project-card img {
+.card img {
   width: 250px; /* fixed width */
   height: 150px; /* fixed height */
   object-fit: cover; /* crop/scale to fill box */
@@ -88,7 +88,7 @@ body {
   transition: transform 0.3s;
 }
 
-.project-card img:hover {
+.card img:hover {
   transform: scale(1.05);
 }
 
@@ -108,7 +108,9 @@ body {
   padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
   white-space: nowrap;
 }
 

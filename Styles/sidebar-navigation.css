@@ -71,14 +71,13 @@
 
 /* Poster blocks */
 .sidebar-section {
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
 }
 
 .sidebar-section img {
   max-width: 100%;
   height: auto;
   margin-top: 1rem;
-  border-radius: 8px;
 }
 
 .sidebar-section .project {
