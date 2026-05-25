@@ -47,11 +47,10 @@
         </a>
         <nav class="sidebar-nav">
           <ul>
-            <li><a href="#Overview">Overview</a></li>
-            <li><a href="#Approach">Approach</a></li>
-            <li><a href="#Case1">Case 1: Oppenheimer Way</a></li>
-            <li><a href="#Case2">Case 2: Dwinelle Hall</a></li>
-            <li><a href="#Findings">Findings</a></li>
+            <li><a href="#Background">Summary</a></li>
+            <li><a href="#Background">Background</a></li>
+            <li><a href="#Features">Features</a></li>
+            <li><a href="#Download">Download</a></li>
           </ul>
         </nav>
       </div>
@@ -59,186 +58,64 @@
       <!-- Right Content -->
       <div class="project-body-container">
         <div class="project-title-container">
-          <a class="project-title">Clocktower Sound Simulation</a>
+          <a class="project-title">Gravitational Synthesizer</a>
         </div>
         <a class="project-body">
-          <section id="Overview" class="sidebar-section">
-            <p class="project-section-title">Overview</p>
+          <section id="Summary" class="sidebar-section">
+            <p class="project-section-title">Summary</p>
             <p>
-              If you've ever walked around the campus of the University of
-              California, Berkeley, you've likely heard the bells of Sather
-              Tower (a.k.a The Campanile). Standing 307 feet tall and with a
-              61-bell carillon, the bell chimes can be heard from all corners of
-              campus. The large collection of bells and the reflective surfaces
-              of Berkeley's buildings combine to produce striking reflections
-              and echoes of the chimes. In this project, I investigated the
-              reflections of chimes at two points of interest (Oppenheimer Way
-              and Dwinelle Hall) and attempted to simulate these reflections in
-              a 3D virtual environment.
-            </p>
-          </section>
-          <section id="Approach" class="sidebar-section">
-            <p class="project-section-title">Approach</p>
-            <p>
-              To virtually simulate the reflections of the bells, I used a 3D
-              topographic map of Berkeley's Campus from Google Earth and
-              imported it into Blender, a software used for animation. To
-              represent a sound wavefront emanating from the bells, I generated
-              thousands of particles in a sphere around the top of Sather Tower.
-              The particles would move away from the center of the sphere until
-              they collided and reflected off any surface. For simplicity, all
-              surfaces were set to be perfectly reflective.
-            </p>
-          </section>
-          <section id="Case1" class="sidebar-section">
-            <p class="project-section-title">Case 1: Oppenheimer Way</p>
-            <p>
-              I visited Berkeley's campus to make field observations of
-              reflections and echoes of the bell chimes. These field
-              observations were used to create a qualitative map of the
-              perceived direction of bell chimes at Oppenheimer Way (Figure 1).
+              This synthesizer is governed by Newton's Laws of Universal
+              Gravitation. In this patch, there is a planet and a stationary
+              sun. You control the mass of the sun as well as the planet's
+              initial velocity and distance from the sun. The sound evolves with
+              the position and velocity of the planet. See if you can keep the
+              planet in a stable orbit!
             </p>
             <div class="single-figure">
               <div class="figure">
                 <img
-                  src="/Projects/Projects/Photos/Oppenheimer Way Map.png"
+                  src="/Projects/Projects/Photos/Gravitational Synthesizer.gif"
                   alt="Oppenheimer Way Map"
                 />
-                <p class="figure-caption">
-                  Figure 1: Perceived Direction of Bell Chimes at Oppenheimer
-                  Way
-                </p>
               </div>
-            </div>
-            <p>
-              In the middle of Oppenheimer Way, there is a corridor between the
-              Physics building and Campbell Hall where a line of sight can be
-              established with Sather Tower. The most direct path is
-              uninterrupted and the brain correctly perceives the location of
-              the bells is to the southwest. Figure 2 shows the direct
-              line-of-sight to Sather Tower near the corridor. Figure 3 shows
-              the simulated wavefront traveling through and around the corridor.
-            </p>
-            <div class="double-figure">
-              <div class="figure">
-                <img
-                  src="/Projects/Projects/Photos/Oppenheimer Way Corridor Pic.png"
-                  alt="Oppenheimer Way Corridor Pic"
-                />
-                <p class="figure-caption">
-                  Figure 2: Line of sight to Sather Tower through Oppenheimer
-                  Way Corridor
-                </p>
-              </div>
-              <div class="figure">
-                <img
-                  src="/Projects/Projects/Photos/Oppenheimer Way Corridor.gif"
-                  alt="Oppenheimer Way Corridor GIF"
-                />
-                <p class="figure-caption">
-                  Figure 3: Simulated Wavefront through Oppenheimer Way Corridor
-                </p>
-              </div>
-            </div>
-            <p>
-              At the north and south ends of Oppenheimer Way, the line-of-sight
-              to Sather tower is obstructed by the rooflines of the surrounding
-              buildings. The brain perceives the chimes are coming from the
-              direction opposite of Sather Tower (i.e. east instead of
-              southwest). This can be explained by the Precedence Effect - the
-              brain determines the perceived location of a sound source from the
-              wavefront that arrives first (Begault 36). In this case, the
-              wavefronts reflected off of Gilman Hall are the first to arrive at
-              the north and south ends of Oppenheimer Way.
-            </p>
-            <div
-              class="audio-player-container"
-              data-src="Audio/Oppenheimer Way Perception Switch.wav"
-              data-description="Best listened to with headphones. The perceived location of the bells changes from right, to left, and then to right again."
-              data-caption="Audio 1: Perception Switch Effect at Oppenheimer Way"
-            ></div>
-            <p>
-              Figure 4 shows a southward view along Oppenheimer Way, where the
-              line of sight to Sather Tower is blocked. Figure 5 shows the
-              simulated wavefront traveling over the roofline of Campbell Hall
-              and the Physics Building and then reflecting off of Gilman Hall.
-            </p>
-            <div class="double-figure">
-              <div class="figure">
-                <img
-                  src="/Projects/Projects/Photos/Oppenheimer Way South Pic.png"
-                  alt="Oppenheimer Way South Pic"
-                />
-                <p class="figure-caption">
-                  Figure 4: Oppenheimer Way Facing South
-                </p>
-              </div>
-              <div class="figure">
-                <img
-                  src="/Projects/Projects/Photos/Oppenheimer Way Reflection.gif"
-                  alt="Oppenheimer Way South GIF"
-                />
-                <p class="figure-caption">
-                  Figure 3: Simulated Wavefront through Oppenheimer Way Facing
-                  South
-                </p>
-              </div>
-            </div>
-            <p></p>
           </section>
 
-          <section id="Case2" class="sidebar-section">
-            <p class="project-section-title">Case 2: Dwinelle Hall</p>
+          <section id="Background" class="sidebar-section">
+            <p class="project-section-title">Background</p>
             <p>
-              When I visited Berkeley's campus, I observed an echo in front of
-              Dwinelle Hall. The chime first comes directly from the clock
-              tower, and the echo comes from the direction of Dwinelle Hall
-              shortly thereafter. The direct sound and the echo are spaced
-              roughly 0.5 seconds apart. Figure 6 below shows the region where
-              the echo can be easily heard.
+              The first version of this patch was created for Music 158A "Music
+              and Computing" during my undergraduate studies at UC Berkeley. At
+              the time, I was most interested in modeling some of the concepts I
+              had learned from physics with sound. Our assignment was to create
+              a patch capable of synthesizing at least 4 different sounds.
             </p>
-            <div class="single-figure">
-              <div class="figure">
-                <img
-                  src="/Projects/Projects/Photos/Dwinelle Hall Map.png"
-                  alt="Dwinelle Hall Map"
-                />
-                <p class="figure-caption">
-                  Figure 6: Region with a Perceivable Echo in front of Dwinelle
-                  Hall
-                </p>
-              </div>
+            <p>
+              The motion of the planet is described by Newton's Law of Universal
+              Gravitation. The patch calculates the force of attraction between
+              the planet and the sun in real-time.
+            </p>
+            <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ygX-FukTnKQ?si=QU2rBnljfV3UU6cA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <p>
-              The 3D rendered environment shows how the echo is formed in front
-              of Dwinelle Hall (XX): First, the particles travel uninterrupted
-              through Dwinelle Plaza; Second, they reflect off the surface of
-              Dwinelle Hall back into the courtyard.
-            </p>
-            <div
-              class="audio-player-container"
-              data-src="Audio/Dwinelle Chime Echo.wav"
-              data-caption="Audio 2: Chime Echoes at Dwinelle Hall"
-            ></div>
           </section>
-          <section id="Findings" class="sidebar-section">
-            <p class="project-section-title">Findings</p>
-            <p>
-              The 3D virtual environment ended up being a helpful visualization
-              tool for reflections and echoes. The simulation helped reinforce
-              my field observations of the acoustic phenomena on Berkeley's
-              campus using only a simplistic model of the reflection of sound
-              waves.
-            </p>
-            <p>
-              For future work, considering other aspects of sound propagation
-              (e.g., air absorption, ground absorption, diffraction) in a 3d
-              virtual environment could reveal more information about the space
-              in question. Blender comes prepackaged with a sound simulation
-              toolbox named TASCAR, which accounts for air absorption and
-              diffraction. For more in-depth analysis, a professional-grade 3D
-              sound propagation modeling software should be used.
-            </p>
+          <section id="Features" class="sidebar-section">
+            <p class="project-section-title">Features</p>
+            <ul>
+              <li>Stereo Imaging</li>
+              <li>5 Synthesizer Presets</li>
+              <li>Graphical Display</li>
+            </ul>
+          </section>
+          <section id="Features" class="sidebar-section">
+            <p class="project-section-title">Download</p>
+            <p>Download the patch here to try it for yourself!</p>
+            <a
+              href="/Downloads/GravitationalSynthesizer.maxpat"
+              download="GravitationalSynthesizer.maxpat"
+              class="download-btn"
+            >
+              ⬇ Download Patch v1.2
+            </a>
           </section>
         </a>
       </div>
