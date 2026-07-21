@@ -76,47 +76,6 @@ header {
   display: none; /* Hide by default */
 }
 
-/* Media query for mobile responsiveness */
-@media (max-width: 1280px) {
-  .header-nav ul {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    width: 250px; /* Set the width of the menu */
-    position: fixed; /* Position it fixed */
-    top: 0; /* Align to the top */
-    right: -250px; /* Start off-screen */
-    background-color: white; /* Background color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    text-align: left; /* Align text to the left */
-    transition: right 0.3s ease; /* Animation for sliding */
-    z-index: 1002; /* Ensure it appears above other content */
-  }
-
-  .header-nav ul.active {
-    right: 0; /* Slide in */
-  }
-
-  .menu-toggle {
-    display: flex; /* Show the hamburger icon */
-  }
-
-  /* Align the close button to the right */
-  .header-nav ul li:first-child {
-    display: flex; /* Use flexbox for the close button */
-    justify-content: flex-end; /* Align the close button to the right */
-    width: 100%; /* Full width for the close button */
-  }
-
-  .close-menu {
-    display: block; /* Show the close button in mobile view */
-  }
-
-  .header-nav ul li {
-    padding-top: 10px;
-    padding-bottom: 5px;
-  }
-}
-
 /* Ensures that links on the website are not underlined or change colors when clicked*/
 a {
   text-decoration: none; /* Remove underline */

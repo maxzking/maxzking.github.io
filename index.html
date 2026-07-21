@@ -21,7 +21,9 @@
     <!--This is the website navigation bar at the top of the screen-->
     <header>
       <div class="page-title">
-        <a class="selected-page" href="index.html"><h2>Max King</h2></a>
+        <a class="selected-page" href="index.html"
+          ><h2 class="web-page-title">Max King</h2></a
+        >
         <nav class="header-nav">
           <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -37,93 +39,280 @@
       </div>
     </header>
     <div class="main">
-      <div class="about-section">
-        <div class="bio-text">
-          <p class="bio">
-            <strong>Max</strong> is a bay-area based musician. He is an
-            acoustician at
-            <a href="https://resonanceac.com/">Resonance Acoustics</a> - an
-            acoustical consulting firm in San Francisco.
-          </p>
-          <p class="bio">
-            He holds a BA in physics and BA in music from the University of
-            California, Berkeley.
-          </p>
-        </div>
+      <div class="about-section-container">
         <div class="portrait-container">
-          <img class="arrow" src="/Photos/arrow.png" />
           <img class="portrait" alt="portrait" src="/Photos/portrait.JPG" />
         </div>
+        <div class="bio-text-container">
+          <p class="bio">
+            <strong>Max</strong> is a Bay-Area based acoustic engineer. He holds
+            a BA in physics and BA in music from the University of California,
+            Berkeley.
+          </p>
+          <p class="bio-small">
+            In my spare time I like to tinker with electronics, making music,
+            playing games, and going running!
+          </p>
+        </div>
       </div>
-      <section class="projects-section">
-        <h2 class="projects-title">Featured Projects -></h2>
-        <div class="projects-scroll">
-          <!-- Project 1 -->
-          <div class="card">
-            <a href="/Projects/Projects/spectraphone.html">
-              <img src="/Photos/Spectraphone.png" alt="Spectraphone" />
-            </a>
-            <p class="project-desc">Spectraphone</p>
+      <!-- Featured Projects Content -->
+      <div class="selected-projects-text-container">Selected Projects</div>
+      <section id="project1" class="sidebar-section">
+        <div
+          class="project-card"
+          onclick="
+            window.location.href = '/Projects/Projects/spectraphone.html'
+          "
+        >
+          <div class="project-card-image">
+            <img
+              src="/Photos/SpectraphonePatch.png"
+              alt="Spectraphone"
+              class="card-static"
+            />
           </div>
-
-          <!-- Project 2 -->
-          <div class="card">
-            <a href="/Projects/Projects/resonanceacoustics.html">
-              <img
-                src="/Photos/ResonanceLogo.png"
-                alt="Resonance Acoustics Simulation"
-              />
-            </a>
-            <p class="project-desc">Resonance Acoustics Simulations</p>
+          <div class="project-card-content">
+            <p class="project-meta">Personal Project — 2023</p>
+            <div class="project-card-header">
+              <h2>Spectraphone</h2>
+            </div>
+            <p class="project-description">
+              Designing a musical instrument that is played with light.
+            </p>
+            <div class="project-stats">
+              <div class="project-stat">
+                <span class="stat-label">Role</span>
+                <span class="stat-value">DSP Engineer</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Skills</span>
+                <span class="stat-value">Max/MSP, Circuit Design, Arduino</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Team</span>
+                <span class="stat-value">2 People</span>
+              </div>
+            </div>
           </div>
-
-          <!-- Project 3 -->
-          <div class="card">
-            <a href="/Projects/Projects/amplifier.html">
-              <img
-                src="/Photos/circuitdiagram.png"
-                alt="Class AB Audio Amplifier"
-              />
-            </a>
-            <p class="project-desc">Class AB Audio Amplifier</p>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="card">
-            <a href="/Projects/Projects/clocktowersimulation.html">
-              <img
-                src="/Photos/clocktowersimulation.png"
-                alt="Clocktower Sound Simulation"
-              />
-            </a>
-            <p class="project-desc">Clocktower Sound Simulation</p>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="card">
-            <a href="/Projects/Projects/thesis.html">
-              <img src="/Photos/honorsthesis.png" alt="FFT Thingy" />
-            </a>
-            <p class="project-desc">FFt thingy</p>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="card">
-            <a href="/Posters/posters.html">
-              <img
-                src="/Posters/Photos/BPURS_Spring_2024_Poster.png"
-                alt="Poster Example"
-              />
-            </a>
-            <p class="project-desc">Research Posters</p>
-          </div>
-
-          <!-- Final “More Projects” button -->
-          <a href="Projects/projects.html" class="more-projects">
-            <span>More Projects →</span>
-          </a>
         </div>
       </section>
+
+      <section id="project2" class="sidebar-section">
+        <div
+          class="project-card"
+          onclick="window.location.href = '/Projects/Projects/amplifier.html'"
+        >
+          <div class="project-card-image">
+            <img
+              src="/Photos/circuitdiagram.png"
+              alt="Circuit Diagram"
+              class="card-static"
+            />
+          </div>
+          <div class="project-card-content">
+            <p class="project-meta">School Project — 2023</p>
+            <div class="project-card-header">
+              <h2>Class AB Audio Amplifier</h2>
+            </div>
+            <p class="project-description">
+              Designed and built a class AB stereo audio amplifier for a class
+              project and home use.
+            </p>
+            <div class="project-stats">
+              <div class="project-stat">
+                <span class="stat-label">Role</span>
+                <span class="stat-value">Designer</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Skils</span>
+                <span class="stat-value">Circuit Design</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Team</span>
+                <span class="stat-value">2 People</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project3" class="sidebar-section">
+        <div
+          class="project-card"
+          onclick="
+            window.location.href =
+              '/Projects/Projects/clocktowersimulation.html'
+          "
+        >
+          <div class="project-card-image">
+            <img
+              src="/Photos/clocktowersimulation.png"
+              alt="Clocktower Photo"
+              class="card-static"
+            />
+            <img
+              src="/Projects/Photos/Clocktower Preview.gif"
+              alt="Clocktower GIF"
+              class="card-gif"
+            />
+          </div>
+          <div class="project-card-content">
+            <p class="project-meta">School Project — 2023</p>
+            <div class="project-card-header">
+              <h2>Clocktower Sound Simulation</h2>
+            </div>
+            <p class="project-description">
+              Created a 3D simulation of sound sources to study reflections
+              across Berkeley's campus.
+            </p>
+            <div class="project-stats">
+              <div class="project-stat">
+                <span class="stat-label">Role</span>
+                <span class="stat-value">Researcher</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Tools</span>
+                <span class="stat-value">Blender, Zoom H2 Microphone</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Methods</span>
+                <span class="stat-value">Field Observations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project4" class="sidebar-section">
+        <div
+          class="project-card"
+          onclick="window.location.href = '/Projects/Projects/thesis.html'"
+        >
+          <div class="project-card-image">
+            <img
+              src="/Photos/honorsthesis.png"
+              alt="Honor's Thesis"
+              class="card-static"
+            />
+          </div>
+          <div class="project-card-content">
+            <p class="project-meta">Research — Academia, 2022-2024</p>
+            <div class="project-card-header">
+              <h2>Honor's Thesis</h2>
+            </div>
+            <p class="project-description">
+              Undergraduate honor's thesis on research conducted at Project
+              IRENE.
+            </p>
+            <div class="project-stats">
+              <div class="project-stat">
+                <span class="stat-label">Role</span>
+                <span class="stat-value">Researcher</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Methods</span>
+                <span class="stat-value"
+                  >Labview, Python, Circuit Design, Photography</span
+                >
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">PIs</span>
+                <span class="stat-value">Marjorie Shapiro, Carl Haber</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project5" class="sidebar-section">
+        <div
+          class="project-card"
+          onclick="
+            window.location.href = '/Projects/Projects/resonanceacoustics.html'
+          "
+        >
+          <div class="project-card-image">
+            <img
+              src="/Photos/ResonanceLogo.png"
+              alt="Resonance Acoustics"
+              class="card-static"
+            />
+          </div>
+          <div class="project-card-content">
+            <p class="project-meta">Work Expereince, 2024-2026</p>
+            <div class="project-card-header">
+              <h2>Resonance Acoustics</h2>
+            </div>
+            <p class="project-description">
+              Work experience as a full-time acoustical consultant.
+            </p>
+            <div class="project-stats">
+              <div class="project-stat">
+                <span class="stat-label">Role</span>
+                <span class="stat-value">Acoustic Consultant</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Measurements</span>
+                <span class="stat-value"
+                  >Reverberation Measurements, Environmental Noise, Airborne
+                  Noise Isolation, Impact Insulation</span
+                >
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Skills</span>
+                <span class="stat-value">Max/MSP, Python, CadnaA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project6" class="sidebar-section">
+        <div
+          class="project-card"
+          onclick="
+            window.location.href =
+              '/Projects/Projects/gravitationalsynthesizer.html'
+          "
+        >
+          <div class="project-card-image">
+            <img
+              src="/Projects/Projects/Photos/Gravitational Synthesizer.jpg"
+              alt="Clocktower Photo"
+              class="card-static"
+            />
+            <img
+              src="/Projects/Projects/Photos/Gravitational Synthesizer.gif"
+              alt="Clocktower GIF"
+              class="card-gif"
+            />
+          </div>
+          <div class="project-card-content">
+            <p class="project-meta">Personal Project — 2023-2026</p>
+            <div class="project-card-header">
+              <h2>Gravitational Synthesizer</h2>
+            </div>
+            <p class="project-description">
+              A synthesizer controlled by the laws of planetary motion!
+            </p>
+            <div class="project-stats">
+              <div class="project-stat">
+                <span class="stat-label">Role</span>
+                <span class="stat-value">Sole Designer</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Tools</span>
+                <span class="stat-value">Max/MSP</span>
+              </div>
+              <div class="project-stat">
+                <span class="stat-label">Team</span>
+                <span class="stat-value">Independent</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <button class="read-more">More Projects</button>
     </div>
     <footer>
       <div class="footer-text">

@@ -2,8 +2,8 @@ html,
 body {
   height: 100%; /* Ensure the rgbody takes the full height of the viewport */
   background-color: #d7eae8;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 8%;
+  padding-right: 8%;
   font-family: "Roboto Mono";
 }
 
@@ -12,8 +12,31 @@ body {
   align-items: center;
 }
 
-.about-section {
+.about-section-container {
   font-size: large;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.web-page-title :hover {
+  cursor: pointer;
+}
+
+.bio-text-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px; /* pick a value that suits your layout */
+}
+
+.bio {
+  padding-right: 20px;
+  margin-top: 10px;
+}
+
+.bio-small {
+  font-size: 14px;
 }
 
 .bio a {
@@ -30,72 +53,22 @@ body {
 .portrait-container {
   display: flex;
   justify-content: center;
-}
-
-.arrow {
-  height: 10vw;
-  width: auto;
-  padding-top: 5vw;
+  align-items: center;
 }
 
 .portrait {
   height: 20vw;
   width: auto;
+  padding-right: 20px;
 }
 
-.projects-section {
-  margin: 60px 0;
-  overflow: hidden;
-}
-
-.projects-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.projects-scroll {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  padding: 1rem;
-  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-}
-
-/* Hide scrollbar (cross-browser) */
-.projects-scroll::-webkit-scrollbar {
-  display: none;
-}
-.projects-scroll {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.card {
-  flex: 0 0 auto; /* prevent shrinking */
-  width: 250px;
-  text-align: center;
-}
-
-.card img {
-  width: 250px; /* fixed width */
-  height: 150px; /* fixed height */
-  object-fit: cover; /* crop/scale to fill box */
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.card img:hover {
-  transform: scale(1.05);
-}
-
-.project-desc {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: #333;
+.selected-projects-text-container {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #ccc;
 }
 
 /* “More Projects” button */
@@ -117,4 +90,422 @@ body {
 .more-projects:hover {
   background-color: #005fa3;
   transform: scale(1.05);
+}
+
+/* --------- */
+/* STYLES FOR PROJECT DESCRIPTIONS */
+/* --------- */
+
+.project-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.project-title {
+  flex: 1;
+  text-align: center;
+  padding-top: 10px;
+  margin: 0;
+  font-size: 40pt;
+  font-weight: bold;
+}
+
+.page-description {
+  font-family: "Roboto Mono";
+  justify-self: center;
+}
+
+/* Outer wrapper — splits page into left and right */
+.page-layout {
+  display: flex;
+  gap: 40px;
+  padding-top: 0px;
+}
+
+.project-list-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Mono";
+}
+
+.project-description {
+  color: grey;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.project-header h2 {
+  margin: 0; /* removes default heading margin that can throw off alignment */
+}
+
+/* Title for the sections on each project page */
+.project-section-title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  border: 1px solid #333;
+  padding: 6px 12px;
+  padding: 6px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.read-more:hover {
+  color: #888;
+  border-color: #888;
+}
+
+.read-more-arrow,
+.back-nav-arrow {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+  padding-bottom: 2px;
+}
+
+.read-more:hover .read-more-arrow {
+  transform: translateX(3px); /* arrow slides right on hover */
+}
+
+.read-more:hover .back-nav-arrow {
+  transform: translateX(-3px); /* arrow slides right on hover */
+}
+
+.figure {
+  display: flex;
+  flex-direction: column; /* stacks image and caption vertically */
+  align-items: center; /* centers both horizontally */
+  gap: 0px; /* space between image and caption */
+}
+
+.single-figure .figure img {
+  width: 50vw;
+}
+
+.figure-caption {
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.double-figure {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.double-figure .figure {
+  flex: 1;
+  max-width: 50%;
+}
+
+.double-figure .figure img {
+  height: 300px; /* same height for both */
+  width: auto; /* width scales proportionally */
+}
+
+.project-card {
+  display: flex;
+  gap: 0;
+  padding: 20px 0; /* reduce from 40px */
+  width: 100%;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  background-color: rgba(140, 140, 140, 0.5);
+}
+
+.project-card-image {
+  width: 40%;
+  flex-shrink: 0;
+  padding-right: 40px;
+  overflow: hidden; /* keep this on the image container only */
+  position: relative; /* needed to stack the two images */
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center; /* vertical centering */
+  justify-content: center; /* horizontal centering */
+}
+
+.card-static,
+.card-gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 !important; /* override -section img margin-top */
+  transition: opacity 0.5s ease;
+}
+
+.card-gif {
+  opacity: 0;
+}
+
+.project-card:hover .card-gif {
+  opacity: 1;
+}
+
+.project-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.project-card-content h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.project-meta {
+  font-size: 0.75rem;
+  color: #888;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.project-description {
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.project-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #888888;
+}
+
+.project-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #888;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-bottom: 12px;
+  position: relative; /* needed for the pseudo-element */
+}
+
+.project-card-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* starts with no width */
+  height: 1px;
+  background-color: #888;
+  transition: width 0.3s ease; /* grows from left to right */
+}
+
+.project-card:hover .project-card-header::after {
+  width: 100%; /* expands to full width on hover */
+}
+
+.project-card-header h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.project-card-header .read-more {
+  grid-column: 3;
+  justify-self: end;
+  width: 100px;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #0070f3;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.download-btn:hover {
+  background: #005bb5;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* --------- */
+/* STYLES FOR LEFT-RIGHT "SIDEBAR" ORGANIZATION OF PROJECTS. NAV ON THE LEFT AND CONTENT ON THE RIGHT*/
+/* --------- */
+
+.sidebar-layout {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+  scroll-behavior: smooth; /* enables smooth anchor scrolling */
+  flex-shrink: 0; /* prevents sidebar from squishing */
+  min-height: fit-content; /* ensure nav grows with links */
+  border-right: 1px solid rgb(136, 136, 136);
+  padding-right: 20px; /* adds breathing room between content and the line */
+}
+
+.sidebar-layout .read-more {
+  margin-top: 20px; /* gap at the top */
+  margin-bottom: 0; /* reduce gap beneath */
+}
+
+/* Left navigation menu */
+.sidebar-nav {
+  top: 2rem; /* stays visible while scrolling */
+  flex: 0 0 200px;
+  padding-top: 30px;
+  position: sticky;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 0.4rem 0;
+}
+
+.sidebar-nav a:hover {
+  transition: ease-in;
+  transition-duration: 0.2s;
+  color: grey;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* make sure they're in a stack */
+  flex-direction: column; /* vertical layout */
+  gap: 0.75rem; /* space between each item */
+}
+
+.sidebar-nav li {
+  display: block; /* ensure each takes full width */
+  margin: 0;
+}
+
+.sidebar-nav a {
+  display: block; /* click area spans full row */
+  text-decoration: none;
+  color: #333;
+  line-height: 1.1;
+  font-size: 14px;
+}
+
+/* Content section styling */
+.sidebar-content {
+  flex: 1;
+}
+
+.sidebar-section {
+  margin-bottom: 0rem;
+}
+
+.sidebar-section img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.sidebar-section .project {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --------- */
+/* STYLE ADJUSTMENTS FOR MOBILE SCREENS */
+/* --------- */
+
+@media (max-width: 1070px) {
+  /* Hides the sidebar-layout on smaller screens */
+  .sidebar-layout {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section-container {
+    flex-direction: column;
+  }
+
+  .portrait {
+    height: 200px;
+    width: auto;
+    padding-right: 0px;
+  }
+
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-card-image {
+    width: 80%;
+  }
 }
