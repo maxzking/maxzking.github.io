@@ -2,9 +2,14 @@ html,
 body {
   height: 100%; /* Ensure the rgbody takes the full height of the viewport */
   background-color: #d7eae8;
-  padding-left: 8%;
-  padding-right: 8%;
   font-family: "Roboto Mono";
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.content-wrapper {
+  padding-left: 8%; /* Adds padding to the left and right of all the page content, excluding the footer*/
+  padding-right: 8%;
 }
 
 .main {
@@ -63,8 +68,8 @@ body {
 }
 
 .selected-projects-text-container {
-  font-size: large;
-  font-weight: bold;
+  font-size: 14px;
+  color: grey;
   margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -96,6 +101,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* --------- */
@@ -497,7 +504,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
+  .content-wrapper {
     padding-left: 4%;
     padding-right: 4%;
   }
@@ -522,5 +529,6 @@ body {
 
   .header-nav ul li {
     margin: 0 15px;
+    font-size: 12px;
   }
 }

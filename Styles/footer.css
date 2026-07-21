@@ -4,17 +4,19 @@ footer {
   font-family: "Roboto Mono";
   margin-top: 10px;
   border-top: 2px solid black;
+  background-color: black;
 }
 
 .footer-text {
   align-self: center;
   text-align: center;
+  color: #d7eae8;
 }
 
 .contact a {
-  color: blue;
+  color: #d7eae8;
 }
 
 .contact a:hover {
-  color: darkblue;
+  color: #9caaa8;
 }
