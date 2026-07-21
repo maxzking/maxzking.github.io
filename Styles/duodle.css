@@ -1,0 +1,356 @@
+.title-container {
+  display: flex;
+  align-items: last baseline;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.end-game-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  background-color: white;
+  width: 50vw;
+  height: 50vh;
+  border-radius: 8px;
+  border-width: 4px;
+  border-color: #333;
+  border-style: solid;
+}
+
+.end-game-text {
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+
+.end-game-container.show {
+  opacity: 1;
+}
+
+.reveal-answers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-answers-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.player-1-answer {
+  margin-right: 20px;
+  -webkit-text-security: disc;
+}
+
+.player-2-answer {
+  -webkit-text-security: disc;
+}
+
+.player-1-answer.revealed,
+.player-2-answer.revealed {
+  -webkit-text-security: none;
+}
+
+.reveal-answers-text {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.reveal-answers-text:hover {
+  font-weight: bold;
+}
+
+.end-game-buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.end-of-game-button {
+  background-color: #333;
+  color: white;
+  width: 95px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.end-of-game-button:hover {
+  transform: translate(0px, -2px);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 1);
+}
+
+.end-of-game-button.show {
+  opacity: 1;
+}
+
+.keep-playing-button {
+  background-color: #333;
+  color: white;
+  width: 95px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 1;
+  margin-right: 20px;
+}
+
+.keep-playing-button:hover {
+  transform: translate(0px, -2px);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 1);
+}
+
+.keep-playing-button.hide {
+  display: none;
+}
+
+.error-message-container {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.center-buttons-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 450px;
+}
+
+.switch-turns-button {
+  background-color: #333;
+  color: white;
+  width: 95px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.new-game-button {
+  background-color: #333;
+  color: white;
+  width: 95px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-game-button:hover {
+  transform: translate(0px, -2px);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 1);
+}
+
+.error-message-container.show {
+  opacity: 1;
+}
+
+.game-board-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-1-side,
+.player-2-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-1-boards,
+.player-2-boards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-1-keyboard,
+.player-2-keyboard {
+  padding-top: 20px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.letter-key {
+  width: 40px;
+  height: 56px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.enter-key {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-key {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.player-1-answer-board,
+.player-2-answer-board {
+  display: grid;
+  grid-template-columns: repeat(5, 45px);
+  grid-template-rows: repeat(4, 45px);
+  row-gap: 19px;
+  column-gap: 2px;
+}
+
+.player-1-answer-board,
+.player-2-answer-board {
+  padding-right: 15px;
+}
+
+.answer-cell {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  font-size: 22px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.player-1-guess-board,
+.player-2-guess-board {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  grid-template-rows: repeat(4, 60px);
+  gap: 4px;
+}
+
+.player-1-side {
+  padding-right: 50px;
+}
+
+.guess-cell {
+  width: 55px;
+  height: 55px;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  font-size: 30px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+/* Animation for whose turn it is. Enlarges the currently active row */
+.guess-cell.active-row {
+  border: 2px solid rgb(100, 100, 100);
+  transition: transform 0.15s ease;
+}
+
+/* Row Shaking Animation when there is an error */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  60% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+/* Scoring reveal animation: cell shrinks slightly, then grows back to full
+   size. The color class (correct/present/absent) is added by JS at the
+   midpoint, so the color pops in right as the cell starts growing again. */
+@keyframes reveal-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cell-reveal {
+  animation: reveal-pop 0.3s ease;
+}
+
+/* Background colors for scored words */
+.correct {
+  background-color: #6aaa64;
+  border-color: #6aaa64;
+  color: white;
+}
+
+.present {
+  background-color: #c9b458;
+  border-color: #c9b458;
+  color: white;
+}
+
+.absent {
+  background-color: #787c7e;
+  border-color: #787c7e;
+  color: white;
+}

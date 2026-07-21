@@ -32,7 +32,7 @@ body {
 .bio-text-container {
   display: flex;
   flex-direction: column;
-  max-width: 500px; /* pick a value that suits your layout */
+  width: 400px;
 }
 
 .bio {
