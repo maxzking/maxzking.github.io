@@ -92,6 +92,12 @@ body {
   transform: scale(1.05);
 }
 
+.all-projects-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* --------- */
 /* STYLES FOR PROJECT DESCRIPTIONS */
 /* --------- */
@@ -491,6 +497,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
   .about-section-container {
     flex-direction: column;
   }
@@ -507,5 +518,9 @@ body {
 
   .project-card-image {
     width: 80%;
+  }
+
+  .header-nav ul li {
+    margin: 0 15px;
   }
 }
