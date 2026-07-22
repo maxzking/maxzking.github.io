@@ -513,6 +513,14 @@ body {
     flex-direction: column;
   }
 
+  .bio-text-container {
+    width: 358px;
+  }
+
+  .sidebar-content {
+    width: 358px;
+  }
+
   .portrait {
     height: 200px;
     width: auto;
