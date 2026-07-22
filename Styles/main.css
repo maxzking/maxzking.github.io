@@ -186,6 +186,10 @@ body {
   border-color: #888;
 }
 
+.project-read-more {
+  margin-top: 20px;
+}
+
 .read-more-arrow,
 .back-nav-arrow {
   font-size: 1rem;
@@ -230,7 +234,7 @@ body {
 }
 
 .double-figure .figure img {
-  height: 300px; /* same height for both */
+  height: 20vw; /* same height for both */
   width: auto; /* width scales proportionally */
 }
 
@@ -407,6 +411,7 @@ body {
 /* STYLES FOR LEFT-RIGHT "SIDEBAR" ORGANIZATION OF PROJECTS. NAV ON THE LEFT AND CONTENT ON THE RIGHT*/
 /* --------- */
 
+/* Left Side */
 .sidebar-layout {
   display: flex;
   align-items: flex-start;
@@ -496,10 +501,26 @@ body {
 /* STYLE ADJUSTMENTS FOR MOBILE SCREENS */
 /* --------- */
 
+@media (max-width: 1400px) {
+  /* Reduces the size of the right side on the projects page and each project-specific page*/
+  .sidebar-content {
+    width: 720px;
+  }
+
+  .player-right {
+    width: 600px;
+  }
+}
+
 @media (max-width: 1070px) {
   /* Hides the sidebar-layout on smaller screens */
   .sidebar-layout {
     display: none;
+  }
+
+  .double-figure .figure img {
+    height: 30vw; /* increase from 20 to 30 */
+    width: auto; /* width scales proportionally */
   }
 }
 
@@ -511,6 +532,10 @@ body {
 
   .about-section-container {
     flex-direction: column;
+  }
+
+  .player-right {
+    width: 250px;
   }
 
   .bio-text-container {
