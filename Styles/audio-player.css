@@ -90,3 +90,9 @@
   font-size: 0.85rem;
   color: #888;
 }
+
+@media (max-width: 768px) {
+  .audio-player-with-desc {
+    flex-direction: column;
+  }
+}

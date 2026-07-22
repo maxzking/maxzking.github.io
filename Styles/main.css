@@ -5,6 +5,9 @@ body {
   font-family: "Roboto Mono";
   margin-left: 0%;
   margin-right: 0%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .content-wrapper {
@@ -15,6 +18,7 @@ body {
 .main {
   font-family: "Roboto Mono";
   align-items: center;
+  flex: 1;
 }
 
 .about-section-container {
@@ -44,7 +48,9 @@ body {
   font-size: 14px;
 }
 
-.bio a {
+.bio a,
+.bio-small a,
+.resume-text a {
   color: blue;
   font-style: bold;
 }
