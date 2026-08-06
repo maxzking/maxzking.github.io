@@ -1,6 +1,8 @@
-html,
+html {
+  height: 100%;
+}
+
 body {
-  height: 100%; /* Ensure the rgbody takes the full height of the viewport */
   background-color: #d7eae8;
   font-family: "Roboto Mono";
   margin-left: 0%;
@@ -11,6 +13,7 @@ body {
 }
 
 .content-wrapper {
+  flex: 1;
   padding-left: 8%; /* Adds padding to the left and right of all the page content, excluding the footer*/
   padding-right: 8%;
 }
