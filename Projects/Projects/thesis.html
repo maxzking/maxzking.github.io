@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/Styles/header.css" />
     <link rel="stylesheet" href="/Styles/footer.css" />
     <link rel="stylesheet" href="/Styles/main.css" />
+    <link rel="stylesheet" href="/Styles/audio-player.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +19,7 @@
   </head>
   <body>
     <div class="content-wrapper">
-      <script src="Scripts/script.js" defer></script>
+      <script src="/Scripts/script.js" defer></script>
       <!--This is the website navigation bar at the top of the screen-->
       <header>
         <div class="page-title">
@@ -30,15 +31,229 @@
               <span class="bar"></span>
             </div>
             <ul>
-              <li>
-                <a href="../projects.html">Projects</a>
-              </li>
+              <li><a href="../projects.html">Projects</a></li>
               <li><a href="/Posters/posters.html">Posters</a></li>
-              <li><a href="/Resume/resume.html">Resume</a></li>
+              <li><a href="/Resume/Resume.html">Resume</a></li>
             </ul>
           </nav>
         </div>
       </header>
+      <a href="/Projects/projects.html" class="read-more project-read-more">
+        <span class="back-nav-arrow">‹</span> All Projects
+      </a>
+      <div class="page-layout">
+        <div class="sidebar-layout">
+          <!-- Left Navigation -->
+          <nav class="sidebar-nav">
+            <ul>
+              <li><a href="#Abstract">Abstract</a></li>
+              <li><a href="#Background">Background</a></li>
+              <li>
+                <a href="#Recreating_Audio_with_High_Speed_Photography"
+                  >Recreating Audio with High Speed Photography</a
+                >
+              </li>
+              <li>
+                <a href="#Piezoelectric_Actuator">Piezoelectric Actuator</a>
+              </li>
+              <li>
+                <a href="#Cutter_Angle">Cutter Angle</a>
+              </li>
+              <li>
+                <a href="#Conclusion">Conclusion</a>
+              </li>
+              <li><a href="#Download">Download</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Right Content -->
+        <div class="sidebar-content">
+          <div class="project-title-container">
+            <a class="project-title"
+              >Modeling Stylus Dynamics with High-Speed Photography</a
+            >
+            <a class="project-sub-title">Undergraduate Honor's Thesis</a>
+            <a class="project-sub-title">Advisor: Marjorie Shaprio</a>
+          </div>
+          <a class="project-body">
+            <section id="Abstract" class="sidebar-section">
+              <p class="project-section-title">Abstract</p>
+              <p>
+                The research for this thesis was conducted from Fall 2022 to
+                Spring 2024 at
+                <a href="https://tay.rhp.mybluehost.me/"
+                  ><strong>Project IRENE’s</strong></a
+                >
+                office in Lawrence Berkeley National Laboratory. This project
+                was conceived as an effort to understand how styli move on
+                cylindrical record surfaces in order to improve audio created
+                from optical reconstruction by IRENE. Three (3) approaches were
+                devised in this aim: recreation of audio using high-speed
+                photography, measurement of cylinder cutter angle, and
+                piezoelectric actuator systems.
+              </p>
+              <p>
+                This article focuses on the
+                <strong>high-speed photography</strong> approach of audio
+                reproduciton. For more information, you can download my thesis
+                here.
+              </p>
+              <a
+                href="/Downloads/IRENE Honors Thesis.pdf"
+                download="Max King IRENE Honors Thesis 2024.pdf"
+                class="download-btn"
+              >
+                ⬇ Download Thesis
+              </a>
+            </section>
+
+            <section id="Background" class="sidebar-section">
+              <p class="project-section-title">Background</p>
+              <p>
+                Many early audio recordings were produced in low quantity and
+                are archived in private or library collections. Over the years,
+                they lose their integrity from mold, cracks, and scratches.
+                Project IRENE develops optical reconstruction methods to recover
+                the audio from these recordings without further damaging them.
+              </p>
+              <div class="single-figure">
+                <div class="figure">
+                  <img
+                    src="/Projects/Projects/Photos/Edison Blue Amberol.jpg"
+                    alt="Edison Blue Amberol Cylinder"
+                  />
+                  <p class="figure-caption">
+                    Figure 1: The Right of the People to Rule / Teddy Roosevelt.
+                    Edison Blue Amberol: 3707. 1919, Courtesy of UCSB Cylinder
+                    Audio Archive
+                  </p>
+                </div>
+              </div>
+              <p>
+                Project IRENE is a laboratory located at the Lawrence Berkeley
+                National Laboratory that digitizes audio from early or rare
+                mechanical audio recordings via high-resolution 3D imaging.
+                IRENE uses a confocal imaging probe to scan the depth of the
+                grooves along the recording's surface. Using in-house image
+                processing software, IRENE tracks how the depth of the groove
+                modulates over time, and from this recreates the audio of the
+                recording. For my thesis, I investigated how a stylus moves over
+                the grooves of a recording during traditional mechanical
+                playback to improve IRENE's understanding of the relationship
+                between groove shape and audio.
+              </p>
+            </section>
+            <section
+              id="Recreating_Audio_with_High_Speed_Photography"
+              class="sidebar-section"
+            >
+              <p class="project-section-title">
+                Recreating Audio with High-Speed Photography
+              </p>
+              <p>
+                The Chronos 1.4 is a high-speed camera capable of capturing the
+                motion of a stylus playing a mechanical recording at a rate of
+                10,000 fps. During an experiment, the stylus motion is filmed by
+                the Chronos 1.4 and the mechanically transduced audio is
+                recorded by a Focusrite 2i2.
+              </p>
+              <div class="double-figure">
+                <div class="figure">
+                  <img
+                    src="/Projects/Projects/Photos/Schematic.png"
+                    alt="Schematic of Experimental Design"
+                  />
+                  <p class="figure-caption">
+                    Figure 2: Schematic of Experimental Design
+                  </p>
+                </div>
+                <div class="figure">
+                  <img
+                    src="/Projects/Projects/Photos/Lab Setup.png"
+                    alt="In-Lab Experiumental Setup"
+                  />
+                  <p class="figure-caption">
+                    Figure 3: In-Lab Experimental Setup
+                  </p>
+                </div>
+              </div>
+              <p>
+                After playback has finished, the video is sent to National
+                Instruments Vision Assistant software to track the
+                frame-by-frame position of the stylus. It is known that the
+                audio transduced by the stylus cartridge is proportional to the
+                stylus's velocity. Therefore, audio can be recreated from the
+                video by measuring the velocity of the stylus. We achieve this
+                by taking the first order discrete derivative of the stylus
+                position.
+              </p>
+              <div class="single-figure">
+                <div class="figure">
+                  <img
+                    src="/Projects/Projects/Photos/Stylus Tip.png"
+                    alt="Image of a Stylus Tip and Cantilever Captured by the Chronos 1.4"
+                  />
+                  <p class="figure-caption">
+                    Figure 4: Image of a Stylus Tip and Cantilever Captured by
+                    the Chronos 1.4
+                  </p>
+                </div>
+              </div>
+              <p>
+                At this point, there are two audio files: one from the Chronos
+                1.4, and one from the Focusrite 2i2. The audio files are
+                systematically synchronized by lagging one audio file one sample
+                at a time and finding the maximum correlation coefficient (via
+                the Pearson method). Correlation values between two variables
+                span from -1 and 1, where values near -1 indicate a strong
+                inverse relationship, values near 0 indicate minimal
+                association, and values near 1 indicate a strong direct
+                relationship. In the example below, the maximum correlation for
+                a cylindrical recording titled "Stars and Stripes Forever" is
+                0.69, suggesting that there is a strong relationship between
+                audio created via high-speed photography and mechanically
+                transduced audio.
+              </p>
+              <div class="single-figure">
+                <div class="figure">
+                  <img
+                    src="/Projects/Projects/Photos/IRENE Correlation.png"
+                    alt="Correlation Between Audio Created Via High-Speed Photography and Mechanically Transduced Audio"
+                  />
+                  <p class="figure-caption">
+                    Figure 4: Correlation Between Audio Created Via High-Speed
+                    Photography and Mechanically Transduced Audio
+                  </p>
+                </div>
+              </div>
+              <p>
+                You can listen to the audio created via high-speed photography
+                below.
+              </p>
+              <div
+                class="audio-player-container"
+                data-src="Audio/Fast Camera Audio Reproduction - John Phillip Sousa _Stars and Stripes Forever_.wav"
+                data-caption="Audio 1: Snippet of 'Stars and Stripes Forever by John Phillip Sousa' - Recreated Via High-Speed Photography"
+              ></div>
+            </section>
+            <section id="Conclusion" class="sidebar-section">
+              <p class="project-section-title">Conclusion</p>
+              <p>
+                Audio reproduced via high-speed photography of stylus motion has
+                high correlation to mechanically transduced audio, suggesting it
+                is an apt method of recovering information from stylus
+                vibrations. The high-speed photography method provides an
+                independent method of measuring qualities of stylus motion,
+                which can be used to improve the understanding of the
+                relationship between groove shape and the resultant audio. This
+                can be of great benefit to IRENE and the preservation of
+                historic mechanical audio recordings.
+              </p>
+            </section>
+          </a>
+        </div>
+      </div>
     </div>
     <footer>
       <div class="footer-text">

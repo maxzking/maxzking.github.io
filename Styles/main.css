@@ -121,6 +121,7 @@ body {
 .project-title-container {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .project-title {
@@ -130,6 +131,11 @@ body {
   margin: 0;
   font-size: 40pt;
   font-weight: bold;
+}
+
+.project-sub-title {
+  font-size: 20pt;
+  color: grey;
 }
 
 .page-description {
