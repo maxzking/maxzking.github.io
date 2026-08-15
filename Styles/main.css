@@ -24,6 +24,18 @@ body {
   flex: 1;
 }
 
+.page-title {
+  margin-block-start: 0.25em;
+  margin-block-end: 0;
+}
+
+.page-subtitle {
+  margin-block-start: 0.25em;
+  margin-block-end: 0em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px dashed black;
+}
+
 .about-section-container {
   font-size: large;
   display: flex;
@@ -511,6 +523,45 @@ body {
   max-width: 100%;
   height: auto;
 }
+.music-section {
+  background-color: black;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.music-project {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+
+.music-picture {
+  width: 200px;
+  height: auto;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.music-text {
+  display: flex;
+  flex-direction: column;
+  color: #d7eae8;
+}
+
+.music-title a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #d7eae8;
+}
+
+.music-description {
+  margin-block-start: 0em;
+  margin-block-end: 1em;
+}
+
+footer.music-page {
+  margin-top: 0px;
+}
 
 /* --------- */
 /* STYLE ADJUSTMENTS FOR MOBILE SCREENS */
@@ -545,6 +596,10 @@ body {
     padding-right: 4%;
   }
 
+  .web-page-title {
+    font-size: 20px;
+  }
+
   .about-section-container {
     flex-direction: column;
   }
@@ -576,7 +631,17 @@ body {
   }
 
   .header-nav ul li {
-    margin: 0 15px;
+    margin: 0 8px;
     font-size: 12px;
+  }
+
+  .music-section {
+    background-color: black;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .music-description {
+    font-size: 14px;
   }
 }
