@@ -71,22 +71,27 @@ function keepPlaying() {
   gameOverStatus = 0;
   const endGameContainer = document.getElementById("endGameContainer");
   endGameContainer.classList.remove("show");
+  updateActiveRowHighlight(); // resize boards back to the current turn's player
 }
+
+// Get the player 1 and player 2 sides of the board
+const player1Side = document.querySelector(".player-1-side");
+const player2Side = document.querySelector(".player-2-side");
 
 // Get all guess cells for both players
 const player1Cells = document.querySelectorAll(
-  ".player-1-guess-board .guess-cell",
+  ".player-1-guess-board .player-1-guess-cell",
 );
 const player2Cells = document.querySelectorAll(
-  ".player-2-guess-board .guess-cell",
+  ".player-2-guess-board .player-2-guess-cell",
 );
 
 // Get all answer cells for both players (the ones that are cross-player)
 const player1AnswerCells = document.querySelectorAll(
-  ".player-1-answer-board .answer-cell",
+  ".player-1-answer-board .player-1-answer-cell",
 );
 const player2AnswerCells = document.querySelectorAll(
-  ".player-2-answer-board .answer-cell",
+  ".player-2-answer-board .player-2-answer-cell",
 );
 
 function getCellIndex(row, col) {
@@ -329,6 +334,7 @@ function animateReveal(sequence, onComplete) {
 }
 
 function scoreGuess(row, player1Guess, player2Guess, onComplete) {
+  setSideSizes("equal"); // snap to equal sizing as soon as scoring begins
   // Player 1's own guess, scored against player 1's own answer (their guess board)
   const player1OwnResult = computeResult(player1Guess, player1Answer);
 
@@ -686,6 +692,23 @@ function shakeRow(row) {
   }
 }
 
+function setSideSizes(mode) {
+  // mode: "player1", "player2", or "equal"
+  player1Side.classList.remove("active-side", "inactive-side", "equal-side");
+  player2Side.classList.remove("active-side", "inactive-side", "equal-side");
+
+  if (mode === "player1") {
+    player1Side.classList.add("active-side");
+    player2Side.classList.add("inactive-side");
+  } else if (mode === "player2") {
+    player2Side.classList.add("active-side");
+    player1Side.classList.add("inactive-side");
+  } else {
+    player1Side.classList.add("equal-side");
+    player2Side.classList.add("equal-side");
+  }
+}
+
 function updateActiveRowHighlight() {
   // Clear all highlights first
   player1Cells.forEach((cell) => cell.classList.remove("active-row"));
@@ -693,7 +716,9 @@ function updateActiveRowHighlight() {
 
   game_over_turn = MAX_ROWS * 2;
 
-  if (currentTurn === game_over_turn) {
+  if (isRevealing || gameOverStatus === 1 || currentTurn === game_over_turn) {
+    // Scoring animation in progress, or the game has ended — equal sizing
+    setSideSizes("equal");
     return;
   } else if (currentTurn % 2 === 0) {
     // Player 1's turn - highlight their current row
@@ -701,12 +726,14 @@ function updateActiveRowHighlight() {
       const cellIndex = getCellIndex(player1CurrentRow, col);
       player1Cells[cellIndex].classList.add("active-row");
     }
+    setSideSizes("player1");
   } else {
     // Player 2's turn - highlight their current row
     for (let col = 0; col < WORD_LENGTH; col++) {
       const cellIndex = getCellIndex(player2CurrentRow, col);
       player2Cells[cellIndex].classList.add("active-row");
     }
+    setSideSizes("player2");
   }
 }
 
@@ -717,10 +744,10 @@ updateActiveRowHighlight();
 let player1LetterStatus = {}; // e.g. { A: "correct", B: "absent" }
 let player2LetterStatus = {};
 const player1KeyboardButtons = document.querySelectorAll(
-  ".player-1-keyboard .letter-key",
+  ".player-1-keyboard .player-1-letter-key",
 );
 const player2KeyboardButtons = document.querySelectorAll(
-  ".player-2-keyboard .letter-key",
+  ".player-2-keyboard .player-2-letter-key",
 );
 
 function updateLetterStatus(statusMap, guess, result) {
@@ -760,7 +787,7 @@ document.addEventListener("keydown", (e) => {
 
 // Player 1 on-screen keyboard - only responds during player 1's turn
 document
-  .querySelectorAll(".player-1-keyboard .letter-key")
+  .querySelectorAll(".player-1-keyboard .player-1-letter-key")
   .forEach((button) => {
     button.addEventListener("click", () => {
       if (currentTurn % 2 === 0) {
@@ -770,7 +797,7 @@ document
   });
 
 document
-  .querySelector(".player-1-keyboard .enter-key")
+  .querySelector(".player-1-keyboard .player-1-enter-key")
   .addEventListener("click", () => {
     if (currentTurn % 2 === 0) {
       submitGuess();
@@ -778,7 +805,7 @@ document
   });
 
 document
-  .querySelector(".player-1-keyboard .delete-key")
+  .querySelector(".player-1-keyboard .player-1-delete-key")
   .addEventListener("click", () => {
     if (currentTurn % 2 === 0) {
       deleteLetter();
@@ -787,7 +814,7 @@ document
 
 // Player 2 on-screen keyboard - only responds during player 2's turn
 document
-  .querySelectorAll(".player-2-keyboard .letter-key")
+  .querySelectorAll(".player-2-keyboard .player-2-letter-key")
   .forEach((button) => {
     button.addEventListener("click", () => {
       if (currentTurn % 2 === 1) {
@@ -797,7 +824,7 @@ document
   });
 
 document
-  .querySelector(".player-2-keyboard .enter-key")
+  .querySelector(".player-2-keyboard .player-2-enter-key")
   .addEventListener("click", () => {
     if (currentTurn % 2 === 1) {
       submitGuess();
@@ -805,7 +832,7 @@ document
   });
 
 document
-  .querySelector(".player-2-keyboard .delete-key")
+  .querySelector(".player-2-keyboard .player-2-delete-key")
   .addEventListener("click", () => {
     if (currentTurn % 2 === 1) {
       deleteLetter();

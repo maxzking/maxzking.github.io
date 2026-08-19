@@ -13,28 +13,44 @@
   </head>
   <body>
     <div class="content-container">
-      <div class="title-container">
-        <div style="font-size: 36px; font-style: italic; font-weight: bold">
-          DUO
+      <header>
+        <div class="header-container">
+          <div class="header-small-empty-spacer"></div>
+          <div class="header-big-empty-spacer"></div>
+          <div
+            style="
+              font-size: 36px;
+              font-style: italic;
+              font-weight: 700;
+              padding-right: 20px;
+            "
+          >
+            DUOdle
+          </div>
+          <div class="center-buttons-container">
+            <img
+              src="/Projects/Projects/DUOdle/images/Question Mark.png"
+              alt="Help Button"
+              class="help-button-image"
+            />
+            <button class="new-game-button" onclick="location.reload()">
+              New Game
+            </button>
+            <button
+              class="switch-turns-button"
+              type="button"
+              onclick="
+                switchTurns();
+                this.blur();
+              "
+            >
+              Switch Turns
+            </button>
+          </div>
+          <div class="header-small-empty-spacer"></div>
         </div>
-        <div style="font-size: 24px">dle</div>
-      </div>
+      </header>
       <div class="error-message-container" id="errorMessage"></div>
-      <div class="center-buttons-container">
-        <button
-          class="switch-turns-button"
-          type="button"
-          onclick="
-            switchTurns();
-            this.blur();
-          "
-        >
-          Switch Turns
-        </button>
-        <button class="new-game-button" onclick="location.reload()">
-          New Game
-        </button>
-      </div>
       <div class="end-game-container" id="endGameContainer">
         <span class="end-game-text" id="endGameText"></span>
         <div class="reveal-answers-container">
@@ -64,88 +80,89 @@
         </div>
       </div>
       <div class="game-board-container">
+        <div class="empty-left-side"></div>
         <div class="player-1-side">
           <h3>Player 1</h3>
           <div class="player-1-boards">
             <div class="player-1-answer-board">
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
+              <div class="player-1-answer-cell"></div>
             </div>
             <div class="player-1-guess-board">
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
+              <div class="player-1-guess-cell"></div>
             </div>
           </div>
           <div class="player-1-keyboard">
-            <div class="keyboard-row">
-              <button class="letter-key">Q</button>
-              <button class="letter-key">W</button>
-              <button class="letter-key">E</button>
-              <button class="letter-key">R</button>
-              <button class="letter-key">T</button>
-              <button class="letter-key">Y</button>
-              <button class="letter-key">U</button>
-              <button class="letter-key">I</button>
-              <button class="letter-key">O</button>
-              <button class="letter-key">P</button>
+            <div class="player-1-keyboard-row">
+              <button class="player-1-letter-key">Q</button>
+              <button class="player-1-letter-key">W</button>
+              <button class="player-1-letter-key">E</button>
+              <button class="player-1-letter-key">R</button>
+              <button class="player-1-letter-key">T</button>
+              <button class="player-1-letter-key">Y</button>
+              <button class="player-1-letter-key">U</button>
+              <button class="player-1-letter-key">I</button>
+              <button class="player-1-letter-key">O</button>
+              <button class="player-1-letter-key">P</button>
             </div>
-            <div class="keyboard-row">
-              <button class="letter-key">A</button>
-              <button class="letter-key">S</button>
-              <button class="letter-key">D</button>
-              <button class="letter-key">F</button>
-              <button class="letter-key">G</button>
-              <button class="letter-key">H</button>
-              <button class="letter-key">J</button>
-              <button class="letter-key">K</button>
-              <button class="letter-key">L</button>
+            <div class="player-1-keyboard-row">
+              <button class="player-1-letter-key">A</button>
+              <button class="player-1-letter-key">S</button>
+              <button class="player-1-letter-key">D</button>
+              <button class="player-1-letter-key">F</button>
+              <button class="player-1-letter-key">G</button>
+              <button class="player-1-letter-key">H</button>
+              <button class="player-1-letter-key">J</button>
+              <button class="player-1-letter-key">K</button>
+              <button class="player-1-letter-key">L</button>
             </div>
-            <div class="keyboard-row">
-              <button class="enter-key">ENTER</button>
-              <button class="letter-key">Z</button>
-              <button class="letter-key">X</button>
-              <button class="letter-key">C</button>
-              <button class="letter-key">V</button>
-              <button class="letter-key">B</button>
-              <button class="letter-key">N</button>
-              <button class="letter-key">M</button>
-              <button class="delete-key">DELETE</button>
+            <div class="player-1-keyboard-row">
+              <button class="player-1-enter-key">ENTER</button>
+              <button class="player-1-letter-key">Z</button>
+              <button class="player-1-letter-key">X</button>
+              <button class="player-1-letter-key">C</button>
+              <button class="player-1-letter-key">V</button>
+              <button class="player-1-letter-key">B</button>
+              <button class="player-1-letter-key">N</button>
+              <button class="player-1-letter-key">M</button>
+              <button class="player-1-delete-key">DELETE</button>
             </div>
           </div>
         </div>
@@ -153,89 +170,93 @@
           <h3>Player 2</h3>
           <div class="player-2-boards">
             <div class="player-2-answer-board">
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
-              <div class="answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
+              <div class="player-2-answer-cell"></div>
             </div>
             <div class="player-2-guess-board">
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
-              <div class="guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
+              <div class="player-2-guess-cell"></div>
             </div>
           </div>
           <div class="player-2-keyboard">
-            <div class="keyboard-row">
-              <button class="letter-key">Q</button>
-              <button class="letter-key">W</button>
-              <button class="letter-key">E</button>
-              <button class="letter-key">R</button>
-              <button class="letter-key">T</button>
-              <button class="letter-key">Y</button>
-              <button class="letter-key">U</button>
-              <button class="letter-key">I</button>
-              <button class="letter-key">O</button>
-              <button class="letter-key">P</button>
+            <div class="player-2-keyboard-row">
+              <button class="player-2-letter-key">Q</button>
+              <button class="player-2-letter-key">W</button>
+              <button class="player-2-letter-key">E</button>
+              <button class="player-2-letter-key">R</button>
+              <button class="player-2-letter-key">T</button>
+              <button class="player-2-letter-key">Y</button>
+              <button class="player-2-letter-key">U</button>
+              <button class="player-2-letter-key">I</button>
+              <button class="player-2-letter-key">O</button>
+              <button class="player-2-letter-key">P</button>
             </div>
-            <div class="keyboard-row">
-              <button class="letter-key">A</button>
-              <button class="letter-key">S</button>
-              <button class="letter-key">D</button>
-              <button class="letter-key">F</button>
-              <button class="letter-key">G</button>
-              <button class="letter-key">H</button>
-              <button class="letter-key">J</button>
-              <button class="letter-key">K</button>
-              <button class="letter-key">L</button>
+            <div class="player-2-keyboard-row">
+              <button class="player-2-letter-key">A</button>
+              <button class="player-2-letter-key">S</button>
+              <button class="player-2-letter-key">D</button>
+              <button class="player-2-letter-key">F</button>
+              <button class="player-2-letter-key">G</button>
+              <button class="player-2-letter-key">H</button>
+              <button class="player-2-letter-key">J</button>
+              <button class="player-2-letter-key">K</button>
+              <button class="player-2-letter-key">L</button>
             </div>
-            <div class="keyboard-row">
-              <button class="enter-key">ENTER</button>
-              <button class="letter-key">Z</button>
-              <button class="letter-key">X</button>
-              <button class="letter-key">C</button>
-              <button class="letter-key">V</button>
-              <button class="letter-key">B</button>
-              <button class="letter-key">N</button>
-              <button class="letter-key">M</button>
-              <button class="delete-key">DELETE</button>
+            <div class="player-2-keyboard-row">
+              <button class="player-2-enter-key">ENTER</button>
+              <button class="player-2-letter-key">Z</button>
+              <button class="player-2-letter-key">X</button>
+              <button class="player-2-letter-key">C</button>
+              <button class="player-2-letter-key">V</button>
+              <button class="player-2-letter-key">B</button>
+              <button class="player-2-letter-key">N</button>
+              <button class="player-2-letter-key">M</button>
+              <button class="player-2-delete-key">DELETE</button>
             </div>
           </div>
         </div>
+        <div class="empty-right-side"></div>
       </div>
     </div>
+    <footer>
+      <p class="footer-text">© 2026 Max King. All rights reserved.</p>
+    </footer>
     <script src="duodle.js"></script>
   </body>
 </html>
