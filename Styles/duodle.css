@@ -1,9 +1,16 @@
 /* Contains all content on the page */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Tahoma";
+  min-height: 100dvh; /* dynamic viewport height - accounts for the address bar */
+  font-family: Sans-serif, Geneva, Verdana;
 }
 
 .content-container {
@@ -18,6 +25,11 @@ body {
   width: 100%;
   padding: 10px 20px;
   box-sizing: border-box;
+}
+
+.player-heading {
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
 }
 
 .header-container {
@@ -37,6 +49,14 @@ body {
 .header-big-empty-spacer {
   /* Measured to be the same width as the buttons container */
   width: 260px;
+}
+
+.duodle-title {
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 700;
+  margin-right: 20px;
+  text-shadow: 2px 2px #ccc;
 }
 
 .end-game-container {
@@ -181,17 +201,6 @@ body {
   gap: 20px;
 }
 
-.switch-turns-button {
-  background-color: #333;
-  color: white;
-  width: 95px;
-  height: 50px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .new-game-button {
   background-color: #333;
   color: white;
@@ -203,8 +212,7 @@ body {
   cursor: pointer;
 }
 
-.new-game-button:hover,
-.switch-turns-button:hover {
+.new-game-button:hover {
   transform: translate(0px, -2px);
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 1);
 }
@@ -255,7 +263,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: "Tahoma";
+  font-family: Sans-serif, Geneva, Verdana;
 }
 
 .player-1-enter-key,
@@ -270,6 +278,19 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.player-1-letter-key,
+.player-2-letter-key,
+.player-1-enter-key,
+.player-2-enter-key,
+.player-1-delete-key,
+.player-2-delete-key {
+  -webkit-appearance: none;
+  appearance: none;
+  color: #000;
+  font-family: "Tahoma", sans-serif;
+  touch-action: manipulation;
 }
 
 .player-1-answer-board,
@@ -400,13 +421,15 @@ body {
 /* Footer Styling */
 footer {
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .footer-text {
   align-self: center;
   text-align: center;
   font-size: 11px;
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
 }
 
 .help-button-image {
@@ -446,6 +469,33 @@ footer {
 }
 
 @media (max-width: 1000px) {
+  /* Changing the width of the end-game container to fit on different screen sizes */
+  .end-game-container {
+    width: 300px;
+  }
+
+  /* Change the Styling of the Header to make things fit better */
+
+  .new-game-button {
+    background-color: #333;
+    color: white;
+    width: 70px;
+    height: 35px;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .help-button-image {
+    height: 35px;
+    width: auto;
+  }
+
+  .header-big-empty-spacer {
+    width: 0px;
+  }
+
   /* Switch the game board orientation to Vertical for smaller screen sizes */
   .game-board-container {
     flex-direction: column;
@@ -457,6 +507,7 @@ footer {
   .player-2-side {
     padding-right: 0;
     transition: width 0.5s ease;
+    height: 328px; /* This makes it so that both player boards stay on their side of their screen as they grow and shrink */
   }
 
   /* ---- Transition base: applies regardless of which state class is active ---- */
@@ -533,17 +584,23 @@ footer {
 
   .active-side .player-1-letter-key,
   .active-side .player-2-letter-key {
-    width: 30px;
-    height: 36px;
+    width: 24px;
+    height: 34px;
     font-size: 12px;
     border-radius: 2px;
     padding-block: 0px;
     padding-inline: 0px;
   }
 
+  .active-side .player-1-keyboard,
+  .active-side .player-2-keyboard {
+    padding-top: 10px;
+  }
+
   .active-side .player-1-keyboard-row,
   .active-side .player-2-keyboard-row {
     gap: 4px;
+    margin-bottom: 4px;
   }
 
   .active-side .player-1-enter-key,
@@ -565,21 +622,21 @@ footer {
     grid-template-rows: repeat(4, 18px);
     row-gap: 10px;
     padding-right: 5px;
-    column-gap: 3px;
+    column-gap: 4px;
   }
 
   .inactive-side .player-1-guess-board,
   .inactive-side .player-2-guess-board {
     grid-template-columns: repeat(5, 24px);
     grid-template-rows: repeat(4, 24px);
-    column-gap: 3px;
+    column-gap: 4px;
   }
 
   .inactive-side .player-1-answer-cell,
   .inactive-side .player-2-answer-cell {
     width: 16px;
     height: 16px;
-    border-radius: 2px;
+    border-radius: 3px;
     font-size: 13px;
   }
 
@@ -587,7 +644,7 @@ footer {
   .inactive-side .player-2-guess-cell {
     width: 22px;
     height: 22px;
-    border-radius: 2px;
+    border-radius: 3px;
     font-size: 13px;
   }
 
@@ -659,9 +716,15 @@ footer {
     padding-inline: 0px;
   }
 
+  .equal-side .player-1-keyboard,
+  .equal-side .player-2-keyboard {
+    padding-top: 10px;
+  }
+
   .equal-side .player-1-keyboard-row,
   .equal-side .player-2-keyboard-row {
     gap: 4px;
+    margin-bottom: 4px;
   }
 
   .equal-side .player-1-enter-key,
@@ -670,5 +733,92 @@ footer {
   .equal-side .player-2-delete-key {
     border-radius: 2px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Designing for the smallest of mobile screens (min. width 325 px) */
+
+  /* Changes to items in the header */
+
+  header {
+    margin-top: 5px;
+  }
+
+  .duodle-title {
+    font-size: 24px;
+  }
+
+  .help-button-image {
+    height: 30px;
+  }
+
+  .new-game-button {
+    background-color: #333;
+    color: white;
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* ---- Active one board much larger than the other ---- */
+  .active-side .player-1-answer-board,
+  .active-side .player-2-answer-board {
+    grid-template-columns: repeat(5, 23px);
+    grid-template-rows: repeat(4, 23px);
+    row-gap: 14px;
+    padding-right: 10px;
+  }
+
+  .active-side .player-1-guess-board,
+  .active-side .player-2-guess-board {
+    grid-template-columns: repeat(5, 33px);
+    grid-template-rows: repeat(4, 33px);
+  }
+
+  .active-side .player-1-answer-cell,
+  .active-side .player-2-answer-cell {
+    width: 18px;
+    height: 18px;
+    font-size: 15px;
+  }
+
+  .active-side .player-1-guess-cell,
+  .active-side .player-2-guess-cell {
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+
+  /* ---- EQUAL (game over / scoring animation) — both boards same medium size ---- */
+  .equal-side .player-1-answer-board,
+  .equal-side .player-2-answer-board {
+    grid-template-columns: repeat(5, 23px);
+    grid-template-rows: repeat(4, 23px);
+    row-gap: 14px;
+    padding-right: 10px;
+  }
+
+  .equal-side .player-1-guess-board,
+  .equal-side .player-2-guess-board {
+    grid-template-columns: repeat(5, 33px);
+    grid-template-rows: repeat(4, 33px);
+  }
+
+  .equal-side .player-1-answer-cell,
+  .equal-side .player-2-answer-cell {
+    width: 18px;
+    height: 18px;
+    font-size: 15px;
+  }
+
+  .equal-side .player-1-guess-cell,
+  .equal-side .player-2-guess-cell {
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
   }
 }
