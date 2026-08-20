@@ -506,8 +506,7 @@ footer {
   .player-1-side,
   .player-2-side {
     padding-right: 0;
-    transition: width 0.5s ease;
-    height: 328px; /* This makes it so that both player boards stay on their side of their screen as they grow and shrink */
+    transition: width 0.3s ease;
   }
 
   /* ---- Transition base: applies regardless of which state class is active ---- */
@@ -516,36 +515,42 @@ footer {
   .player-1-guess-board,
   .player-2-guess-board {
     transition:
-      grid-template-columns 0.5s ease,
-      grid-template-rows 0.5s ease,
-      row-gap 0.5s ease,
-      column-gap 0.5s ease,
-      padding-right 0.5s ease;
+      grid-template-columns 0.3s ease,
+      grid-template-rows 0.3s ease,
+      row-gap 0.3s ease,
+      column-gap 0.3s ease,
+      padding-right 0.3s ease;
   }
 
-  .answer-cell,
-  .guess-cell {
+  .player-1-answer-cell,
+  .player-2-answer-cell,
+  .player-1-guess-cell,
+  .player-2-guess-cell {
     transition:
-      width 0.5s ease,
-      height 0.5s ease,
-      font-size 0.5s ease,
-      border-width 0.5s ease;
+      width 0.3s ease,
+      height 0.3s ease,
+      font-size 0.3s ease,
+      border-width 0.3s ease;
   }
 
-  .letter-key {
+  .player-1-letter-key,
+  .player-2-letter-key {
     transition:
-      width 0.5s ease,
-      height 0.5s ease,
-      font-size 0.5s ease;
+      width 0.3s ease,
+      height 0.3s ease,
+      font-size 0.3s ease;
   }
 
-  .enter-key,
-  .delete-key {
-    transition: font-size 0.5s ease;
+  .player-1-enter-key,
+  .player-2-enter-key,
+  .player-1-delete-key,
+  .player-2-delete-key {
+    transition: font-size 0.3s ease;
   }
 
-  .keyboard-row {
-    transition: gap 0.5s ease;
+  .player-1-keyboard-row,
+  .player-2-keyboard-row {
+    transition: gap 0.3s ease;
   }
 
   .player-1-side,
@@ -584,9 +589,9 @@ footer {
 
   .active-side .player-1-letter-key,
   .active-side .player-2-letter-key {
-    width: 24px;
-    height: 34px;
-    font-size: 12px;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
     border-radius: 2px;
     padding-block: 0px;
     padding-inline: 0px;
@@ -655,8 +660,8 @@ footer {
 
   .inactive-side .player-1-letter-key,
   .inactive-side .player-2-letter-key {
-    width: 12px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     font-size: 10px;
     border-radius: 2px;
     padding-block: 0px;
@@ -708,9 +713,9 @@ footer {
 
   .equal-side .player-1-letter-key,
   .equal-side .player-2-letter-key {
-    width: 24px;
-    height: 34px;
-    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
     border-radius: 2px;
     padding-block: 0px;
     padding-inline: 0px;
@@ -793,6 +798,13 @@ footer {
     font-size: 20px;
   }
 
+  .active-side .player-1-letter-key,
+  .active-side .player-2-letter-key {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+
   /* ---- EQUAL (game over / scoring animation) — both boards same medium size ---- */
   .equal-side .player-1-answer-board,
   .equal-side .player-2-answer-board {
@@ -820,5 +832,15 @@ footer {
     width: 28px;
     height: 28px;
     font-size: 20px;
+  }
+
+  .equal-side .player-1-letter-key,
+  .equal-side .player-2-letter-key {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    border-radius: 2px;
+    padding-block: 0px;
+    padding-inline: 0px;
   }
 }

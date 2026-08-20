@@ -499,6 +499,7 @@ function submitGuess() {
       player2CurrentCol = 0;
     }
     console.log("ended player 2 turn", currentTurn);
+    updateActiveRowHighlight();
   }
 }
 
