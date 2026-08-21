@@ -59,6 +59,63 @@ body {
   text-shadow: 2px 2px #ccc;
 }
 
+.help-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-flex; /* keeps the image sized to its own dimensions, no extra button box */
+}
+
+.help-button-image {
+  height: 50px;
+  width: auto;
+  pointer-events: none;
+}
+
+.help-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1002;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  background-color: white;
+  width: 50vw;
+  height: 50vh;
+  border-radius: 8px;
+  border-width: 4px;
+  border-color: #333;
+  border-style: solid;
+}
+
+.help-container.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Blurs the background while the help menu is open */
+.header-container,
+.game-board-container,
+footer {
+  transition: filter 0.3s ease;
+}
+
+body.blur-active .header-container,
+body.blur-active .game-board-container,
+body.blur-active footer {
+  filter: blur(6px);
+  pointer-events: none;
+}
+
 .end-game-container {
   position: fixed;
   display: flex;
@@ -432,11 +489,6 @@ footer {
   margin-block-end: 0.25em;
 }
 
-.help-button-image {
-  height: 50px;
-  width: auto;
-}
-
 @media (max-width: 1200px) {
   /* Reduces the size of the player boards for smaller screens */
   .player-1-answer-board,
@@ -772,29 +824,135 @@ footer {
   /* ---- Active one board much larger than the other ---- */
   .active-side .player-1-answer-board,
   .active-side .player-2-answer-board {
-    grid-template-columns: repeat(5, 23px);
-    grid-template-rows: repeat(4, 23px);
+    grid-template-columns: repeat(5, 28px);
+    grid-template-rows: repeat(4, 28px);
     row-gap: 14px;
     padding-right: 10px;
   }
 
   .active-side .player-1-guess-board,
   .active-side .player-2-guess-board {
-    grid-template-columns: repeat(5, 33px);
-    grid-template-rows: repeat(4, 33px);
+    grid-template-columns: repeat(5, 38px);
+    grid-template-rows: repeat(4, 38px);
   }
 
   .active-side .player-1-answer-cell,
   .active-side .player-2-answer-cell {
-    width: 18px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
     font-size: 15px;
   }
 
   .active-side .player-1-guess-cell,
   .active-side .player-2-guess-cell {
-    width: 28px;
-    height: 28px;
+    width: 33px;
+    height: 33px;
+    font-size: 20px;
+  }
+
+  .active-side .player-1-letter-key,
+  .active-side .player-2-letter-key {
+    width: 33px;
+    height: 33px;
+    font-size: 12px;
+  }
+
+  /* ---- EQUAL (game over / scoring animation) — both boards same medium size ---- */
+  .equal-side .player-1-answer-board,
+  .equal-side .player-2-answer-board {
+    grid-template-columns: repeat(5, 28px);
+    grid-template-rows: repeat(4, 28px);
+    row-gap: 14px;
+    padding-right: 10px;
+  }
+
+  .equal-side .player-1-guess-board,
+  .equal-side .player-2-guess-board {
+    grid-template-columns: repeat(5, 38px);
+    grid-template-rows: repeat(4, 38px);
+  }
+
+  .equal-side .player-1-answer-cell,
+  .equal-side .player-2-answer-cell {
+    width: 23px;
+    height: 23px;
+    font-size: 15px;
+  }
+
+  .equal-side .player-1-guess-cell,
+  .equal-side .player-2-guess-cell {
+    width: 33px;
+    height: 33px;
+    font-size: 20px;
+  }
+
+  .equal-side .player-1-letter-key,
+  .equal-side .player-2-letter-key {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    border-radius: 2px;
+    padding-block: 0px;
+    padding-inline: 0px;
+  }
+}
+
+@media (max-width: 370px) {
+  /* Designing for the smallest of mobile screens (min. width 325 px) */
+
+  /* Changes to items in the header */
+
+  header {
+    margin-top: 5px;
+  }
+
+  .duodle-title {
+    font-size: 24px;
+  }
+
+  .help-button-image {
+    height: 30px;
+  }
+
+  .new-game-button {
+    background-color: #333;
+    color: white;
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* ---- Active one board much larger than the other ---- */
+  .active-side .player-1-answer-board,
+  .active-side .player-2-answer-board {
+    grid-template-columns: repeat(5, 24px);
+    grid-template-rows: repeat(4, 24px);
+    row-gap: 11px;
+    padding-right: 10px;
+  }
+
+  .active-side .player-1-guess-board,
+  .active-side .player-2-guess-board {
+    grid-template-columns: repeat(5, 34px);
+    grid-template-rows: repeat(4, 34px);
+    row-gap: 2px;
+    column-gap: 2px;
+  }
+
+  .active-side .player-1-answer-cell,
+  .active-side .player-2-answer-cell {
+    width: 19px;
+    height: 19px;
+    font-size: 15px;
+  }
+
+  .active-side .player-1-guess-cell,
+  .active-side .player-2-guess-cell {
+    width: 29px;
+    height: 29px;
     font-size: 20px;
   }
 
@@ -808,29 +966,31 @@ footer {
   /* ---- EQUAL (game over / scoring animation) — both boards same medium size ---- */
   .equal-side .player-1-answer-board,
   .equal-side .player-2-answer-board {
-    grid-template-columns: repeat(5, 23px);
-    grid-template-rows: repeat(4, 23px);
-    row-gap: 14px;
+    grid-template-columns: repeat(5, 24px);
+    grid-template-rows: repeat(4, 24px);
+    row-gap: 11px;
     padding-right: 10px;
   }
 
   .equal-side .player-1-guess-board,
   .equal-side .player-2-guess-board {
-    grid-template-columns: repeat(5, 33px);
-    grid-template-rows: repeat(4, 33px);
+    grid-template-columns: repeat(5, 34px);
+    grid-template-rows: repeat(4, 34px);
+    row-gap: 2px;
+    column-gap: 2px;
   }
 
   .equal-side .player-1-answer-cell,
   .equal-side .player-2-answer-cell {
-    width: 18px;
-    height: 18px;
+    width: 19px;
+    height: 19px;
     font-size: 15px;
   }
 
   .equal-side .player-1-guess-cell,
   .equal-side .player-2-guess-cell {
-    width: 28px;
-    height: 28px;
+    width: 29px;
+    height: 29px;
     font-size: 20px;
   }
 

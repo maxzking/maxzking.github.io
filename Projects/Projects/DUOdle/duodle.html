@@ -19,11 +19,20 @@
           <div class="header-big-empty-spacer"></div>
           <div class="duodle-title">DUOdle</div>
           <div class="center-buttons-container">
-            <img
-              src="/Projects/Projects/DUOdle/images/Question Mark.png"
-              alt="Help Button"
-              class="help-button-image"
-            />
+            <button
+              class="help-button"
+              type="button"
+              onclick="
+                showHelp();
+                this.blur();
+              "
+            >
+              <img
+                src="/Projects/Projects/DUOdle/images/Question Mark.png"
+                alt="Help Button"
+                class="help-button-image"
+              />
+            </button>
             <button class="new-game-button" onclick="location.reload()">
               New Game
             </button>
@@ -41,6 +50,49 @@
           <div class="header-small-empty-spacer"></div>
         </div>
       </header>
+      <!-- The Help container, error container, and end game container are invisible until triggered -->
+      <div class="help-container" id="helpContainer">
+        <button
+          class="close-help-button"
+          type="button"
+          onclick="
+            closeHelp();
+            this.blur();
+          "
+        >
+          X
+        </button>
+        <p>How to Play</p>
+        <p>
+          DUOdle is a spin-off of the game
+          <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>
+          by
+          <a href="https://x.com/powerlanguish?lang=en">powerlanguish.</a>
+        </p>
+        <p>Guess your target word in 4 tries and before your opponent.</p>
+        <p>Each player has a different target word they must guess.</p>
+        <p>
+          After both players have guessed, the color of the tiles change to show
+          how close your guess was.
+        </p>
+        <img
+          src="/Projects/Projects/DUOdle/images/1_player_example.png"
+          alt="1-player scoring example"
+          class="scoring-example-picture"
+        />
+        <p>P is in the word in the correct spot</p>
+        <p>A is in th eword in the incorrect spot</p>
+        <p>I, R, and S are not in the word</p>
+        <p>
+          Cross-scoring: your opponent's guess is scored against your target
+          word, and vice-versa.
+        </p>
+        <img
+          src="/Projects/Projects/DUOdle/images/2_player_example.png"
+          alt="2-player scoring example"
+          class="scoring-example-picture"
+        />
+      </div>
       <div class="error-message-container" id="errorMessage"></div>
       <div class="end-game-container" id="endGameContainer">
         <span class="end-game-text" id="endGameText"></span>

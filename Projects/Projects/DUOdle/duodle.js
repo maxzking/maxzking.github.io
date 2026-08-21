@@ -45,10 +45,8 @@ loadGuessList(); // call this once when the script runs
 function pickRandomAnswer() {
   const randomIndex1 = Math.floor(Math.random() * answerbank.length);
   const randomIndex2 = Math.floor(Math.random() * answerbank.length);
-  player1Answer = answerbank[randomIndex1];
+  player1Answer = "PLANE";
   player2Answer = answerbank[randomIndex2];
-  console.log(player1Answer);
-  console.log(player2Answer);
 
   // Loads the answer for both players in the reveal-answers-container
   const player1ANSWER = document.getElementById("player-1-Answer");
@@ -142,6 +140,18 @@ function deleteLetter() {
     const cellIndex = getCellIndex(player2CurrentRow, player2CurrentCol);
     player2Cells[cellIndex].textContent = "";
   }
+}
+
+function showHelp() {
+  const helpContainer = document.getElementById("helpContainer");
+  helpContainer.classList.add("show");
+  document.body.classList.add("blur-active");
+}
+
+function closeHelp() {
+  const helpContainer = document.getElementById("helpContainer");
+  helpContainer.classList.remove("show");
+  document.body.classList.remove("blur-active");
 }
 
 function showError(message) {
