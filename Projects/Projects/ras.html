@@ -40,6 +40,222 @@
           </nav>
         </div>
       </header>
+      <a href="/Projects/projects.html" class="read-more project-read-more">
+        <span class="back-nav-arrow">‹</span> All Projects
+      </a>
+      <div class="page-layout">
+        <div class="sidebar-layout">
+          <!-- Left Navigation -->
+          <nav class="sidebar-nav">
+            <ul>
+              <li><a href="#Summary">Summary</a></li>
+              <li><a href="#Problem">The Problem</a></li>
+              <li><a href="#Solution">The Solution</a></li>
+              <li><a href="#Process">Process</a></li>
+              <li><a href="#Offices">Offices</a></li>
+              <li><a href="#Multi-Family">Multi-Family Housing</a></li>
+              <li><a href="#Exterior">Exterior Facade</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Right Content -->
+        <div class="sidebar-content">
+          <div class="project-title-container">
+            <a class="project-title">RAS</a>
+          </div>
+          <div class="project-body">
+            <section id="Summary" class="sidebar-section">
+              <p class="project-section-title">Summary</p>
+              <p>
+                <a
+                  class="credit-link"
+                  href="https://resonanceac.com/launching-portable-audio-simulation-environment/"
+                  >RAS</a
+                >
+                is a portable acoustic simulation environment built for
+                architects when I worked at
+                <a class="credit-link" href="https://resonanceac.com/"
+                  >Resonance Acoustics</a
+                >. RAS uses lab and field tests of acoustic assemblies to
+                generate calibrate audio. Architects and designers can use RAS
+                to <b>hear</b> the difference acoustics products and assemblies
+                will make to aid their design process. In addition to the 30+
+                acoustic assemblies that come pre-packaged, the RAS is capable
+                of providing project-specific audio if a client has specific
+                acoustic assemblies in mind.
+              </p>
+              <p>
+                Disclaimer: I do not own the RAS. RAS is owned and managed by
+                <a class="credit-link" href="https://resonanceac.com/"
+                  >Resonance Acoustics.</a
+                >
+              </p>
+            </section>
+
+            <section id="Problem" class="sidebar-section">
+              <p class="project-section-title">The Problem</p>
+              <p>
+                The acoustic performances of wall, floor, and door assemblies
+                are described in metrics that can seem quite opaque
+                <b
+                  >(e.g. STC ratings, IIC ratings, Transmission Loss, Noise
+                  Reduction).</b
+                >
+                If you are an architect or designer, you have a right to know if
+                an STC 36 window will fit your design needs before you put your
+                final order in.
+              </p>
+            </section>
+
+            <section id="Solution" class="sidebar-section">
+              <p class="project-section-title">The Solution</p>
+              <p>
+                RAS uses lab and field-tested measurements of acoustic
+                assemblies to generate calibrated audio. The RAS can be shipped
+                to your doorstep as a tablet+headset system to be used in your
+                own home or office.
+              </p>
+              <p>
+                RAS provides audio for three environments common to
+                architectural acoustics:
+              </p>
+              <ul>
+                <li>Offices</li>
+                <li>Multi-Family Housing</li>
+                <li>Exterior Facades</li>
+              </ul>
+              <div class="single-figure">
+                <div class="figure">
+                  <img src="/Projects/Projects/Photos/RAS.gif" alt="RAS gif" />
+                </div>
+              </div>
+            </section>
+
+            <section id="Process" class="sidebar-section">
+              <p class="project-section-title">Process</p>
+              <p>
+                The audio for the RAS was generated through the process
+                described below:
+              </p>
+              <ol>
+                <li>
+                  Acoustic performance data is gathered from lab test or field
+                  test results (<a
+                    class="credit-link"
+                    href="https://echo-one.pliteq.com/login"
+                    >Pliteq Echo One </a
+                  >and
+                  <a
+                    class="credit-link"
+                    href="https://portal.maxxon.com/portal-login/?request=1"
+                    >Maxxon</a
+                  >
+                  are good sources).
+                </li>
+                <li>
+                  Acoustic performance data (in the form of transmission loss
+                  per 1/3 octave) is imported into Max/MSP and turned into a EQ
+                  filter.
+                </li>
+                <li>Pink noise is passed through this filter and recorded.</li>
+                <li>
+                  A binaural dummy head (see photo) verifies if the filtered
+                  pink noise matches the acoustic performance data. If
+                  necessary, adjustements to the fitler are made.
+                </li>
+                <li>
+                  Demonstration audio is passed through the calibrated filter
+                  and uploaded to the RAS.
+                </li>
+                <div class="single-figure">
+                  <div class="figure">
+                    <img
+                      src="/Projects/Projects/Photos/RAS Measurement Setup Photo.png"
+                      alt="RAS Measurement Setup Photo"
+                    />
+                  </div>
+                </div>
+              </ol>
+            </section>
+
+            <section id="Offices" class="sidebar-section">
+              <p class="project-section-title">Offices</p>
+              <p>
+                Acoustic assemblies can make a huge difference in speech privacy
+                between neighboring offices. The office listening environment
+                provides the following features:
+              </p>
+              <ul>
+                <li>4 wall assemblies</li>
+                <li>4 door assemblies</li>
+                <li>2 project-specific custom acoustic assemblies</li>
+                <li>Toggle for sound masking</li>
+                <li>
+                  "Raised speech volume" or "Normal speech volume" Demonstration
+                  Audio
+                </li>
+              </ul>
+              <div class="single-figure">
+                <div class="figure">
+                  <img
+                    src="/Projects/Projects/Photos/RAS Office Speech Privacy.png"
+                    alt="RAS Offices"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section id="Multi-Family" class="sidebar-section">
+              <p class="project-section-title">Multi-Family Housing</p>
+              <p>
+                Acoustic walls and floor impact can mitigate the noise you hear
+                from adjacent neighbors inside a multi-family residence
+                building. The multi-family listening environment provides the
+                following features:
+              </p>
+              <ul>
+                <li>3 wall assemblies</li>
+                <li>4 floor assemblies</li>
+                <li>2 project-specific custom acoustic assemblies</li>
+                <li>
+                  Option between "Party" and "Footsteps" demonstration audio.
+                </li>
+              </ul>
+              <div class="single-figure">
+                <div class="figure">
+                  <img
+                    src="/Projects/Projects/Photos/RAS Multi Family.png"
+                    alt="RAS Multi Family Housing"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section id="Exterior" class="sidebar-section">
+              <p class="project-section-title">Exterior Facade</p>
+              <p>
+                Acoustic windows can reduce outdoor noise you hear from inside
+                your building. The exterior facade listening environment
+                provides the following features:
+              </p>
+              <ul>
+                <li>4 punched window assemblies</li>
+                <li>2 curtain wall assemblies</li>
+                <li>2 project-specific custom acoustic assemblies</li>
+              </ul>
+              <div class="single-figure">
+                <div class="figure">
+                  <img
+                    src="/Projects/Projects/Photos/RAS Exterior Facade.png"
+                    alt="RAS Exterior Facade"
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
     </div>
     <footer>
       <div class="footer-text">

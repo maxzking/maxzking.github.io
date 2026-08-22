@@ -45,7 +45,7 @@ loadGuessList(); // call this once when the script runs
 function pickRandomAnswer() {
   const randomIndex1 = Math.floor(Math.random() * answerbank.length);
   const randomIndex2 = Math.floor(Math.random() * answerbank.length);
-  player1Answer = "PLANE";
+  player1Answer = answerbank[randomIndex1];
   player2Answer = answerbank[randomIndex2];
 
   // Loads the answer for both players in the reveal-answers-container

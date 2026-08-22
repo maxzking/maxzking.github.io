@@ -19,105 +19,125 @@
   </head>
   <body>
     <div class="content-wrapper">
-    <script src="Scripts/script.js" defer></script>
-    <!--This is the website navigation bar at the top of the screen-->
-    <header>
-      <div class="page-title">
-        <a href="/index.html"><h2>Max King</h2></a>
-        <nav class="header-nav">
-          <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-          <ul>
-            <li><a href="../projects.html">Projects</a></li>
-            <li><a href="/Posters/posters.html">Posters</a></li>
-            <li><a href="/Music/music.html">Music</a></li>
-            <li><a href="/Resume/Resume.html">Resume</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+      <script src="Scripts/script.js" defer></script>
+      <!--This is the website navigation bar at the top of the screen-->
+      <header>
+        <div class="page-title">
+          <a href="/index.html"><h2>Max King</h2></a>
+          <nav class="header-nav">
+            <div class="menu-toggle" id="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            <ul>
+              <li><a href="../projects.html">Projects</a></li>
+              <li><a href="/Posters/posters.html">Posters</a></li>
+              <li><a href="/Music/music.html">Music</a></li>
+              <li><a href="/Resume/Resume.html">Resume</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
       <a href="/Projects/projects.html" class="read-more project-read-more">
         <span class="back-nav-arrow">‹</span> All Projects
       </a>
-    <div class="page-layout">
-      <div class="sidebar-layout">
-        <!-- Left Navigation -->
-        <nav class="sidebar-nav">
-          <ul>
-            <li><a href="#Background">Summary</a></li>
-            <li><a href="#Background">Background</a></li>
-            <li><a href="#Features">Features</a></li>
-            <li><a href="#Download">Download</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Right Content -->
-      <div class="sidebar-content">
-        <div class="project-title-container">
-          <a class="project-title">Gravitational Synthesizer</a>
-        </div>
-        <a class="project-body">
-          <section id="Summary" class="sidebar-section">
-            <p class="project-section-title">Summary</p>
-            <p>
-              This synthesizer is governed by Newton's Laws of Universal
-              Gravitation. In this patch, there is a planet and a stationary
-              sun. You control the mass of the sun as well as the planet's
-              initial velocity and distance from the sun. The sound evolves with
-              the position and velocity of the planet. See if you can keep the
-              planet in a stable orbit!
-            </p>
-            <div class="single-figure">
-              <div class="figure">
-                <img
-                  src="/Projects/Projects/Photos/Gravitational Synthesizer.gif"
-                  alt="Oppenheimer Way Map"
-                />
-              </div>
-          </section>
-
-          <section id="Background" class="sidebar-section">
-            <p class="project-section-title">Background</p>
-            <p>
-              The first version of this patch was created for Music 158A "Music
-              and Computing" during my undergraduate studies at UC Berkeley. At
-              the time, I was most interested in modeling some of the concepts I
-              had learned from physics with sound. Our assignment was to create
-              a patch capable of synthesizing at least 4 different sounds.
-            </p>
-            <p>
-              The motion of the planet is described by Newton's Law of Universal
-              Gravitation. The patch calculates the force of attraction between
-              the planet and the sun in real-time.
-            </p>
-            <div class="video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ygX-FukTnKQ?si=QU2rBnljfV3UU6cA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </section>
-          <section id="Features" class="sidebar-section">
-            <p class="project-section-title">Features</p>
+      <div class="page-layout">
+        <div class="sidebar-layout">
+          <!-- Left Navigation -->
+          <nav class="sidebar-nav">
             <ul>
-              <li>Stereo Imaging</li>
-              <li>5 Synthesizer Presets</li>
-              <li>Graphical Display</li>
+              <li><a href="#Background">Summary</a></li>
+              <li><a href="#Background">Background</a></li>
+              <li><a href="#Features">Features</a></li>
+              <li><a href="#Download">Download</a></li>
             </ul>
-          </section>
-          <section id="Features" class="sidebar-section">
-            <p class="project-section-title">Download</p>
-            <p>Download the patch here to try it for yourself!</p>
-            <a
-              href="/Downloads/GravitationalSynthesizer.maxpat"
-              download="GravitationalSynthesizer.maxpat"
-              class="download-btn"
-            >
-              ⬇ Download Patch
-            </a>
-          </section>
-        </a>
+          </nav>
+        </div>
+
+        <!-- Right Content -->
+        <div class="sidebar-content">
+          <div class="project-title-container">
+            <a class="project-title">Gravitational Synthesizer</a>
+          </div>
+          <div class="project-body">
+            <section id="Summary" class="sidebar-section">
+              <p class="project-section-title">Summary</p>
+              <p>
+                This synthesizer is governed by Newton's Laws of Universal
+                Gravitation. In this patch, there is a planet and a stationary
+                sun. You control the mass of the sun as well as the planet's
+                initial velocity and distance from the sun. The sound evolves
+                with the position and velocity of the planet. See if you can
+                keep the planet in a stable orbit!
+              </p>
+              <div class="single-figure">
+                <div class="figure">
+                  <img
+                    src="/Projects/Projects/Photos/Gravitational Synthesizer.gif"
+                    alt="Oppenheimer Way Map"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section id="Background" class="sidebar-section">
+              <p class="project-section-title">Background</p>
+              <p>
+                The first version of this patch was created for Music 158A
+                "Music and Computing" during my undergraduate studies at UC
+                Berkeley. At the time, I was most interested in modeling some of
+                the concepts I had learned from physics with sound. Our
+                assignment was to create a patch capable of synthesizing at
+                least 4 different sounds.
+              </p>
+              <p>
+                The motion of the planet is described by Newton's Law of
+                Universal Gravitation. The patch calculates the force of
+                attraction between the planet and the sun in real-time.
+              </p>
+              <div class="video-wrapper">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/ygX-FukTnKQ?si=QU2rBnljfV3UU6cA"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </section>
+            <section id="Features" class="sidebar-section">
+              <p class="project-section-title">Features</p>
+              <ul>
+                <li>Stereo Imaging</li>
+                <li>5 Synthesizer Presets</li>
+                <li>Graphical Display</li>
+              </ul>
+            </section>
+            <section id="Features" class="sidebar-section">
+              <p class="project-section-title">Download</p>
+              <p>Download the patch here to try it for yourself!</p>
+              <a
+                href="/Downloads/GravitationalSynthesizer.maxpat"
+                download="GravitationalSynthesizer.maxpat"
+                class="download-btn"
+              >
+                ⬇ Download Patch
+              </a>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
     <footer>

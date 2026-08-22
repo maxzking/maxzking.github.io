@@ -434,6 +434,10 @@ body {
   height: 100%;
 }
 
+.credit-link {
+  color: blue;
+}
+
 /* --------- */
 /* STYLES FOR LEFT-RIGHT "SIDEBAR" ORGANIZATION OF PROJECTS. NAV ON THE LEFT AND CONTENT ON THE RIGHT*/
 /* --------- */
